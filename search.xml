@@ -332,4 +332,13 @@ lty                 -改变标签线的类型, 可以设置通过与plot图像�
         <category>生物网络</category>
       </categories>
   </entry>
+  <entry>
+    <title>博客插件</title>
+    <url>/2022/05/21/%E5%8D%9A%E5%AE%A2%E6%8F%92%E4%BB%B6/</url>
+    <content><![CDATA[<h1 id="日历插件"><a href="#日历插件" class="headerlink" title="日历插件"></a>日历插件</h1><p>来源于<a href="https://github.com/theme-next/theme-next-calendar">theme-next-calendar</a></p>
+]]></content>
+      <categories>
+        <category>其他</category>
+      </categories>
+  </entry>
 </search>
