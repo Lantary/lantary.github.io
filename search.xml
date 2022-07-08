@@ -1,16 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>博客插件</title>
-    <url>/1970/01/01/%E5%8D%9A%E5%AE%A2%E6%8F%92%E4%BB%B6/</url>
-    <content><![CDATA[<h1 id="日历插件"><a href="#日历插件" class="headerlink" title="日历插件"></a>日历插件</h1><p><del>来源于<a href="https://github.com/theme-next/theme-next-calendar">theme-next-calendar</a></del></p>
-<p>来源于<a href="https://zfe.space/">小冰大神</a> 做的插件 <a href="https://zfe.space/post/hexo-githubcalendar.html">文章在此处</a> , <a href="https://github.com/Zfour/hexo-github-calendar">github</a></p>
-]]></content>
-      <categories>
-        <category>其他</category>
-      </categories>
-  </entry>
-  <entry>
     <title>ROC曲线</title>
     <url>/1970/01/01/ROC%E6%9B%B2%E7%BA%BF/ROC%E6%9B%B2%E7%BA%BF/</url>
     <content><![CDATA[<ul>
@@ -94,6 +84,16 @@ lty                 -改变标签线的类型, 可以设置通过与plot图像�
       <categories>
         <category>生物信息学</category>
         <category>ROC曲线</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>博客插件</title>
+    <url>/1970/01/01/%E5%8D%9A%E5%AE%A2%E6%8F%92%E4%BB%B6/</url>
+    <content><![CDATA[<h1 id="日历插件"><a href="#日历插件" class="headerlink" title="日历插件"></a>日历插件</h1><p><del>来源于<a href="https://github.com/theme-next/theme-next-calendar">theme-next-calendar</a></del></p>
+<p>来源于<a href="https://zfe.space/">小冰大神</a> 做的插件 <a href="https://zfe.space/post/hexo-githubcalendar.html">文章在此处</a> , <a href="https://github.com/Zfour/hexo-github-calendar">github</a></p>
+]]></content>
+      <categories>
+        <category>其他</category>
       </categories>
   </entry>
   <entry>
