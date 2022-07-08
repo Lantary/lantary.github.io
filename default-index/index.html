@@ -407,6 +407,419 @@ lty                 -改变标签线的类型, 可以设置通过与plot图像�
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/1970/01/01/%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/Rstudio%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BB%A3%E7%A0%81%E9%85%8D%E8%89%B2%E6%96%B9%E6%A1%88/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/%E5%A4%B4%E5%83%8F.png">
+      <meta itemprop="name" content="lantary">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lantary">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/1970/01/01/%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/Rstudio%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BB%A3%E7%A0%81%E9%85%8D%E8%89%B2%E6%96%B9%E6%A1%88/" class="post-title-link" itemprop="url">Rstudio自定义代码配色方案</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 1970-01-01 08:00:00" itemprop="dateCreated datePublished" datetime="1970-01-01T08:00:00+08:00">1970-01-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-07-01 19:21:24" itemprop="dateModified" datetime="2022-07-01T19:21:24+08:00">2022-07-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">日常使用中的问题</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>Rsutido 中默认的代码配色方案变量和函数是没有区分的。所以想要一个自定义代码配色的方案</p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>因为只需要区分开函数和变量，所以可以让便量为默认色-“白色”，而函数给一个高亮。<br>在Rstudio中，函数高亮是有可以直接实现的选项的。<br>选择 TOOL –&gt;&gt; Global Option –&gt;&gt; Code –&gt;&gt; Display 中，勾选Highlight R function call。</p>
+<p><img src="https://raw.githubusercontent.com/Lantary/Private_warehouses/main/Rstudio%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BB%A3%E7%A0%81%E9%85%8D%E8%89%B2%E6%96%B9%E6%A1%88_p1.png" alt="p1"></p>
+<p>如果只是需求将变量和函数名分开，那么到这里为止就结束了。<br>但是如果你对Rstudio默认主题中的函数高亮颜色不满意想要修改，那么可以通过以下方式。</p>
+<ol>
+<li>确定你现在所使用的配色方案可以在TOOL –&gt;&gt; Global Option –&gt;&gt; Appearance 中查看</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/Lantary/Private_warehouses/main/Rstudio%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BB%A3%E7%A0%81%E9%85%8D%E8%89%B2%E6%96%B9%E6%A1%88_p2.png" alt="p2"></p>
+<ol start="3">
+<li>在你Rstudio的安装目录下找到对应名字的[ .rtheme]文件，我的文件夹在./Rstudio/resources/themes下</li>
+<li>复制一份更名，打开后找到 <code>.ace_support.ace_function</code> 即为函数颜色设置的设置条目。</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/Lantary/Private_warehouses/main/Rstudio%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BB%A3%E7%A0%81%E9%85%8D%E8%89%B2%E6%96%B9%E6%A1%88_p3.png" alt="p3"></p>
+<ol start="6">
+<li>更改文本开头的  <code>rs-theme-name:</code> 然后用Rstudio Add新设置的主题文件就可以了</li>
+</ol>
+<h2 id="版本信息"><a href="#版本信息" class="headerlink" title="版本信息"></a>版本信息</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">操作系统		ubuntu22</span><br><span class="line">Rstudio		2022.02.3+492</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p>[1] <a target="_blank" rel="noopener" href="https://community.rstudio.com/t/colour-additional-functions-within-an-editor-theme/4428">https://community.rstudio.com/t/colour-additional-functions-within-an-editor-theme/4428</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/1970/01/01/%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/ibus%E5%9C%A8pycharm%E4%B8%AD%E4%B8%8D%E8%83%BD%E8%BF%9B%E8%A1%8C%E6%B1%89%E5%AD%97%E8%BE%93%E5%85%A5%E7%9A%84%E9%97%AE%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/%E5%A4%B4%E5%83%8F.png">
+      <meta itemprop="name" content="lantary">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lantary">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/1970/01/01/%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/ibus%E5%9C%A8pycharm%E4%B8%AD%E4%B8%8D%E8%83%BD%E8%BF%9B%E8%A1%8C%E6%B1%89%E5%AD%97%E8%BE%93%E5%85%A5%E7%9A%84%E9%97%AE%E9%A2%98/" class="post-title-link" itemprop="url">ibus在pycharm中不能进行汉字输入的问题</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 1970-01-01 08:00:00" itemprop="dateCreated datePublished" datetime="1970-01-01T08:00:00+08:00">1970-01-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-27 15:55:47" itemprop="dateModified" datetime="2022-06-27T15:55:47+08:00">2022-06-27</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">日常使用中的问题</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>在使用pycharm过程中，发现pycharm没有办法输入中文，且ibus输入法的候选框一直在左下角，不跟随光标位置。<br>在网络上搜索了一下，目前中文互联网上能搜索到的大部分解决方案因为版本问题多多少少都有些问题。<br>所以这里写一篇基于我使用版本确实有效的一个解决方案。并且指出我在用其他方案来解决时遇到的问题</p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>打开pycharm  —-&gt;&gt; help —-&gt;&gt; Edit Custom VM Options </p>
+<p>在出现的交互窗中输入</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-Drecreate.x11.input.method=true</span><br></pre></td></tr></table></figure>
+<p>重启pycharm 可以正常的输入中文，但是光标跟随问题仍未解决。目前为之还没有找到很好的解决方案</p>
+<h2 id="其他方案"><a href="#其他方案" class="headerlink" title="其他方案"></a>其他方案</h2><h3 id="1-修改pycharm-sh文件"><a href="#1-修改pycharm-sh文件" class="headerlink" title="1.修改pycharm.sh文件"></a>1.<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_39628498/article/details/110485125">修改pycharm.sh文件</a></h3><p>该方法尝试最大的问题是我的pycharm是从snap中下载的。<br>而通过snap安装的软件，赋予的权限特别高，无论怎么改它的权限，都没有办法写入。<br>chmod命令，chattr命令都试过了，没有用。</p>
+<h3 id="2-加载第三方插件的方法"><a href="#2-加载第三方插件的方法" class="headerlink" title="2.加载第三方插件的方法"></a>2.<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/342670244">加载第三方插件的方法</a></h3><p>这个方案尝试过程中，遇到的最大问题是本版本pycharm搜索不到choose runtime 需要自己手动下载。<br>而且文章中给的JBR文件链接也是无效的。<br>这里提供一个<a target="_blank" rel="noopener" href="https://plugins.jetbrains.com/plugin/12836-choose-runtime/versions">choose runtime</a>的手动下载链接。<br>下载后在pycharm插件界面本地添加插件添加choose runtime即可。</p>
+<p>需要注意的是，这个方案的尝试中，我确实成功了。<br>但是也只是解决了pycharm中不能输入中文的问题。<br>光标不跟随问题仍不能解决。<br>并且按这个方案做完之后 pycharm 中 markdown 插件会出bug，直接失效。<br>这里写出来仅供参考。</p>
+<h2 id="版本信息"><a href="#版本信息" class="headerlink" title="版本信息"></a>版本信息</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Distributor 		 Ubuntu 22.04 LTS  </span><br><span class="line">Codename: 		 jammy  </span><br><span class="line">架构: 			 x86_64  </span><br><span class="line">ibus框架：		 IBus 1.5.26</span><br><span class="line">ibus输入法：		 IBus 智能拼音 1.12.1</span><br><span class="line">pycharm:		 community_11.0.15</span><br></pre></td></tr></table></figure>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_54032194/article/details/119081008">https://blog.csdn.net/m0_54032194/article/details/119081008</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/1970/01/01/%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/%E6%A3%80%E6%B5%8B%E5%88%B0%E7%AA%97%E5%8F%A3%E7%B3%BB%E7%BB%9F%E9%87%87%E7%94%A8wayland%E5%8D%8F%E8%AE%AE%20%E8%85%BE%E8%AE%AF%E4%BC%9A%E8%AE%AE%E6%9A%82%E4%B8%8D%E5%85%BC%E5%AE%B9%20%E7%A8%8B%E5%BA%8F%E5%8D%B3%E5%B0%86%E9%80%80%E5%87%BA/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/%E5%A4%B4%E5%83%8F.png">
+      <meta itemprop="name" content="lantary">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lantary">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/1970/01/01/%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/%E6%A3%80%E6%B5%8B%E5%88%B0%E7%AA%97%E5%8F%A3%E7%B3%BB%E7%BB%9F%E9%87%87%E7%94%A8wayland%E5%8D%8F%E8%AE%AE%20%E8%85%BE%E8%AE%AF%E4%BC%9A%E8%AE%AE%E6%9A%82%E4%B8%8D%E5%85%BC%E5%AE%B9%20%E7%A8%8B%E5%BA%8F%E5%8D%B3%E5%B0%86%E9%80%80%E5%87%BA/" class="post-title-link" itemprop="url">检测到窗口系统采用wayland协议 腾讯会议暂不兼容 程序即将退出</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 1970-01-01 08:00:00" itemprop="dateCreated datePublished" datetime="1970-01-01T08:00:00+08:00">1970-01-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-06-27 15:55:25" itemprop="dateModified" datetime="2022-06-27T15:55:25+08:00">2022-06-27</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">日常使用中的问题</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="问题描述及解决办法"><a href="#问题描述及解决办法" class="headerlink" title="问题描述及解决办法"></a>问题描述及解决办法</h2><p>ubuntu系统中下载了腾讯会议官方版本的deb包，安装后无法打开。弹窗警告 “检测到窗口系统采用wayland协议 腾讯会议暂不兼容 程序即将退出”</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/gdm3/custom.conf</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">WaylandEnable=<span class="literal">false</span> 的注释井号去掉</span></span><br><span class="line">sudo service gdm3 restart</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="版本信息"><a href="#版本信息" class="headerlink" title="版本信息"></a>版本信息</h2><p>Distributor ID: Ubuntu<br>Description: Ubuntu 22.04 LTS<br>Release: 22.04<br>Codename: jammy<br>架构: x86_64<br>腾讯会议: linux 3.8.0.2(2022-06-07)</p>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_52640673/article/details/124911402">https://blog.csdn.net/m0_52640673/article/details/124911402</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/1970/01/01/%E7%94%9F%E7%89%A9%E7%BD%91%E7%BB%9C/%E7%94%9F%E7%89%A9%E7%BD%91%E7%BB%9C%E5%88%86%E6%9E%90/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/%E5%A4%B4%E5%83%8F.png">
+      <meta itemprop="name" content="lantary">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lantary">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/1970/01/01/%E7%94%9F%E7%89%A9%E7%BD%91%E7%BB%9C/%E7%94%9F%E7%89%A9%E7%BD%91%E7%BB%9C%E5%88%86%E6%9E%90/" class="post-title-link" itemprop="url">生物网络</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 1970-01-01 08:00:00" itemprop="dateCreated datePublished" datetime="1970-01-01T08:00:00+08:00">1970-01-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-05-20 23:47:25" itemprop="dateModified" datetime="2022-05-20T23:47:25+08:00">2022-05-20</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">生物信息学</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6/%E7%94%9F%E7%89%A9%E7%BD%91%E7%BB%9C/" itemprop="url" rel="index"><span itemprop="name">生物网络</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <ul>
+<li><a href="#%E4%B8%80%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%9F%E7%89%A9%E7%BD%91%E7%BB%9C">一、什么是生物网络</a><ul>
+<li><a href="#1%E7%94%9F%E7%89%A9%E7%BD%91%E7%BB%9C%E7%9A%84%E5%AE%9A%E4%B9%89">1.生物网络的定义</a></li>
+<li><a href="#2%E7%94%9F%E7%89%A9%E7%BD%91%E7%BB%9C%E7%9A%84%E5%88%86%E7%B1%BB">2.生物网络的分类</a></li>
+<li><a href="#3%E7%94%9F%E7%89%A9%E7%BD%91%E7%BB%9C%E7%9A%84%E5%AD%90%E6%A6%82%E5%BF%B5">3.生物网络的子概念</a></li>
+</ul>
+</li>
+</ul>
+<p><br></br></p>
+<h1 id="一、什么是生物网络"><a href="#一、什么是生物网络" class="headerlink" title="一、什么是生物网络"></a>一、什么是生物网络</h1><h2 id="1-生物网络的定义"><a href="#1-生物网络的定义" class="headerlink" title="1.生物网络的定义"></a>1.生物网络的定义</h2><p>生物网络指的是适用于生物系统的网络。网络指的是具有连为一体的子单元（例如链接到整个食物网的物种单元）的系统<sup><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E7%94%9F%E7%89%A9%E7%BD%91%E7%BB%9C">[1]</a></sup>。简单的来理解，就是生物网络是一个有关生物的信息的载体，通过网络链接的方式表达各个节点之间的关系。如蛋白质互作网络，KEGG通路等都是常见的生物网络</p>
+<h2 id="2-生物网络的分类"><a href="#2-生物网络的分类" class="headerlink" title="2.生物网络的分类"></a>2.生物网络的分类</h2><p><strong>1.有向网络与无向网络</strong></p>
+<p><br></br></p>
+<p>根据网络中的边是否具有方向性或者说连接一条边的两个节点是否存在顺序，网络可以分为有向网络与无向网络，边存在方向性为有向网络(directed network)，否则为无向网络(undirected network)。<br>下图为KEGG的通路网络图，是一个典型的有向网络，连接边的方向代表了代谢的顺序。</p>
+<div align=center><img src=https://user-images.githubusercontent.com/102901955/166651208-0a88d139-b90a-46c3-829d-4a164d5d1602.png width=40% /></div>
+
+
+<p>下图为String 数据库中蛋白互作的关系图，是一个典型的无向网络，节点表示蛋白，而连接的线条表示是否互作，不含有方向信息。</p>
+<div align=center><img src=https://user-images.githubusercontent.com/102901955/166651669-638d6cb8-279b-40d5-8df4-82cdfa095985.png width=40% /></div>
+
+<p><br></br></p>
+<p><strong>2.加权网络与等权网络</strong></p>
+<p><br></br></p>
+<p>加权网络指网络中的每条边都被赋予相应的数值。所赋予的数值称为边的权重。权重可以用来描述节点间的距离，相关程度，稳定程度。String蛋白互作网络就是一个加权网络，他的边表示两个节点直接互作的得分。</p>
+<p>如果网络中各边之间没有区别，可以认为各边的权重相等，称为等权网络或无权网络</p>
+<p><br></br></p>
+<p><strong>3.二分网络</strong></p>
+<p><br></br></p>
+<p>如果网络中的节点可分为两个互不相交的集合，而所有的边都建立在来自不同集合的节点之间，则称这样的网络为二分网络。下图是一个二分网络的例子</p>
+<div align=center><img src=https://user-images.githubusercontent.com/102901955/166682187-d89e8481-abe4-4c47-a1e3-b915e31be598.png width=40% /></div>
+
+<p><br></br></p>
+<h2 id="3-生物网络的子概念"><a href="#3-生物网络的子概念" class="headerlink" title="3.生物网络的子概念"></a>3.生物网络的子概念</h2><p><br></br></p>
+<p>为了解释下面几个概念我们用一个简单的网络图作为例子</p>
+<div align=center> <img src = https://user-images.githubusercontent.com/102901955/166682829-2c72d3ae-51d9-43fa-9fce-97012de5d9b2.png /> </div>
+
+<p><br></br></p>
+<p><strong>1.节点的度(degree)</strong></p>
+<p><br></br></p>
+<p>又称为连通度，关联度。节点度是指和该节点相关联的边的条数。</p>
+<p>特别地，对于有向图，</p>
+<p>节点的入度 是指进入该节点的边的条数；</p>
+<p>节点的出度是指从该节点出发的边的条数。</p>
+<p>如上图 <code>A</code> 的度数为2，<code>B</code>，<code>C</code> 的度数为 1</p>
+<p><br></br></p>
+<p><strong>2.最短路径</strong>  </p>
+<p><br></br></p>
+<p>指连接两个节点之间经过最少的边的路径。</p>
+<p>如上图中 <code>A</code> 节点到 <code>B</code> 的最短路径为 <code>A-B</code> ， 而 <code>B</code> 节点到 <code>C</code> 节点的最短路径为 <code>B-C</code> 。  </p>
+<p><br></br></p>
+<p><strong>3.节点的介数</strong>   </p>
+<p><br></br></p>
+<p>节点的介数是用于描述一个节点在网络中的重要程度的参数。某一节点在网络中越重要，则其介数越大。</p>
+<p>其计算公式为</p>
+<img src =https://user-images.githubusercontent.com/102901955/166685241-d931e15b-54f3-417a-89cf-05e858f26885.png width=20% />
+
+<p>其中 B<sub>i</sub> 即为节点 <code>i</code> 的介数，如 B<sub>A</sub> 为上图中 A 节点的介数。</p>
+<p><strong>n<sub>k,j</sub></strong> 表示为 <code>k</code> ，<code>j</code> 节点之间的最短路径的数量。 <strong>n<sub>k,j(i)</sub></strong> 表示为 <code>k</code> ， <code>j</code> 节点最短路径中含有 <code>i</code> 节点的数量。</p>
+<p>如上图中 显然可以看出 <code>A</code> 节点是整个网络中最重要的。其介数为 </p>
+<img src =https://user-images.githubusercontent.com/102901955/166689035-59e8c4f1-99b8-45e1-ba3f-7ca92336658d.png width=50% />
+
+<p>同理可计算出 <code>B</code> ， <code>C</code> 节点的节度均为 2 。 表明 <code>A</code> 节点的重要程度大于 <code>B</code> ， <code>C</code> 节点。</p>
+<p><br></br></p>
+<p><strong>4.聚类系数(clustering coefficient, CC)</strong></p>
+<p><br></br></p>
+<p>聚类系数用于衡量节点的密集程度。</p>
+<p>在无向网络中，节点 <code>v</code> 的聚类系数 CC<sub>v</sub> 的表达公式为  <img src="http://chart.googleapis.com/chart?cht=tx&chl=CC_{v} = \frac{n}{C_{k}^{2}} = \frac{2n}{k(k-1)}" style="border:none;"></p>
+<p>其中 n 表示 节点v 的所有 k 个邻居节点之间边的数量。n 的最大值可以由 C<sub>k</sub><sup>2</sup> = k(k-1)/2 计算出。其含义为在所有 k 个邻居节点中， 选出2个相连的节点的所有可能数量。<br>故可以得到 CC<sub>v</sub> 的取值落在 [0, 1] 之间。</p>
+<p>以下图为例。</p>
+<p><img src="https://user-images.githubusercontent.com/102901955/166695151-865f3ca3-91ac-441f-a624-a579b6aaa850.png" alt="image"></p>
+<p>节点 A 的聚类系数  <img src="http://chart.googleapis.com/chart?cht=tx&chl=CC_{A}  = \frac{2}{3(3-1)} = \frac{1}{3}" ></p>
+<p>在有向网络中，节点 <code>v</code> 的聚类系数 CC<sub>v</sub> 的表达公式为 <img src="http://chart.googleapis.com/chart?cht=tx&chl=CC_{v} = \frac{n}{P_{k_{out}}^{2}} = \frac{n}{k_{out}(k_{out}-1)}" style="border:none;"></p>
+<p>其中 k<sub>out</sub> 为 v 节点的出度，n 表示 v 所有指向的节点彼此之间存在的边数。因为有方向差别，不同方向的节点算两条边，故用的是排列而不是组合。</p>
+<p>以下图为例</p>
+<p><img src="https://user-images.githubusercontent.com/102901955/166705407-db0f21e5-357f-48b6-ba3d-9ebbef6ef265.png" alt="image"></p>
+<p>图中 计算 A 节点的聚类系数。 节点 A 连接了三个节点 <code>&#123;B, C, F&#125;</code> ， 所以 n 为 3 ，其中<code>&#123;B, C, F&#125;</code> 相连接的边有 <code>&#123;[B → C], [C → B], [C → F]&#125;</code> 共 3 条 故 k<sub>out</sub> 为 3</p>
+<p>A 的聚类系数 <img src="http://chart.googleapis.com/chart?cht=tx&chl=CC_{A}  = \frac{3}{3(3-1)} = \frac{1}{2}" ></p>
+<p><br></br></p>
+<p><strong>5.度分布</strong></p>
+<p><br></br></p>
+<p>度分布指的是整个网络中各个点的度数量的概率分布。</p>
+<p>例如 P{k = k<sub>i</sub>} 表示的是在某一网络中，度为 k<sub>i</sub> 的节点的出现概率。 </p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/1970/01/01/%E5%AF%8C%E9%9B%86%E5%88%86%E6%9E%90/001_DAVID%E5%9C%A8%E7%BA%BF%E5%AF%8C%E9%9B%86%E5%88%86%E6%9E%90/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -816,419 +1229,6 @@ lty                 -改变标签线的类型, 可以设置通过与plot图像�
 <p>  Count / List.Total = 实际富集到的概率i</p>
 <p>  Pop.Hits / Pop.Total = 随机富集到的概率ii</p>
 <p>  i / ii = Fold Enrichment</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/1970/01/01/%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/Rstudio%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BB%A3%E7%A0%81%E9%85%8D%E8%89%B2%E6%96%B9%E6%A1%88/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/%E5%A4%B4%E5%83%8F.png">
-      <meta itemprop="name" content="lantary">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lantary">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/1970/01/01/%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/Rstudio%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BB%A3%E7%A0%81%E9%85%8D%E8%89%B2%E6%96%B9%E6%A1%88/" class="post-title-link" itemprop="url">Rstudio自定义代码配色方案</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 1970-01-01 08:00:00" itemprop="dateCreated datePublished" datetime="1970-01-01T08:00:00+08:00">1970-01-01</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-07-01 19:21:24" itemprop="dateModified" datetime="2022-07-01T19:21:24+08:00">2022-07-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">日常使用中的问题</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>Rsutido 中默认的代码配色方案变量和函数是没有区分的。所以想要一个自定义代码配色的方案</p>
-<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>因为只需要区分开函数和变量，所以可以让便量为默认色-“白色”，而函数给一个高亮。<br>在Rstudio中，函数高亮是有可以直接实现的选项的。<br>选择 TOOL –&gt;&gt; Global Option –&gt;&gt; Code –&gt;&gt; Display 中，勾选Highlight R function call。</p>
-<p><img src="https://raw.githubusercontent.com/Lantary/Private_warehouses/main/Rstudio%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BB%A3%E7%A0%81%E9%85%8D%E8%89%B2%E6%96%B9%E6%A1%88_p1.png" alt="p1"></p>
-<p>如果只是需求将变量和函数名分开，那么到这里为止就结束了。<br>但是如果你对Rstudio默认主题中的函数高亮颜色不满意想要修改，那么可以通过以下方式。</p>
-<ol>
-<li>确定你现在所使用的配色方案可以在TOOL –&gt;&gt; Global Option –&gt;&gt; Appearance 中查看</li>
-</ol>
-<p><img src="https://raw.githubusercontent.com/Lantary/Private_warehouses/main/Rstudio%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BB%A3%E7%A0%81%E9%85%8D%E8%89%B2%E6%96%B9%E6%A1%88_p2.png" alt="p2"></p>
-<ol start="3">
-<li>在你Rstudio的安装目录下找到对应名字的[ .rtheme]文件，我的文件夹在./Rstudio/resources/themes下</li>
-<li>复制一份更名，打开后找到 <code>.ace_support.ace_function</code> 即为函数颜色设置的设置条目。</li>
-</ol>
-<p><img src="https://raw.githubusercontent.com/Lantary/Private_warehouses/main/Rstudio%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BB%A3%E7%A0%81%E9%85%8D%E8%89%B2%E6%96%B9%E6%A1%88_p3.png" alt="p3"></p>
-<ol start="6">
-<li>更改文本开头的  <code>rs-theme-name:</code> 然后用Rstudio Add新设置的主题文件就可以了</li>
-</ol>
-<h2 id="版本信息"><a href="#版本信息" class="headerlink" title="版本信息"></a>版本信息</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">操作系统		ubuntu22</span><br><span class="line">Rstudio		2022.02.3+492</span><br></pre></td></tr></table></figure>
-
-
-<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p>[1] <a target="_blank" rel="noopener" href="https://community.rstudio.com/t/colour-additional-functions-within-an-editor-theme/4428">https://community.rstudio.com/t/colour-additional-functions-within-an-editor-theme/4428</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/1970/01/01/%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/ibus%E5%9C%A8pycharm%E4%B8%AD%E4%B8%8D%E8%83%BD%E8%BF%9B%E8%A1%8C%E6%B1%89%E5%AD%97%E8%BE%93%E5%85%A5%E7%9A%84%E9%97%AE%E9%A2%98/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/%E5%A4%B4%E5%83%8F.png">
-      <meta itemprop="name" content="lantary">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lantary">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/1970/01/01/%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/ibus%E5%9C%A8pycharm%E4%B8%AD%E4%B8%8D%E8%83%BD%E8%BF%9B%E8%A1%8C%E6%B1%89%E5%AD%97%E8%BE%93%E5%85%A5%E7%9A%84%E9%97%AE%E9%A2%98/" class="post-title-link" itemprop="url">ibus在pycharm中不能进行汉字输入的问题</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 1970-01-01 08:00:00" itemprop="dateCreated datePublished" datetime="1970-01-01T08:00:00+08:00">1970-01-01</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-27 15:55:47" itemprop="dateModified" datetime="2022-06-27T15:55:47+08:00">2022-06-27</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">日常使用中的问题</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>在使用pycharm过程中，发现pycharm没有办法输入中文，且ibus输入法的候选框一直在左下角，不跟随光标位置。<br>在网络上搜索了一下，目前中文互联网上能搜索到的大部分解决方案因为版本问题多多少少都有些问题。<br>所以这里写一篇基于我使用版本确实有效的一个解决方案。并且指出我在用其他方案来解决时遇到的问题</p>
-<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>打开pycharm  —-&gt;&gt; help —-&gt;&gt; Edit Custom VM Options </p>
-<p>在出现的交互窗中输入</p>
- <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-Drecreate.x11.input.method=true</span><br></pre></td></tr></table></figure>
-<p>重启pycharm 可以正常的输入中文，但是光标跟随问题仍未解决。目前为之还没有找到很好的解决方案</p>
-<h2 id="其他方案"><a href="#其他方案" class="headerlink" title="其他方案"></a>其他方案</h2><h3 id="1-修改pycharm-sh文件"><a href="#1-修改pycharm-sh文件" class="headerlink" title="1.修改pycharm.sh文件"></a>1.<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_39628498/article/details/110485125">修改pycharm.sh文件</a></h3><p>该方法尝试最大的问题是我的pycharm是从snap中下载的。<br>而通过snap安装的软件，赋予的权限特别高，无论怎么改它的权限，都没有办法写入。<br>chmod命令，chattr命令都试过了，没有用。</p>
-<h3 id="2-加载第三方插件的方法"><a href="#2-加载第三方插件的方法" class="headerlink" title="2.加载第三方插件的方法"></a>2.<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/342670244">加载第三方插件的方法</a></h3><p>这个方案尝试过程中，遇到的最大问题是本版本pycharm搜索不到choose runtime 需要自己手动下载。<br>而且文章中给的JBR文件链接也是无效的。<br>这里提供一个<a target="_blank" rel="noopener" href="https://plugins.jetbrains.com/plugin/12836-choose-runtime/versions">choose runtime</a>的手动下载链接。<br>下载后在pycharm插件界面本地添加插件添加choose runtime即可。</p>
-<p>需要注意的是，这个方案的尝试中，我确实成功了。<br>但是也只是解决了pycharm中不能输入中文的问题。<br>光标不跟随问题仍不能解决。<br>并且按这个方案做完之后 pycharm 中 markdown 插件会出bug，直接失效。<br>这里写出来仅供参考。</p>
-<h2 id="版本信息"><a href="#版本信息" class="headerlink" title="版本信息"></a>版本信息</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Distributor 		 Ubuntu 22.04 LTS  </span><br><span class="line">Codename: 		 jammy  </span><br><span class="line">架构: 			 x86_64  </span><br><span class="line">ibus框架：		 IBus 1.5.26</span><br><span class="line">ibus输入法：		 IBus 智能拼音 1.12.1</span><br><span class="line">pycharm:		 community_11.0.15</span><br></pre></td></tr></table></figure>
-<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_54032194/article/details/119081008">https://blog.csdn.net/m0_54032194/article/details/119081008</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/1970/01/01/%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/%E6%A3%80%E6%B5%8B%E5%88%B0%E7%AA%97%E5%8F%A3%E7%B3%BB%E7%BB%9F%E9%87%87%E7%94%A8wayland%E5%8D%8F%E8%AE%AE%20%E8%85%BE%E8%AE%AF%E4%BC%9A%E8%AE%AE%E6%9A%82%E4%B8%8D%E5%85%BC%E5%AE%B9%20%E7%A8%8B%E5%BA%8F%E5%8D%B3%E5%B0%86%E9%80%80%E5%87%BA/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/%E5%A4%B4%E5%83%8F.png">
-      <meta itemprop="name" content="lantary">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lantary">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/1970/01/01/%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/%E6%A3%80%E6%B5%8B%E5%88%B0%E7%AA%97%E5%8F%A3%E7%B3%BB%E7%BB%9F%E9%87%87%E7%94%A8wayland%E5%8D%8F%E8%AE%AE%20%E8%85%BE%E8%AE%AF%E4%BC%9A%E8%AE%AE%E6%9A%82%E4%B8%8D%E5%85%BC%E5%AE%B9%20%E7%A8%8B%E5%BA%8F%E5%8D%B3%E5%B0%86%E9%80%80%E5%87%BA/" class="post-title-link" itemprop="url">检测到窗口系统采用wayland协议 腾讯会议暂不兼容 程序即将退出</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 1970-01-01 08:00:00" itemprop="dateCreated datePublished" datetime="1970-01-01T08:00:00+08:00">1970-01-01</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-27 15:55:25" itemprop="dateModified" datetime="2022-06-27T15:55:25+08:00">2022-06-27</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">日常使用中的问题</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="问题描述及解决办法"><a href="#问题描述及解决办法" class="headerlink" title="问题描述及解决办法"></a>问题描述及解决办法</h2><p>ubuntu系统中下载了腾讯会议官方版本的deb包，安装后无法打开。弹窗警告 “检测到窗口系统采用wayland协议 腾讯会议暂不兼容 程序即将退出”</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/gdm3/custom.conf</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">WaylandEnable=<span class="literal">false</span> 的注释井号去掉</span></span><br><span class="line">sudo service gdm3 restart</span><br></pre></td></tr></table></figure>
-
-
-<h2 id="版本信息"><a href="#版本信息" class="headerlink" title="版本信息"></a>版本信息</h2><p>Distributor ID: Ubuntu<br>Description: Ubuntu 22.04 LTS<br>Release: 22.04<br>Codename: jammy<br>架构: x86_64<br>腾讯会议: linux 3.8.0.2(2022-06-07)</p>
-<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_52640673/article/details/124911402">https://blog.csdn.net/m0_52640673/article/details/124911402</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/1970/01/01/%E7%94%9F%E7%89%A9%E7%BD%91%E7%BB%9C/%E7%94%9F%E7%89%A9%E7%BD%91%E7%BB%9C%E5%88%86%E6%9E%90/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/%E5%A4%B4%E5%83%8F.png">
-      <meta itemprop="name" content="lantary">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lantary">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/1970/01/01/%E7%94%9F%E7%89%A9%E7%BD%91%E7%BB%9C/%E7%94%9F%E7%89%A9%E7%BD%91%E7%BB%9C%E5%88%86%E6%9E%90/" class="post-title-link" itemprop="url">生物网络</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 1970-01-01 08:00:00" itemprop="dateCreated datePublished" datetime="1970-01-01T08:00:00+08:00">1970-01-01</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-05-20 23:47:25" itemprop="dateModified" datetime="2022-05-20T23:47:25+08:00">2022-05-20</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">生物信息学</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6/%E7%94%9F%E7%89%A9%E7%BD%91%E7%BB%9C/" itemprop="url" rel="index"><span itemprop="name">生物网络</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <ul>
-<li><a href="#%E4%B8%80%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%9F%E7%89%A9%E7%BD%91%E7%BB%9C">一、什么是生物网络</a><ul>
-<li><a href="#1%E7%94%9F%E7%89%A9%E7%BD%91%E7%BB%9C%E7%9A%84%E5%AE%9A%E4%B9%89">1.生物网络的定义</a></li>
-<li><a href="#2%E7%94%9F%E7%89%A9%E7%BD%91%E7%BB%9C%E7%9A%84%E5%88%86%E7%B1%BB">2.生物网络的分类</a></li>
-<li><a href="#3%E7%94%9F%E7%89%A9%E7%BD%91%E7%BB%9C%E7%9A%84%E5%AD%90%E6%A6%82%E5%BF%B5">3.生物网络的子概念</a></li>
-</ul>
-</li>
-</ul>
-<p><br></br></p>
-<h1 id="一、什么是生物网络"><a href="#一、什么是生物网络" class="headerlink" title="一、什么是生物网络"></a>一、什么是生物网络</h1><h2 id="1-生物网络的定义"><a href="#1-生物网络的定义" class="headerlink" title="1.生物网络的定义"></a>1.生物网络的定义</h2><p>生物网络指的是适用于生物系统的网络。网络指的是具有连为一体的子单元（例如链接到整个食物网的物种单元）的系统<sup><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E7%94%9F%E7%89%A9%E7%BD%91%E7%BB%9C">[1]</a></sup>。简单的来理解，就是生物网络是一个有关生物的信息的载体，通过网络链接的方式表达各个节点之间的关系。如蛋白质互作网络，KEGG通路等都是常见的生物网络</p>
-<h2 id="2-生物网络的分类"><a href="#2-生物网络的分类" class="headerlink" title="2.生物网络的分类"></a>2.生物网络的分类</h2><p><strong>1.有向网络与无向网络</strong></p>
-<p><br></br></p>
-<p>根据网络中的边是否具有方向性或者说连接一条边的两个节点是否存在顺序，网络可以分为有向网络与无向网络，边存在方向性为有向网络(directed network)，否则为无向网络(undirected network)。<br>下图为KEGG的通路网络图，是一个典型的有向网络，连接边的方向代表了代谢的顺序。</p>
-<div align=center><img src=https://user-images.githubusercontent.com/102901955/166651208-0a88d139-b90a-46c3-829d-4a164d5d1602.png width=40% /></div>
-
-
-<p>下图为String 数据库中蛋白互作的关系图，是一个典型的无向网络，节点表示蛋白，而连接的线条表示是否互作，不含有方向信息。</p>
-<div align=center><img src=https://user-images.githubusercontent.com/102901955/166651669-638d6cb8-279b-40d5-8df4-82cdfa095985.png width=40% /></div>
-
-<p><br></br></p>
-<p><strong>2.加权网络与等权网络</strong></p>
-<p><br></br></p>
-<p>加权网络指网络中的每条边都被赋予相应的数值。所赋予的数值称为边的权重。权重可以用来描述节点间的距离，相关程度，稳定程度。String蛋白互作网络就是一个加权网络，他的边表示两个节点直接互作的得分。</p>
-<p>如果网络中各边之间没有区别，可以认为各边的权重相等，称为等权网络或无权网络</p>
-<p><br></br></p>
-<p><strong>3.二分网络</strong></p>
-<p><br></br></p>
-<p>如果网络中的节点可分为两个互不相交的集合，而所有的边都建立在来自不同集合的节点之间，则称这样的网络为二分网络。下图是一个二分网络的例子</p>
-<div align=center><img src=https://user-images.githubusercontent.com/102901955/166682187-d89e8481-abe4-4c47-a1e3-b915e31be598.png width=40% /></div>
-
-<p><br></br></p>
-<h2 id="3-生物网络的子概念"><a href="#3-生物网络的子概念" class="headerlink" title="3.生物网络的子概念"></a>3.生物网络的子概念</h2><p><br></br></p>
-<p>为了解释下面几个概念我们用一个简单的网络图作为例子</p>
-<div align=center> <img src = https://user-images.githubusercontent.com/102901955/166682829-2c72d3ae-51d9-43fa-9fce-97012de5d9b2.png /> </div>
-
-<p><br></br></p>
-<p><strong>1.节点的度(degree)</strong></p>
-<p><br></br></p>
-<p>又称为连通度，关联度。节点度是指和该节点相关联的边的条数。</p>
-<p>特别地，对于有向图，</p>
-<p>节点的入度 是指进入该节点的边的条数；</p>
-<p>节点的出度是指从该节点出发的边的条数。</p>
-<p>如上图 <code>A</code> 的度数为2，<code>B</code>，<code>C</code> 的度数为 1</p>
-<p><br></br></p>
-<p><strong>2.最短路径</strong>  </p>
-<p><br></br></p>
-<p>指连接两个节点之间经过最少的边的路径。</p>
-<p>如上图中 <code>A</code> 节点到 <code>B</code> 的最短路径为 <code>A-B</code> ， 而 <code>B</code> 节点到 <code>C</code> 节点的最短路径为 <code>B-C</code> 。  </p>
-<p><br></br></p>
-<p><strong>3.节点的介数</strong>   </p>
-<p><br></br></p>
-<p>节点的介数是用于描述一个节点在网络中的重要程度的参数。某一节点在网络中越重要，则其介数越大。</p>
-<p>其计算公式为</p>
-<img src =https://user-images.githubusercontent.com/102901955/166685241-d931e15b-54f3-417a-89cf-05e858f26885.png width=20% />
-
-<p>其中 B<sub>i</sub> 即为节点 <code>i</code> 的介数，如 B<sub>A</sub> 为上图中 A 节点的介数。</p>
-<p><strong>n<sub>k,j</sub></strong> 表示为 <code>k</code> ，<code>j</code> 节点之间的最短路径的数量。 <strong>n<sub>k,j(i)</sub></strong> 表示为 <code>k</code> ， <code>j</code> 节点最短路径中含有 <code>i</code> 节点的数量。</p>
-<p>如上图中 显然可以看出 <code>A</code> 节点是整个网络中最重要的。其介数为 </p>
-<img src =https://user-images.githubusercontent.com/102901955/166689035-59e8c4f1-99b8-45e1-ba3f-7ca92336658d.png width=50% />
-
-<p>同理可计算出 <code>B</code> ， <code>C</code> 节点的节度均为 2 。 表明 <code>A</code> 节点的重要程度大于 <code>B</code> ， <code>C</code> 节点。</p>
-<p><br></br></p>
-<p><strong>4.聚类系数(clustering coefficient, CC)</strong></p>
-<p><br></br></p>
-<p>聚类系数用于衡量节点的密集程度。</p>
-<p>在无向网络中，节点 <code>v</code> 的聚类系数 CC<sub>v</sub> 的表达公式为  <img src="http://chart.googleapis.com/chart?cht=tx&chl=CC_{v} = \frac{n}{C_{k}^{2}} = \frac{2n}{k(k-1)}" style="border:none;"></p>
-<p>其中 n 表示 节点v 的所有 k 个邻居节点之间边的数量。n 的最大值可以由 C<sub>k</sub><sup>2</sup> = k(k-1)/2 计算出。其含义为在所有 k 个邻居节点中， 选出2个相连的节点的所有可能数量。<br>故可以得到 CC<sub>v</sub> 的取值落在 [0, 1] 之间。</p>
-<p>以下图为例。</p>
-<p><img src="https://user-images.githubusercontent.com/102901955/166695151-865f3ca3-91ac-441f-a624-a579b6aaa850.png" alt="image"></p>
-<p>节点 A 的聚类系数  <img src="http://chart.googleapis.com/chart?cht=tx&chl=CC_{A}  = \frac{2}{3(3-1)} = \frac{1}{3}" ></p>
-<p>在有向网络中，节点 <code>v</code> 的聚类系数 CC<sub>v</sub> 的表达公式为 <img src="http://chart.googleapis.com/chart?cht=tx&chl=CC_{v} = \frac{n}{P_{k_{out}}^{2}} = \frac{n}{k_{out}(k_{out}-1)}" style="border:none;"></p>
-<p>其中 k<sub>out</sub> 为 v 节点的出度，n 表示 v 所有指向的节点彼此之间存在的边数。因为有方向差别，不同方向的节点算两条边，故用的是排列而不是组合。</p>
-<p>以下图为例</p>
-<p><img src="https://user-images.githubusercontent.com/102901955/166705407-db0f21e5-357f-48b6-ba3d-9ebbef6ef265.png" alt="image"></p>
-<p>图中 计算 A 节点的聚类系数。 节点 A 连接了三个节点 <code>&#123;B, C, F&#125;</code> ， 所以 n 为 3 ，其中<code>&#123;B, C, F&#125;</code> 相连接的边有 <code>&#123;[B → C], [C → B], [C → F]&#125;</code> 共 3 条 故 k<sub>out</sub> 为 3</p>
-<p>A 的聚类系数 <img src="http://chart.googleapis.com/chart?cht=tx&chl=CC_{A}  = \frac{3}{3(3-1)} = \frac{1}{2}" ></p>
-<p><br></br></p>
-<p><strong>5.度分布</strong></p>
-<p><br></br></p>
-<p>度分布指的是整个网络中各个点的度数量的概率分布。</p>
-<p>例如 P{k = k<sub>i</sub>} 表示的是在某一网络中，度为 k<sub>i</sub> 的节点的出现概率。 </p>
 
       
     </div>
