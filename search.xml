@@ -21,35 +21,6 @@
       </categories>
   </entry>
   <entry>
-    <title>hexo框架下的博客提交至google搜索</title>
-    <url>/2022/07/10/%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96/blog%E8%83%BD%E8%A2%AB%E6%90%9C%E7%B4%A2%E5%88%B0/</url>
-    <content><![CDATA[<h2 id="博客优化内容"><a href="#博客优化内容" class="headerlink" title="博客优化内容"></a>博客优化内容</h2><p>对于刚建立的博客来说，谷歌往往不能或者不会收录你的博客，为了使自己的博客可以被谷歌所检索到。我们需要主动向谷歌提供网址信息。</p>
-<h2 id="优化方案"><a href="#优化方案" class="headerlink" title="优化方案"></a>优化方案</h2><p>谷歌提供了如何向谷歌提交搜索的方法，同样bing，搜狗，百度等搜索引擎也有相同的提交方案。<br>如果你想你的博客被全网搜索到，那么你需要在主流的搜索引擎上分别提交你的网址。要注意的是百度的提交原理跟其他搜索引擎有所不同。这篇博客只以谷歌搜索为例子。以下操作均在 <a href="https://search.google.com/search-console/about">[Google Search Console]</a> 中完成。</p>
-<h3 id="1-验证网站所属"><a href="#1-验证网站所属" class="headerlink" title="1.验证网站所属"></a>1.验证网站所属</h3><p>进入 <a href="https://search.google.com/search-console/about">[Google Search Console]</a> 后会显示</p>
-<p><img src="https://raw.githubusercontent.com/Lantary/Private_warehouses/main/hexo%E6%A1%86%E6%9E%B6%E4%B8%8B%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%8F%90%E4%BA%A4%E8%87%B3google%E6%90%9C%E7%B4%A2/p1.png" alt="piture_1"></p>
-<p>输入你博客的地址后点击继续。</p>
-<p><img src="https://github.com/Lantary/Private_warehouses/blob/main/hexo%E6%A1%86%E6%9E%B6%E4%B8%8B%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%8F%90%E4%BA%A4%E8%87%B3google%E6%90%9C%E7%B4%A2/p2.png?raw=true" alt="piture_2"></p>
-<p>选择验证网站所有权信息的方式。这里需要注意如果你的bolg是以hexo框架搭建的。 那么最好不要选择第一种 <code>HTML文件验证</code> 的方式。 因为hexo会自动编译你下载的HTML文件，使其失效，若想要用这种验证方式，那么需要在hexo编译完后，再添加HTML文件。 即在 <code>hexo g</code> 后，再添加HTML文件。且你每一次部署都需要如此操作十分麻烦。故不推荐。</p>
-<p>这里用第二种方式 <code>HTML标记</code> 进行验证。 复制content中的内容到主题中的配置文件 <code>_config.yml</code> 。 在属性 <code>google_site_verification:</code> 后添加content后的内容</p>
-<p><img src="https://raw.githubusercontent.com/Lantary/Private_warehouses/main/hexo%E6%A1%86%E6%9E%B6%E4%B8%8B%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%8F%90%E4%BA%A4%E8%87%B3google%E6%90%9C%E7%B4%A2/p3.png" alt="piture_3"></p>
-<p>最后通过验证如图所示。</p>
-<p><img src="https://raw.githubusercontent.com/Lantary/Private_warehouses/main/hexo%E6%A1%86%E6%9E%B6%E4%B8%8B%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%8F%90%E4%BA%A4%E8%87%B3google%E6%90%9C%E7%B4%A2/p4.png" alt="piture_4"></p>
-<h3 id="2-添加sitemap文件到博客"><a href="#2-添加sitemap文件到博客" class="headerlink" title="2.添加sitemap文件到博客"></a>2.添加sitemap文件到博客</h3><p>向博客中添加站点地图的方式有很多。这里推荐一种用插件实现的方案。 首先要在你的博客根目录下下载插件。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-sitemap --save</span><br></pre></td></tr></table></figure>
-<p>插件安装完成后，在public中文件夹中会生成一个 <code>sitemap.xml</code>，如果没有请重新编译一下 <code>hexo g</code> 再进行检查。 同时修改博客根目录下的站点配置文件 <code>_config.yml</code> 中的 url 属性，将你的主页网站输入到url中。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># URL</span><br><span class="line">## Set your site url here. For example, if you use GitHub Page, set url as &#x27;https://username.github.io/project&#x27;</span><br><span class="line">url: https://lantary.github.io/</span><br><span class="line">permalink: :year/:month/:day/:title/</span><br><span class="line">permalink_defaults:</span><br><span class="line">pretty_urls:</span><br><span class="line">  trailing_index: true # Set to false to remove trailing &#x27;index.html&#x27; from permalinks</span><br><span class="line">  trailing_html: true # Set to false to remove trailing &#x27;.html&#x27; from permalinks</span><br></pre></td></tr></table></figure>
-<p>重新编译部署 <code>hexo g -d</code>。在谷歌站点地图中输入sitemap.xml后提交即可。</p>
-<p><img src="https://github.com/Lantary/Private_warehouses/blob/main/hexo%E6%A1%86%E6%9E%B6%E4%B8%8B%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%8F%90%E4%BA%A4%E8%87%B3google%E6%90%9C%E7%B4%A2/p5.png?raw=true" alt="piture_5"></p>
-<h2 id="版本信息"><a href="#版本信息" class="headerlink" title="版本信息"></a>版本信息</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">博客框架 	hexo-cli_4.3.0</span><br><span class="line">主题		next</span><br><span class="line">网站挂载于	github</span><br></pre></td></tr></table></figure>
-
-<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="https://javahikers.github.io/2019/06/16/personal-blog-being-included-in-google/">[1] 解决验证问题</a></p>
-<p><a href="https://zhuanlan.zhihu.com/p/100922816">[2] 提交sitemap</a></p>
-]]></content>
-      <categories>
-        <category>博客优化</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Rstudio自定义代码配色方案</title>
     <url>/2022/07/01/%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/Rstudio%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BB%A3%E7%A0%81%E9%85%8D%E8%89%B2%E6%96%B9%E6%A1%88/</url>
     <content><![CDATA[<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>Rsutido 中默认的代码配色方案变量和函数是没有区分的。所以想要一个自定义代码配色的方案</p>
@@ -439,6 +410,35 @@ lty                 -改变标签线的类型, 可以设置通过与plot图像�
       <categories>
         <category>生物信息学</category>
         <category>生物网络</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>hexo框架下的博客提交至google搜索</title>
+    <url>/2022/07/10/%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96/blog%E8%83%BD%E8%A2%AB%E6%90%9C%E7%B4%A2%E5%88%B0/</url>
+    <content><![CDATA[<h2 id="博客优化内容"><a href="#博客优化内容" class="headerlink" title="博客优化内容"></a>博客优化内容</h2><p>对于刚建立的博客来说，谷歌往往不能或者不会收录你的博客，为了使自己的博客可以被谷歌所检索到。我们需要主动向谷歌提供网址信息。</p>
+<h2 id="优化方案"><a href="#优化方案" class="headerlink" title="优化方案"></a>优化方案</h2><p>谷歌提供了如何向谷歌提交搜索的方法，同样bing，搜狗，百度等搜索引擎也有相同的提交方案。<br>如果你想你的博客被全网搜索到，那么你需要在主流的搜索引擎上分别提交你的网址。要注意的是百度的提交原理跟其他搜索引擎有所不同。这篇博客只以谷歌搜索为例子。以下操作均在 <a href="https://search.google.com/search-console/about">[Google Search Console]</a> 中完成。</p>
+<h3 id="1-验证网站所属"><a href="#1-验证网站所属" class="headerlink" title="1.验证网站所属"></a>1.验证网站所属</h3><p>进入 <a href="https://search.google.com/search-console/about">[Google Search Console]</a> 后会显示</p>
+<p><img src="https://raw.githubusercontent.com/Lantary/Private_warehouses/main/hexo%E6%A1%86%E6%9E%B6%E4%B8%8B%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%8F%90%E4%BA%A4%E8%87%B3google%E6%90%9C%E7%B4%A2/p1.png" alt="piture_1"></p>
+<p>输入你博客的地址后点击继续。</p>
+<p><img src="https://github.com/Lantary/Private_warehouses/blob/main/hexo%E6%A1%86%E6%9E%B6%E4%B8%8B%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%8F%90%E4%BA%A4%E8%87%B3google%E6%90%9C%E7%B4%A2/p2.png?raw=true" alt="piture_2"></p>
+<p>选择验证网站所有权信息的方式。这里需要注意如果你的bolg是以hexo框架搭建的。 那么最好不要选择第一种 <code>HTML文件验证</code> 的方式。 因为hexo会自动编译你下载的HTML文件，使其失效，若想要用这种验证方式，那么需要在hexo编译完后，再添加HTML文件。 即在 <code>hexo g</code> 后，再添加HTML文件。且你每一次部署都需要如此操作十分麻烦。故不推荐。</p>
+<p>这里用第二种方式 <code>HTML标记</code> 进行验证。 复制content中的内容到主题中的配置文件 <code>_config.yml</code> 。 在属性 <code>google_site_verification:</code> 后添加content后的内容</p>
+<p><img src="https://raw.githubusercontent.com/Lantary/Private_warehouses/main/hexo%E6%A1%86%E6%9E%B6%E4%B8%8B%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%8F%90%E4%BA%A4%E8%87%B3google%E6%90%9C%E7%B4%A2/p3.png" alt="piture_3"></p>
+<p>最后通过验证如图所示。</p>
+<p><img src="https://raw.githubusercontent.com/Lantary/Private_warehouses/main/hexo%E6%A1%86%E6%9E%B6%E4%B8%8B%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%8F%90%E4%BA%A4%E8%87%B3google%E6%90%9C%E7%B4%A2/p4.png" alt="piture_4"></p>
+<h3 id="2-添加sitemap文件到博客"><a href="#2-添加sitemap文件到博客" class="headerlink" title="2.添加sitemap文件到博客"></a>2.添加sitemap文件到博客</h3><p>向博客中添加站点地图的方式有很多。这里推荐一种用插件实现的方案。 首先要在你的博客根目录下下载插件。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-sitemap --save</span><br></pre></td></tr></table></figure>
+<p>插件安装完成后，在public中文件夹中会生成一个 <code>sitemap.xml</code>，如果没有请重新编译一下 <code>hexo g</code> 再进行检查。 同时修改博客根目录下的站点配置文件 <code>_config.yml</code> 中的 url 属性，将你的主页网站输入到url中。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># URL</span><br><span class="line">## Set your site url here. For example, if you use GitHub Page, set url as &#x27;https://username.github.io/project&#x27;</span><br><span class="line">url: https://lantary.github.io/</span><br><span class="line">permalink: :year/:month/:day/:title/</span><br><span class="line">permalink_defaults:</span><br><span class="line">pretty_urls:</span><br><span class="line">  trailing_index: true # Set to false to remove trailing &#x27;index.html&#x27; from permalinks</span><br><span class="line">  trailing_html: true # Set to false to remove trailing &#x27;.html&#x27; from permalinks</span><br></pre></td></tr></table></figure>
+<p>重新编译部署 <code>hexo g -d</code>。在谷歌站点地图中输入sitemap.xml后提交即可。</p>
+<p><img src="https://github.com/Lantary/Private_warehouses/blob/main/hexo%E6%A1%86%E6%9E%B6%E4%B8%8B%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%8F%90%E4%BA%A4%E8%87%B3google%E6%90%9C%E7%B4%A2/p5.png?raw=true" alt="piture_5"></p>
+<h2 id="版本信息"><a href="#版本信息" class="headerlink" title="版本信息"></a>版本信息</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">博客框架 	hexo-cli_4.3.0</span><br><span class="line">主题		next</span><br><span class="line">网站挂载于	github</span><br></pre></td></tr></table></figure>
+
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="https://javahikers.github.io/2019/06/16/personal-blog-being-included-in-google/">[1] 解决验证问题</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/100922816">[2] 提交sitemap</a></p>
+]]></content>
+      <categories>
+        <category>博客优化</category>
       </categories>
   </entry>
 </search>
