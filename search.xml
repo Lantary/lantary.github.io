@@ -11,6 +11,36 @@
       </categories>
   </entry>
   <entry>
+    <title>hexo框架下的博客提交至google搜索</title>
+    <url>/2022/07/10/%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96/blog%E8%83%BD%E8%A2%AB%E6%90%9C%E7%B4%A2%E5%88%B0/</url>
+    <content><![CDATA[<h2 id="博客优化内容"><a href="#博客优化内容" class="headerlink" title="博客优化内容"></a>博客优化内容</h2><p>对于刚建立的博客来说，谷歌往往不能或者不会收录你的博客，为了使自己的博客可以被谷歌所检索到。我们需要主动向谷歌提供网址信息。</p>
+<h2 id="优化方案"><a href="#优化方案" class="headerlink" title="优化方案"></a>优化方案</h2><p>谷歌提供了如何向谷歌提交搜索的方法，同样bing，搜狗，百度等搜索引擎也有相同的提交方案。<br>如果你想你的博客被全网搜索到，那么你需要在主流的搜索引擎上分别提交你的网址。要注意的是百度的提交原理跟其他搜索引擎有所不同。这篇博客只以谷歌搜索为例子。以下操作均在 <a href="https://search.google.com/search-console/about">[Google Search Console]</a> 中完成。</p>
+<h3 id="1-验证网站所属"><a href="#1-验证网站所属" class="headerlink" title="1.验证网站所属"></a>1.验证网站所属</h3><p>进入 <a href="https://search.google.com/search-console/about">[Google Search Console]</a> 后会显示</p>
+<p><img src="https://raw.githubusercontent.com/Lantary/Private_warehouses/main/hexo%E6%A1%86%E6%9E%B6%E4%B8%8B%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%8F%90%E4%BA%A4%E8%87%B3google%E6%90%9C%E7%B4%A2/p1.png" alt="piture_1"></p>
+<p>输入你博客的地址后点击继续。</p>
+<p><img src="https://github.com/Lantary/Private_warehouses/blob/main/hexo%E6%A1%86%E6%9E%B6%E4%B8%8B%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%8F%90%E4%BA%A4%E8%87%B3google%E6%90%9C%E7%B4%A2/p2.png?raw=true" alt="piture_2"></p>
+<p>选择验证网站所有权信息的方式。这里需要注意如果你的bolg是以hexo框架搭建的。 那么最好不要选择第一种 <code>HTML文件验证</code> 的方式。 因为hexo会自动编译你下载的HTML文件，使其失效，若想要用这种验证方式，那么需要在hexo编译完后，再添加HTML文件。 即在 <code>hexo g</code> 后，再添加HTML文件。且你每一次部署都需要如此操作十分麻烦。故不推荐。</p>
+<p>这里用第二种方式 <code>HTML标记</code> 进行验证。 复制content中的内容到主题中的配置文件 <code>_config.yml</code> 。 在属性 <code>google_site_verification:</code> 后添加content后的内容</p>
+<p><img src="https://raw.githubusercontent.com/Lantary/Private_warehouses/main/hexo%E6%A1%86%E6%9E%B6%E4%B8%8B%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%8F%90%E4%BA%A4%E8%87%B3google%E6%90%9C%E7%B4%A2/p3.png" alt="piture_3"></p>
+<p>最后通过验证如图所示。</p>
+<p><img src="https://raw.githubusercontent.com/Lantary/Private_warehouses/main/hexo%E6%A1%86%E6%9E%B6%E4%B8%8B%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%8F%90%E4%BA%A4%E8%87%B3google%E6%90%9C%E7%B4%A2/p4.png" alt="piture_4"></p>
+<h3 id="2-添加sitemap文件到博客"><a href="#2-添加sitemap文件到博客" class="headerlink" title="2.添加sitemap文件到博客"></a>2.添加sitemap文件到博客</h3><p>向博客中添加站点地图的方式有很多。这里推荐一种用插件实现的方案。 首先要在你的博客根目录下下载插件。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-sitemap --save</span><br></pre></td></tr></table></figure>
+<p>插件安装完成后，在public中文件夹中会生成一个 <code>sitemap.xml</code>，如果没有请重新编译一下 <code>hexo g</code> 再进行检查。 同时修改博客根目录下的站点配置文件 <code>_config.yml</code> 中的 url 属性，将你的主页网站输入到url中。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># URL</span><br><span class="line">## Set your site url here. For example, if you use GitHub Page, set url as &#x27;https://username.github.io/project&#x27;</span><br><span class="line">url: https://lantary.github.io/</span><br><span class="line">permalink: :year/:month/:day/:title/</span><br><span class="line">permalink_defaults:</span><br><span class="line">pretty_urls:</span><br><span class="line">  trailing_index: true # Set to false to remove trailing &#x27;index.html&#x27; from permalinks</span><br><span class="line">  trailing_html: true # Set to false to remove trailing &#x27;.html&#x27; from permalinks</span><br></pre></td></tr></table></figure>
+<p>重新编译部署 <code>hexo g -d</code>。在谷歌站点地图中输入sitemap.xml后提交即可。</p>
+<p><img src="https://github.com/Lantary/Private_warehouses/blob/main/hexo%E6%A1%86%E6%9E%B6%E4%B8%8B%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%8F%90%E4%BA%A4%E8%87%B3google%E6%90%9C%E7%B4%A2/p5.png?raw=true" alt="piture_5"></p>
+<h2 id="3-其他网站索引添加"><a href="#3-其他网站索引添加" class="headerlink" title="3.其他网站索引添加"></a>3.其他网站索引添加</h2><p>其他网站添加索引的方式与谷歌搜索类似，如果是bing则可以直接使用<a href="https://search.google.com/search-console/about">[Google Search Console]</a>的数据</p>
+<h2 id="版本信息"><a href="#版本信息" class="headerlink" title="版本信息"></a>版本信息</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">博客框架		hexo-cli_4.3.0</span><br><span class="line">主题				next_7.8.0</span><br><span class="line">网站挂载于	github</span><br></pre></td></tr></table></figure>
+
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="https://javahikers.github.io/2019/06/16/personal-blog-being-included-in-google/">[1] 解决验证问题</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/100922816">[2] 提交sitemap</a></p>
+]]></content>
+      <categories>
+        <category>博客优化</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Rstudio自定义代码配色方案</title>
     <url>/2022/07/01/%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/Rstudio%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BB%A3%E7%A0%81%E9%85%8D%E8%89%B2%E6%96%B9%E6%A1%88/</url>
     <content><![CDATA[<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>Rsutido 中默认的代码配色方案变量和函数是没有区分的。所以想要一个自定义代码配色的方案</p>
@@ -68,35 +98,6 @@
 ]]></content>
       <categories>
         <category>日常使用中的问题</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>hexo框架下的博客提交至google搜索</title>
-    <url>/2022/07/10/%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96/blog%E8%83%BD%E8%A2%AB%E6%90%9C%E7%B4%A2%E5%88%B0/</url>
-    <content><![CDATA[<h2 id="博客优化内容"><a href="#博客优化内容" class="headerlink" title="博客优化内容"></a>博客优化内容</h2><p>对于刚建立的博客来说，谷歌往往不能或者不会收录你的博客，为了使自己的博客可以被谷歌所检索到。我们需要主动向谷歌提供网址信息。</p>
-<h2 id="优化方案"><a href="#优化方案" class="headerlink" title="优化方案"></a>优化方案</h2><p>谷歌提供了如何向谷歌提交搜索的方法，同样bing，搜狗，百度等搜索引擎也有相同的提交方案。<br>如果你想你的博客被全网搜索到，那么你需要在主流的搜索引擎上分别提交你的网址。要注意的是百度的提交原理跟其他搜索引擎有所不同。这篇博客只以谷歌搜索为例子。以下操作均在 <a href="https://search.google.com/search-console/about">[Google Search Console]</a> 中完成。</p>
-<h3 id="1-验证网站所属"><a href="#1-验证网站所属" class="headerlink" title="1.验证网站所属"></a>1.验证网站所属</h3><p>进入 <a href="https://search.google.com/search-console/about">[Google Search Console]</a> 后会显示</p>
-<p><img src="https://raw.githubusercontent.com/Lantary/Private_warehouses/main/hexo%E6%A1%86%E6%9E%B6%E4%B8%8B%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%8F%90%E4%BA%A4%E8%87%B3google%E6%90%9C%E7%B4%A2/p1.png" alt="piture_1"></p>
-<p>输入你博客的地址后点击继续。</p>
-<p><img src="https://github.com/Lantary/Private_warehouses/blob/main/hexo%E6%A1%86%E6%9E%B6%E4%B8%8B%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%8F%90%E4%BA%A4%E8%87%B3google%E6%90%9C%E7%B4%A2/p2.png?raw=true" alt="piture_2"></p>
-<p>选择验证网站所有权信息的方式。这里需要注意如果你的bolg是以hexo框架搭建的。 那么最好不要选择第一种 <code>HTML文件验证</code> 的方式。 因为hexo会自动编译你下载的HTML文件，使其失效，若想要用这种验证方式，那么需要在hexo编译完后，再添加HTML文件。 即在 <code>hexo g</code> 后，再添加HTML文件。且你每一次部署都需要如此操作十分麻烦。故不推荐。</p>
-<p>这里用第二种方式 <code>HTML标记</code> 进行验证。 复制content中的内容到主题中的配置文件 <code>_config.yml</code> 。 在属性 <code>google_site_verification:</code> 后添加content后的内容</p>
-<p><img src="https://raw.githubusercontent.com/Lantary/Private_warehouses/main/hexo%E6%A1%86%E6%9E%B6%E4%B8%8B%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%8F%90%E4%BA%A4%E8%87%B3google%E6%90%9C%E7%B4%A2/p3.png" alt="piture_3"></p>
-<p>最后通过验证如图所示。</p>
-<p><img src="https://raw.githubusercontent.com/Lantary/Private_warehouses/main/hexo%E6%A1%86%E6%9E%B6%E4%B8%8B%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%8F%90%E4%BA%A4%E8%87%B3google%E6%90%9C%E7%B4%A2/p4.png" alt="piture_4"></p>
-<h3 id="2-添加sitemap文件到博客"><a href="#2-添加sitemap文件到博客" class="headerlink" title="2.添加sitemap文件到博客"></a>2.添加sitemap文件到博客</h3><p>向博客中添加站点地图的方式有很多。这里推荐一种用插件实现的方案。 首先要在你的博客根目录下下载插件。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-sitemap --save</span><br></pre></td></tr></table></figure>
-<p>插件安装完成后，在public中文件夹中会生成一个 <code>sitemap.xml</code>，如果没有请重新编译一下 <code>hexo g</code> 再进行检查。 同时修改博客根目录下的站点配置文件 <code>_config.yml</code> 中的 url 属性，将你的主页网站输入到url中。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># URL</span><br><span class="line">## Set your site url here. For example, if you use GitHub Page, set url as &#x27;https://username.github.io/project&#x27;</span><br><span class="line">url: https://lantary.github.io/</span><br><span class="line">permalink: :year/:month/:day/:title/</span><br><span class="line">permalink_defaults:</span><br><span class="line">pretty_urls:</span><br><span class="line">  trailing_index: true # Set to false to remove trailing &#x27;index.html&#x27; from permalinks</span><br><span class="line">  trailing_html: true # Set to false to remove trailing &#x27;.html&#x27; from permalinks</span><br></pre></td></tr></table></figure>
-<p>重新编译部署 <code>hexo g -d</code>。在谷歌站点地图中输入sitemap.xml后提交即可。</p>
-<p><img src="https://github.com/Lantary/Private_warehouses/blob/main/hexo%E6%A1%86%E6%9E%B6%E4%B8%8B%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%8F%90%E4%BA%A4%E8%87%B3google%E6%90%9C%E7%B4%A2/p5.png?raw=true" alt="piture_5"></p>
-<h2 id="版本信息"><a href="#版本信息" class="headerlink" title="版本信息"></a>版本信息</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">博客框架 	hexo-cli_4.3.0</span><br><span class="line">主题		next</span><br><span class="line">网站挂载于	github</span><br></pre></td></tr></table></figure>
-
-<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="https://javahikers.github.io/2019/06/16/personal-blog-being-included-in-google/">[1] 解决验证问题</a></p>
-<p><a href="https://zhuanlan.zhihu.com/p/100922816">[2] 提交sitemap</a></p>
-]]></content>
-      <categories>
-        <category>博客优化</category>
       </categories>
   </entry>
   <entry>
@@ -178,92 +179,6 @@
       <categories>
         <category>生物信息学</category>
         <category>富集分析</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>ROC曲线</title>
-    <url>/2022/05/20/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6/ROC%E6%9B%B2%E7%BA%BF/</url>
-    <content><![CDATA[<ul>
-<li><a href="#%E4%B8%80%E4%BB%80%E4%B9%88%E6%98%AFroc%E6%9B%B2%E7%BA%BF">一、什么是ROC曲线</a><ul>
-<li><a href="#1%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5">1.相关概念</a></li>
-<li><a href="#2roc%E6%9B%B2%E7%BA%BF">2.ROC曲线</a></li>
-<li><a href="#3auc%E9%9D%A2%E7%A7%AF">3.AUC面积</a></li>
-</ul>
-</li>
-<li><a href="#%E4%BA%8Croc%E6%9B%B2%E7%BA%BF%E5%A6%82%E4%BD%95%E7%BB%98%E5%88%B6">二、ROC曲线如何绘制</a><ul>
-<li><a href="#1%E7%AE%97%E6%B3%95%E4%BB%8B%E7%BB%8D">1.算法介绍</a></li>
-<li><a href="#2%E7%94%A8r%E8%BF%9B%E8%A1%8Croc%E6%9B%B2%E7%BA%BF%E7%9A%84%E7%BB%98%E5%88%B6">2.用R进行ROC曲线的绘制</a><ul>
-<li><a href="#1%E7%AE%80%E5%8D%95%E7%BB%98%E5%88%B6roc%E6%9B%B2%E7%BA%BF">1.简单绘制ROC曲线</a></li>
-<li><a href="#2%E5%B0%86%E4%B8%A4%E4%B8%AAroc%E6%9B%B2%E7%BA%BF%E7%BB%98%E5%88%B6%E5%9C%A8%E4%B8%80%E5%BC%A0%E5%9B%BE%E4%B8%AD%E5%B9%B6%E6%B7%BB%E5%8A%A0%E6%A0%87%E7%AD%BE">2.将两个ROC曲线绘制在一张图中，并添加标签</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h1 id="一、什么是ROC曲线"><a href="#一、什么是ROC曲线" class="headerlink" title="一、什么是ROC曲线"></a>一、什么是ROC曲线</h1><p>ROC曲线实际上就是一种用于评价所建立的模型优劣性的二维图像</p>
-<p><br></br></p>
-<h2 id="1-相关概念"><a href="#1-相关概念" class="headerlink" title="1.相关概念"></a>1.相关概念</h2><p>1.真阳性(TP)：实际为正类，模型预测为正类</p>
-<p>2.假阳性(FP)：实际为负类，模型预测为正类</p>
-<p>3.真阴性(TN)：实际为负类，模型预测为负类</p>
-<p>4.假阴性(FN)：实际为正类，模型预测为负类</p>
-<p>5.精确率： 真阳性 / (真阳性 + 假阳性) | 表示模型中预测的正类中实际为正类的比例，</p>
-<p>6.召回率： 真阳性 / (真阳性 + 假阴性) | 与灵敏度相同</p>
-<p>7.特异度： 真阴性 / (真阴性 + 假阳性) | 表示所有负类中被模型分对的比例，衡量了模型对负类的识别能力</p>
-<p>8.灵敏度： 真阳性 / (真阳性 + 假阴性) | 表示所有正类中被模型分对的比例，衡量了模型对正类的识别能力</p>
-<p>9.正确率： (真阳性 + 真阴性) / (真阳性 + 假阳性 + 真阴性 + 假阴性) | 表示模型预测正确的样本占总体的比例</p>
-<p>10.预测概率：在模型对样本做出预测时，预测结果往往不是固定的，会呈现一个预测概率，即某样本在某一模型的预测下有p的概率为正类，1-p的概率为负类。最后模型会输出一个预测概率。</p>
-<p>11.阈值：为了让模型得到准确的结果，可以设置一个阈值。例如，当某样本在模型预测概率大于 一个定值 时，我们认为这个样本为正类。这个值即阈值。 </p>
-<h2 id="2-ROC曲线"><a href="#2-ROC曲线" class="headerlink" title="2.ROC曲线"></a>2.ROC曲线</h2><p>ROC曲线是以灵敏度与特异度为指标对某一模型作出评价的二维图像。</p>
-<p>以 <code>1 - 特异度</code> 作为横坐标，也可以称为伪正类率(False positive rate， FPR)，表示模型对负类的识别能力，数值越小，模型对负类识别能力越好。</p>
-<p>以  <code>灵敏度</code> 作为纵坐标 ， 也可以称为真正类率(True positive rate， TPR) ，表示模型对正类的识别能力，数值越大，模型对正类识别能力越好</p>
-<p>例如下图中蓝线是某一模型的ROC曲线。</p>
-<p><img src="https://user-images.githubusercontent.com/102901955/167638460-05012c00-69d3-4272-bfe0-4fee206c42a9.png" alt="image"></p>
-<p>红线的含义为 随机预测。即预测为正类与负类的概率为均为0.5左右，正负类判定取决于阈值。</p>
-<p>而蓝线为某一模型的ROC曲线，表示当调整阈值使TPR(或FPR)为某一值时，TPR与FPR的关系符合曲线的函数关系。</p>
-<p>举例来讲，在蓝色点处，表示在阈值设置为某一值时，TPR为0.9，而FPR为0.4。实际应用过程中，我们可以根据需求(更加需求TPR,还是FPR)来设置阈值。</p>
-<h2 id="3-AUC面积"><a href="#3-AUC面积" class="headerlink" title="3.AUC面积"></a>3.AUC面积</h2><p>AUC面积是指ROC曲线与 x = 1 与 x 轴 所围成区域的面积，即图中绿色部分。</p>
-<p><img src="https://user-images.githubusercontent.com/102901955/167867291-c8deeddf-af02-4f42-bf52-8a7afddff16d.png" alt="image"></p>
-<p>AUC面积往往用于衡量一个模型的预测性的优劣，因为ROC曲线涉及阈值的选择，在一定情况下使用ROC曲线衡量不是很好比较。</p>
-<p>一般地认为AUC面积越大，则模型的预测性越好。</p>
-<h1 id="二、ROC曲线如何绘制"><a href="#二、ROC曲线如何绘制" class="headerlink" title="二、ROC曲线如何绘制"></a>二、ROC曲线如何绘制</h1><p><br></br></p>
-<h2 id="1-算法介绍"><a href="#1-算法介绍" class="headerlink" title="1.算法介绍"></a>1.算法介绍</h2><p>这一部分是为了加深ROC曲线的理解，在用R绘制曲线过程中实际并不需要从0开发算法，有现成的包可以使用。</p>
-<p><img src="https://img-blog.csdnimg.cn/2545fb9435984bc8b54e7ce92e92a398.gif#pic_center" alt="image"></p>
-<p>如图所示是一种ROC曲线的常用算法，先将预测概率按序排列。由上向下设置阈值，模型预测的正类数量会按梯度增加，依据这个规律计算处特异度与灵敏度，记录于内存之中，最后绘图。</p>
-<h2 id="2-用R进行ROC曲线的绘制"><a href="#2-用R进行ROC曲线的绘制" class="headerlink" title="2.用R进行ROC曲线的绘制"></a>2.用R进行ROC曲线的绘制</h2><p>这里要介绍pROC包。一个专门用于绘制ROC曲线的模块。</p>
-<p>其中有一个函数 <code>roc()</code> 可以用于计算ROC曲线各个阈值下的敏感度与特异度</p>
-<p>=======数据格式======</p>
-<p><img src="https://user-images.githubusercontent.com/102901955/167880563-cbc141ce-5d9d-403a-91a0-915bc8416601.png" alt="image"></p>
-<p>===================</p>
-<p>即最后roc函数计算的数据格式要如上图所示</p>
-<p>roc(v1, v2) </p>
-<p>v1 -训练集中实际正类还是负类的列向量</p>
-<p>v2 -训练集中模型预测为正类的预测概率</p>
-<h3 id="1-简单绘制ROC曲线"><a href="#1-简单绘制ROC曲线" class="headerlink" title="1.简单绘制ROC曲线"></a>1.简单绘制ROC曲线</h3><figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 加载R包</span></span><br><span class="line">library<span class="punctuation">(</span>pROC<span class="punctuation">)</span></span><br><span class="line">library<span class="punctuation">(</span>ggplot2<span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取数据</span></span><br><span class="line">df <span class="operator">=</span> read.delim<span class="punctuation">(</span><span class="string">&quot;https://www.bioladder.cn/shiny/zyp/bioladder2/demoData/ROC/demo.txt&quot;</span><span class="punctuation">,</span><span class="comment"># 这里读取了网络上的demo数据，将此处换成你自己电脑里的文件</span></span><br><span class="line">                header <span class="operator">=</span> <span class="built_in">T</span>    <span class="comment"># 指定第一行是列名</span></span><br><span class="line"><span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># ROC计算</span></span><br><span class="line">rocobj <span class="operator">&lt;-</span> roc<span class="punctuation">(</span>df<span class="punctuation">[</span><span class="punctuation">,</span><span class="number">1</span><span class="punctuation">]</span><span class="punctuation">,</span> df<span class="punctuation">[</span><span class="punctuation">,</span><span class="number">2</span><span class="punctuation">]</span><span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘图</span></span><br><span class="line">plot<span class="punctuation">(</span>rocobj<span class="punctuation">,</span> col <span class="operator">=</span> <span class="string">&quot;red&quot;</span><span class="punctuation">,</span> legacy.axes <span class="operator">=</span> <span class="built_in">T</span><span class="punctuation">,</span> print.auc <span class="operator">=</span> <span class="built_in">T</span><span class="punctuation">,</span> print.thres <span class="operator">=</span> <span class="built_in">T</span><span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;</span><span class="string">&quot;</span></span><br><span class="line"><span class="string">print.auc    -增加AUC面积</span></span><br><span class="line"><span class="string">print.thres  -增加临界点</span></span><br><span class="line"><span class="string">legacy.axes  -更改横坐标(以 1-敏感度 还是 敏感度 为横坐标)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">&quot;</span><span class="string">&quot;&quot;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="2-将两个ROC曲线绘制在一张图中，并添加标签"><a href="#2-将两个ROC曲线绘制在一张图中，并添加标签" class="headerlink" title="2.将两个ROC曲线绘制在一张图中，并添加标签"></a>2.将两个ROC曲线绘制在一张图中，并添加标签</h3><pre><code class="R"># 读取数据及ROC计算同 ###1 步骤。 
-
-# 绘图
-plot(rocobj_1, col = &quot;red&quot;, legacy.axes = T, print.thres = T)                                             
-plot(rocobj_2, col = &quot;blue&quot;, legacy.axes = T, print.thres = T, add = T)
-legend(&quot;bottomright&quot;, legend = c(&quot;roc1 AUC-0.731&quot;, &quot;roc2 AUC-0.612&quot;), col = c(&quot;red&quot;, &quot;blue&quot;), lty = c(1, 1))  # 添加图例
-
-&quot;&quot;&quot;
-====
-plot:
-rocobj_1, rocobj_2  -表示通过roc函数所计算出来的数据集
-add                 -表示添加曲线,添加该参数后不会覆盖原图像,而是添加新的曲线到图像上
-====
-legend:
-&quot;bottomright&quot;       -设置标签所在位置
-legend              -设置标签的名字, 可以通过手动添加AUC数字
-lty                 -改变标签线的类型, 可以设置通过与plot图像一一对应.
-
-&quot;&quot;&quot;
-
-</code></pre>
-]]></content>
-      <categories>
-        <category>生物信息学</category>
-        <category>ROC曲线</category>
       </categories>
   </entry>
   <entry>
@@ -429,6 +344,92 @@ lty                 -改变标签线的类型, 可以设置通过与plot图像�
       <categories>
         <category>生物信息学</category>
         <category>生物网络</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>ROC曲线</title>
+    <url>/2022/05/20/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6/ROC%E6%9B%B2%E7%BA%BF/</url>
+    <content><![CDATA[<ul>
+<li><a href="#%E4%B8%80%E4%BB%80%E4%B9%88%E6%98%AFroc%E6%9B%B2%E7%BA%BF">一、什么是ROC曲线</a><ul>
+<li><a href="#1%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5">1.相关概念</a></li>
+<li><a href="#2roc%E6%9B%B2%E7%BA%BF">2.ROC曲线</a></li>
+<li><a href="#3auc%E9%9D%A2%E7%A7%AF">3.AUC面积</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BA%8Croc%E6%9B%B2%E7%BA%BF%E5%A6%82%E4%BD%95%E7%BB%98%E5%88%B6">二、ROC曲线如何绘制</a><ul>
+<li><a href="#1%E7%AE%97%E6%B3%95%E4%BB%8B%E7%BB%8D">1.算法介绍</a></li>
+<li><a href="#2%E7%94%A8r%E8%BF%9B%E8%A1%8Croc%E6%9B%B2%E7%BA%BF%E7%9A%84%E7%BB%98%E5%88%B6">2.用R进行ROC曲线的绘制</a><ul>
+<li><a href="#1%E7%AE%80%E5%8D%95%E7%BB%98%E5%88%B6roc%E6%9B%B2%E7%BA%BF">1.简单绘制ROC曲线</a></li>
+<li><a href="#2%E5%B0%86%E4%B8%A4%E4%B8%AAroc%E6%9B%B2%E7%BA%BF%E7%BB%98%E5%88%B6%E5%9C%A8%E4%B8%80%E5%BC%A0%E5%9B%BE%E4%B8%AD%E5%B9%B6%E6%B7%BB%E5%8A%A0%E6%A0%87%E7%AD%BE">2.将两个ROC曲线绘制在一张图中，并添加标签</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="一、什么是ROC曲线"><a href="#一、什么是ROC曲线" class="headerlink" title="一、什么是ROC曲线"></a>一、什么是ROC曲线</h1><p>ROC曲线实际上就是一种用于评价所建立的模型优劣性的二维图像</p>
+<p><br></br></p>
+<h2 id="1-相关概念"><a href="#1-相关概念" class="headerlink" title="1.相关概念"></a>1.相关概念</h2><p>1.真阳性(TP)：实际为正类，模型预测为正类</p>
+<p>2.假阳性(FP)：实际为负类，模型预测为正类</p>
+<p>3.真阴性(TN)：实际为负类，模型预测为负类</p>
+<p>4.假阴性(FN)：实际为正类，模型预测为负类</p>
+<p>5.精确率： 真阳性 / (真阳性 + 假阳性) | 表示模型中预测的正类中实际为正类的比例，</p>
+<p>6.召回率： 真阳性 / (真阳性 + 假阴性) | 与灵敏度相同</p>
+<p>7.特异度： 真阴性 / (真阴性 + 假阳性) | 表示所有负类中被模型分对的比例，衡量了模型对负类的识别能力</p>
+<p>8.灵敏度： 真阳性 / (真阳性 + 假阴性) | 表示所有正类中被模型分对的比例，衡量了模型对正类的识别能力</p>
+<p>9.正确率： (真阳性 + 真阴性) / (真阳性 + 假阳性 + 真阴性 + 假阴性) | 表示模型预测正确的样本占总体的比例</p>
+<p>10.预测概率：在模型对样本做出预测时，预测结果往往不是固定的，会呈现一个预测概率，即某样本在某一模型的预测下有p的概率为正类，1-p的概率为负类。最后模型会输出一个预测概率。</p>
+<p>11.阈值：为了让模型得到准确的结果，可以设置一个阈值。例如，当某样本在模型预测概率大于 一个定值 时，我们认为这个样本为正类。这个值即阈值。 </p>
+<h2 id="2-ROC曲线"><a href="#2-ROC曲线" class="headerlink" title="2.ROC曲线"></a>2.ROC曲线</h2><p>ROC曲线是以灵敏度与特异度为指标对某一模型作出评价的二维图像。</p>
+<p>以 <code>1 - 特异度</code> 作为横坐标，也可以称为伪正类率(False positive rate， FPR)，表示模型对负类的识别能力，数值越小，模型对负类识别能力越好。</p>
+<p>以  <code>灵敏度</code> 作为纵坐标 ， 也可以称为真正类率(True positive rate， TPR) ，表示模型对正类的识别能力，数值越大，模型对正类识别能力越好</p>
+<p>例如下图中蓝线是某一模型的ROC曲线。</p>
+<p><img src="https://user-images.githubusercontent.com/102901955/167638460-05012c00-69d3-4272-bfe0-4fee206c42a9.png" alt="image"></p>
+<p>红线的含义为 随机预测。即预测为正类与负类的概率为均为0.5左右，正负类判定取决于阈值。</p>
+<p>而蓝线为某一模型的ROC曲线，表示当调整阈值使TPR(或FPR)为某一值时，TPR与FPR的关系符合曲线的函数关系。</p>
+<p>举例来讲，在蓝色点处，表示在阈值设置为某一值时，TPR为0.9，而FPR为0.4。实际应用过程中，我们可以根据需求(更加需求TPR,还是FPR)来设置阈值。</p>
+<h2 id="3-AUC面积"><a href="#3-AUC面积" class="headerlink" title="3.AUC面积"></a>3.AUC面积</h2><p>AUC面积是指ROC曲线与 x = 1 与 x 轴 所围成区域的面积，即图中绿色部分。</p>
+<p><img src="https://user-images.githubusercontent.com/102901955/167867291-c8deeddf-af02-4f42-bf52-8a7afddff16d.png" alt="image"></p>
+<p>AUC面积往往用于衡量一个模型的预测性的优劣，因为ROC曲线涉及阈值的选择，在一定情况下使用ROC曲线衡量不是很好比较。</p>
+<p>一般地认为AUC面积越大，则模型的预测性越好。</p>
+<h1 id="二、ROC曲线如何绘制"><a href="#二、ROC曲线如何绘制" class="headerlink" title="二、ROC曲线如何绘制"></a>二、ROC曲线如何绘制</h1><p><br></br></p>
+<h2 id="1-算法介绍"><a href="#1-算法介绍" class="headerlink" title="1.算法介绍"></a>1.算法介绍</h2><p>这一部分是为了加深ROC曲线的理解，在用R绘制曲线过程中实际并不需要从0开发算法，有现成的包可以使用。</p>
+<p><img src="https://img-blog.csdnimg.cn/2545fb9435984bc8b54e7ce92e92a398.gif#pic_center" alt="image"></p>
+<p>如图所示是一种ROC曲线的常用算法，先将预测概率按序排列。由上向下设置阈值，模型预测的正类数量会按梯度增加，依据这个规律计算处特异度与灵敏度，记录于内存之中，最后绘图。</p>
+<h2 id="2-用R进行ROC曲线的绘制"><a href="#2-用R进行ROC曲线的绘制" class="headerlink" title="2.用R进行ROC曲线的绘制"></a>2.用R进行ROC曲线的绘制</h2><p>这里要介绍pROC包。一个专门用于绘制ROC曲线的模块。</p>
+<p>其中有一个函数 <code>roc()</code> 可以用于计算ROC曲线各个阈值下的敏感度与特异度</p>
+<p>=======数据格式======</p>
+<p><img src="https://user-images.githubusercontent.com/102901955/167880563-cbc141ce-5d9d-403a-91a0-915bc8416601.png" alt="image"></p>
+<p>===================</p>
+<p>即最后roc函数计算的数据格式要如上图所示</p>
+<p>roc(v1, v2) </p>
+<p>v1 -训练集中实际正类还是负类的列向量</p>
+<p>v2 -训练集中模型预测为正类的预测概率</p>
+<h3 id="1-简单绘制ROC曲线"><a href="#1-简单绘制ROC曲线" class="headerlink" title="1.简单绘制ROC曲线"></a>1.简单绘制ROC曲线</h3><figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 加载R包</span></span><br><span class="line">library<span class="punctuation">(</span>pROC<span class="punctuation">)</span></span><br><span class="line">library<span class="punctuation">(</span>ggplot2<span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取数据</span></span><br><span class="line">df <span class="operator">=</span> read.delim<span class="punctuation">(</span><span class="string">&quot;https://www.bioladder.cn/shiny/zyp/bioladder2/demoData/ROC/demo.txt&quot;</span><span class="punctuation">,</span><span class="comment"># 这里读取了网络上的demo数据，将此处换成你自己电脑里的文件</span></span><br><span class="line">                header <span class="operator">=</span> <span class="built_in">T</span>    <span class="comment"># 指定第一行是列名</span></span><br><span class="line"><span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># ROC计算</span></span><br><span class="line">rocobj <span class="operator">&lt;-</span> roc<span class="punctuation">(</span>df<span class="punctuation">[</span><span class="punctuation">,</span><span class="number">1</span><span class="punctuation">]</span><span class="punctuation">,</span> df<span class="punctuation">[</span><span class="punctuation">,</span><span class="number">2</span><span class="punctuation">]</span><span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘图</span></span><br><span class="line">plot<span class="punctuation">(</span>rocobj<span class="punctuation">,</span> col <span class="operator">=</span> <span class="string">&quot;red&quot;</span><span class="punctuation">,</span> legacy.axes <span class="operator">=</span> <span class="built_in">T</span><span class="punctuation">,</span> print.auc <span class="operator">=</span> <span class="built_in">T</span><span class="punctuation">,</span> print.thres <span class="operator">=</span> <span class="built_in">T</span><span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;</span><span class="string">&quot;</span></span><br><span class="line"><span class="string">print.auc    -增加AUC面积</span></span><br><span class="line"><span class="string">print.thres  -增加临界点</span></span><br><span class="line"><span class="string">legacy.axes  -更改横坐标(以 1-敏感度 还是 敏感度 为横坐标)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">&quot;</span><span class="string">&quot;&quot;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="2-将两个ROC曲线绘制在一张图中，并添加标签"><a href="#2-将两个ROC曲线绘制在一张图中，并添加标签" class="headerlink" title="2.将两个ROC曲线绘制在一张图中，并添加标签"></a>2.将两个ROC曲线绘制在一张图中，并添加标签</h3><pre><code class="R"># 读取数据及ROC计算同 ###1 步骤。 
+
+# 绘图
+plot(rocobj_1, col = &quot;red&quot;, legacy.axes = T, print.thres = T)                                             
+plot(rocobj_2, col = &quot;blue&quot;, legacy.axes = T, print.thres = T, add = T)
+legend(&quot;bottomright&quot;, legend = c(&quot;roc1 AUC-0.731&quot;, &quot;roc2 AUC-0.612&quot;), col = c(&quot;red&quot;, &quot;blue&quot;), lty = c(1, 1))  # 添加图例
+
+&quot;&quot;&quot;
+====
+plot:
+rocobj_1, rocobj_2  -表示通过roc函数所计算出来的数据集
+add                 -表示添加曲线,添加该参数后不会覆盖原图像,而是添加新的曲线到图像上
+====
+legend:
+&quot;bottomright&quot;       -设置标签所在位置
+legend              -设置标签的名字, 可以通过手动添加AUC数字
+lty                 -改变标签线的类型, 可以设置通过与plot图像一一对应.
+
+&quot;&quot;&quot;
+
+</code></pre>
+]]></content>
+      <categories>
+        <category>生物信息学</category>
+        <category>ROC曲线</category>
       </categories>
   </entry>
 </search>
