@@ -40,38 +40,6 @@
       </categories>
   </entry>
   <entry>
-    <title>hexo框架下的博客提交至google搜索</title>
-    <url>/2022/07/10/%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96/blog%E8%83%BD%E8%A2%AB%E6%90%9C%E7%B4%A2%E5%88%B0/</url>
-    <content><![CDATA[<h3 id="博客优化内容"><a href="#博客优化内容" class="headerlink" title="博客优化内容"></a>博客优化内容</h3><p>对于刚建立的博客来说，谷歌往往不能或者不会收录你的博客，为了使自己的博客可以被谷歌所检索到。我们需要主动向谷歌提供网址信息。</p>
-<h3 id="优化方案"><a href="#优化方案" class="headerlink" title="优化方案"></a>优化方案</h3><p>谷歌提供了如何向谷歌提交搜索的方法，同样bing，搜狗，百度等搜索引擎也有相同的提交方案。<br>如果你想你的博客被全网搜索到，那么你需要在主流的搜索引擎上分别提交你的网址。要注意的是百度的提交原理跟其他搜索引擎有所不同。这篇博客只以谷歌搜索为例子。以下操作均在 <a href="https://search.google.com/search-console/about">[Google Search Console]</a> 中完成。</p>
-<h4 id="1-验证网站所属"><a href="#1-验证网站所属" class="headerlink" title="1.验证网站所属"></a>1.验证网站所属</h4><p>进入 <a href="https://search.google.com/search-console/about">[Google Search Console]</a> 后会显示</p>
-<p><img src="https://raw.githubusercontent.com/Lantary/Private_warehouses/main/hexo%E6%A1%86%E6%9E%B6%E4%B8%8B%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%8F%90%E4%BA%A4%E8%87%B3google%E6%90%9C%E7%B4%A2/p1.png" alt="piture_1"></p>
-<p>输入你博客的地址后点击继续。</p>
-<p><img src="https://github.com/Lantary/Private_warehouses/blob/main/hexo%E6%A1%86%E6%9E%B6%E4%B8%8B%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%8F%90%E4%BA%A4%E8%87%B3google%E6%90%9C%E7%B4%A2/p2.png?raw=true" alt="piture_2"></p>
-<p>选择验证网站所有权信息的方式。这里需要注意如果你的bolg是以hexo框架搭建的。 那么最好不要选择第一种 <code>HTML文件验证</code> 的方式。 因为hexo会自动编译你下载的HTML文件，使其失效，若想要用这种验证方式，那么需要在hexo编译完后，再添加HTML文件。 即在 <code>hexo g</code> 后，再添加HTML文件。且你每一次部署都需要如此操作十分麻烦。故不推荐。</p>
-<p>这里用第二种方式 <code>HTML标记</code> 进行验证。 复制content中的内容到主题中的配置文件 <code>_config.yml</code> 。 在属性 <code>google_site_verification:</code> 后添加content后的内容</p>
-<p><img src="https://raw.githubusercontent.com/Lantary/Private_warehouses/main/hexo%E6%A1%86%E6%9E%B6%E4%B8%8B%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%8F%90%E4%BA%A4%E8%87%B3google%E6%90%9C%E7%B4%A2/p3.png" alt="piture_3"></p>
-<p>最后通过验证如图所示。</p>
-<p><img src="https://raw.githubusercontent.com/Lantary/Private_warehouses/main/hexo%E6%A1%86%E6%9E%B6%E4%B8%8B%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%8F%90%E4%BA%A4%E8%87%B3google%E6%90%9C%E7%B4%A2/p4.png" alt="piture_4"></p>
-<h4 id="2-添加sitemap文件到博客"><a href="#2-添加sitemap文件到博客" class="headerlink" title="2.添加sitemap文件到博客"></a>2.添加sitemap文件到博客</h4><p>向博客中添加站点地图的方式有很多。这里推荐一种用插件实现的方案。 首先要在你的博客根目录下下载插件。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-sitemap --save</span><br></pre></td></tr></table></figure>
-<p>插件安装完成后，在public中文件夹中会生成一个 <code>sitemap.xml</code>，如果没有请重新编译一下 <code>hexo g</code> 再进行检查。 同时修改博客根目录下的站点配置文件 <code>_config.yml</code> 中的 url 属性，将你的主页网站输入到url中。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># URL</span><br><span class="line">## Set your site url here. For example, if you use GitHub Page, set url as &#x27;https://username.github.io/project&#x27;</span><br><span class="line">url: https://lantary.github.io/</span><br><span class="line">permalink: :year/:month/:day/:title/</span><br><span class="line">permalink_defaults:</span><br><span class="line">pretty_urls:</span><br><span class="line">  trailing_index: true # Set to false to remove trailing &#x27;index.html&#x27; from permalinks</span><br><span class="line">  trailing_html: true # Set to false to remove trailing &#x27;.html&#x27; from permalinks</span><br></pre></td></tr></table></figure>
-<p>重新编译部署 <code>hexo g -d</code>。在谷歌站点地图中输入sitemap.xml后提交即可。</p>
-<p><img src="https://github.com/Lantary/Private_warehouses/blob/main/hexo%E6%A1%86%E6%9E%B6%E4%B8%8B%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%8F%90%E4%BA%A4%E8%87%B3google%E6%90%9C%E7%B4%A2/p5.png?raw=true" alt="piture_5"></p>
-<h4 id="3-其他网站索引添加"><a href="#3-其他网站索引添加" class="headerlink" title="3.其他网站索引添加"></a>3.其他网站索引添加</h4><p>其他网站添加索引的方式与谷歌搜索类似，如果是bing则可以直接使用<a href="https://search.google.com/search-console/about">[Google Search Console]</a>的数据</p>
-<h3 id="版本信息"><a href="#版本信息" class="headerlink" title="版本信息"></a>版本信息</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">博客框架		hexo-cli_4.3.0</span><br><span class="line">主题		next_7.8.0</span><br><span class="line">网站挂载于	github</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><p><a href="https://javahikers.github.io/2019/06/16/personal-blog-being-included-in-google/">[1] 解决验证问题</a></p>
-<p><a href="https://zhuanlan.zhihu.com/p/100922816">[2] 提交sitemap</a></p>
-]]></content>
-      <categories>
-        <category>博客优化</category>
-      </categories>
-  </entry>
-  <entry>
     <title>博客添加github贡献日历</title>
     <url>/2022/04/01/%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96/%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0github%E8%B4%A1%E7%8C%AE%E6%97%A5%E5%8E%86/</url>
     <content><![CDATA[<h3 id="日历插件"><a href="#日历插件" class="headerlink" title="日历插件"></a>日历插件</h3><p><del>来源于<a href="https://github.com/theme-next/theme-next-calendar">theme-next-calendar</a></del></p>
@@ -110,21 +78,35 @@
       </categories>
   </entry>
   <entry>
-    <title>ibus在pycharm中不能进行汉字输入的问题</title>
-    <url>/2022/06/27/%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/ibus%E5%9C%A8pycharm%E4%B8%AD%E4%B8%8D%E8%83%BD%E8%BF%9B%E8%A1%8C%E6%B1%89%E5%AD%97%E8%BE%93%E5%85%A5%E7%9A%84%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>在使用pycharm过程中，发现pycharm没有办法输入中文，且ibus输入法的候选框一直在左下角，不跟随光标位置。<br>在网络上搜索了一下，目前中文互联网上能搜索到的大部分解决方案因为版本问题多多少少都有些问题。<br>所以这里写一篇基于我使用版本确实有效的一个解决方案。并且指出我在用其他方案来解决时遇到的问题</p>
-<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>打开pycharm  —-&gt;&gt; help —-&gt;&gt; Edit Custom VM Options </p>
-<p>在出现的交互窗中输入</p>
- <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-Drecreate.x11.input.method=true</span><br></pre></td></tr></table></figure>
-<p>重启pycharm 可以正常的输入中文，但是光标跟随问题仍未解决。目前为之还没有找到很好的解决方案</p>
-<h2 id="其他方案"><a href="#其他方案" class="headerlink" title="其他方案"></a>其他方案</h2><h3 id="1-修改pycharm-sh文件"><a href="#1-修改pycharm-sh文件" class="headerlink" title="1.修改pycharm.sh文件"></a>1.<a href="https://blog.csdn.net/weixin_39628498/article/details/110485125">修改pycharm.sh文件</a></h3><p>该方法尝试最大的问题是我的pycharm是从snap中下载的。<br>而通过snap安装的软件，赋予的权限特别高，无论怎么改它的权限，都没有办法写入。<br>chmod命令，chattr命令都试过了，没有用。</p>
-<h3 id="2-加载第三方插件的方法"><a href="#2-加载第三方插件的方法" class="headerlink" title="2.加载第三方插件的方法"></a>2.<a href="https://zhuanlan.zhihu.com/p/342670244">加载第三方插件的方法</a></h3><p>这个方案尝试过程中，遇到的最大问题是本版本pycharm搜索不到choose runtime 需要自己手动下载。<br>而且文章中给的JBR文件链接也是无效的。<br>这里提供一个<a href="https://plugins.jetbrains.com/plugin/12836-choose-runtime/versions">choose runtime</a>的手动下载链接。<br>下载后在pycharm插件界面本地添加插件添加choose runtime即可。</p>
-<p>需要注意的是，这个方案的尝试中，我确实成功了。<br>但是也只是解决了pycharm中不能输入中文的问题。<br>光标不跟随问题仍不能解决。<br>并且按这个方案做完之后 pycharm 中 markdown 插件会出bug，直接失效。<br>这里写出来仅供参考。</p>
-<h2 id="版本信息"><a href="#版本信息" class="headerlink" title="版本信息"></a>版本信息</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Distributor 		 Ubuntu 22.04 LTS  </span><br><span class="line">Codename: 		 jammy  </span><br><span class="line">架构: 			 x86_64  </span><br><span class="line">ibus框架：		 IBus 1.5.26</span><br><span class="line">ibus输入法：		 IBus 智能拼音 1.12.1</span><br><span class="line">pycharm:		 community_11.0.15</span><br></pre></td></tr></table></figure>
-<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="https://blog.csdn.net/m0_54032194/article/details/119081008">https://blog.csdn.net/m0_54032194/article/details/119081008</a></p>
+    <title>hexo框架下的博客提交至google搜索</title>
+    <url>/2022/07/10/%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96/blog%E8%83%BD%E8%A2%AB%E6%90%9C%E7%B4%A2%E5%88%B0/</url>
+    <content><![CDATA[<h3 id="博客优化内容"><a href="#博客优化内容" class="headerlink" title="博客优化内容"></a>博客优化内容</h3><p>对于刚建立的博客来说，谷歌往往不能或者不会收录你的博客，为了使自己的博客可以被谷歌所检索到。我们需要主动向谷歌提供网址信息。</p>
+<h3 id="优化方案"><a href="#优化方案" class="headerlink" title="优化方案"></a>优化方案</h3><p>谷歌提供了如何向谷歌提交搜索的方法，同样bing，搜狗，百度等搜索引擎也有相同的提交方案。<br>如果你想你的博客被全网搜索到，那么你需要在主流的搜索引擎上分别提交你的网址。要注意的是百度的提交原理跟其他搜索引擎有所不同。这篇博客只以谷歌搜索为例子。以下操作均在 <a href="https://search.google.com/search-console/about">[Google Search Console]</a> 中完成。</p>
+<h4 id="1-验证网站所属"><a href="#1-验证网站所属" class="headerlink" title="1.验证网站所属"></a>1.验证网站所属</h4><p>进入 <a href="https://search.google.com/search-console/about">[Google Search Console]</a> 后会显示</p>
+<p><img src="https://raw.githubusercontent.com/Lantary/Private_warehouses/main/hexo%E6%A1%86%E6%9E%B6%E4%B8%8B%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%8F%90%E4%BA%A4%E8%87%B3google%E6%90%9C%E7%B4%A2/p1.png" alt="piture_1"></p>
+<p>输入你博客的地址后点击继续。</p>
+<p><img src="https://github.com/Lantary/Private_warehouses/blob/main/hexo%E6%A1%86%E6%9E%B6%E4%B8%8B%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%8F%90%E4%BA%A4%E8%87%B3google%E6%90%9C%E7%B4%A2/p2.png?raw=true" alt="piture_2"></p>
+<p>选择验证网站所有权信息的方式。这里需要注意如果你的bolg是以hexo框架搭建的。 那么最好不要选择第一种 <code>HTML文件验证</code> 的方式。 因为hexo会自动编译你下载的HTML文件，使其失效，若想要用这种验证方式，那么需要在hexo编译完后，再添加HTML文件。 即在 <code>hexo g</code> 后，再添加HTML文件。且你每一次部署都需要如此操作十分麻烦。故不推荐。</p>
+<p>这里用第二种方式 <code>HTML标记</code> 进行验证。 复制content中的内容到主题中的配置文件 <code>_config.yml</code> 。 在属性 <code>google_site_verification:</code> 后添加content后的内容</p>
+<p><img src="https://raw.githubusercontent.com/Lantary/Private_warehouses/main/hexo%E6%A1%86%E6%9E%B6%E4%B8%8B%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%8F%90%E4%BA%A4%E8%87%B3google%E6%90%9C%E7%B4%A2/p3.png" alt="piture_3"></p>
+<p>最后通过验证如图所示。</p>
+<p><img src="https://raw.githubusercontent.com/Lantary/Private_warehouses/main/hexo%E6%A1%86%E6%9E%B6%E4%B8%8B%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%8F%90%E4%BA%A4%E8%87%B3google%E6%90%9C%E7%B4%A2/p4.png" alt="piture_4"></p>
+<h4 id="2-添加sitemap文件到博客"><a href="#2-添加sitemap文件到博客" class="headerlink" title="2.添加sitemap文件到博客"></a>2.添加sitemap文件到博客</h4><p>向博客中添加站点地图的方式有很多。这里推荐一种用插件实现的方案。 首先要在你的博客根目录下下载插件。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-sitemap --save</span><br></pre></td></tr></table></figure>
+<p>插件安装完成后，在public中文件夹中会生成一个 <code>sitemap.xml</code>，如果没有请重新编译一下 <code>hexo g</code> 再进行检查。 同时修改博客根目录下的站点配置文件 <code>_config.yml</code> 中的 url 属性，将你的主页网站输入到url中。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># URL</span><br><span class="line">## Set your site url here. For example, if you use GitHub Page, set url as &#x27;https://username.github.io/project&#x27;</span><br><span class="line">url: https://lantary.github.io/</span><br><span class="line">permalink: :year/:month/:day/:title/</span><br><span class="line">permalink_defaults:</span><br><span class="line">pretty_urls:</span><br><span class="line">  trailing_index: true # Set to false to remove trailing &#x27;index.html&#x27; from permalinks</span><br><span class="line">  trailing_html: true # Set to false to remove trailing &#x27;.html&#x27; from permalinks</span><br></pre></td></tr></table></figure>
+<p>重新编译部署 <code>hexo g -d</code>。在谷歌站点地图中输入sitemap.xml后提交即可。</p>
+<p><img src="https://github.com/Lantary/Private_warehouses/blob/main/hexo%E6%A1%86%E6%9E%B6%E4%B8%8B%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%8F%90%E4%BA%A4%E8%87%B3google%E6%90%9C%E7%B4%A2/p5.png?raw=true" alt="piture_5"></p>
+<h4 id="3-其他网站索引添加"><a href="#3-其他网站索引添加" class="headerlink" title="3.其他网站索引添加"></a>3.其他网站索引添加</h4><p>其他网站添加索引的方式与谷歌搜索类似，如果是bing则可以直接使用<a href="https://search.google.com/search-console/about">[Google Search Console]</a>的数据</p>
+<h3 id="版本信息"><a href="#版本信息" class="headerlink" title="版本信息"></a>版本信息</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">博客框架		hexo-cli_4.3.0</span><br><span class="line">主题		next_7.8.0</span><br><span class="line">网站挂载于	github</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><p><a href="https://javahikers.github.io/2019/06/16/personal-blog-being-included-in-google/">[1] 解决验证问题</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/100922816">[2] 提交sitemap</a></p>
 ]]></content>
       <categories>
-        <category>日常使用中的问题</category>
+        <category>博客优化</category>
       </categories>
   </entry>
   <entry>
@@ -179,34 +161,21 @@
       </categories>
   </entry>
   <entry>
-    <title>DAVID富集分析(一)</title>
-    <url>/2022/05/20/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6/001_DAVID%E5%9C%A8%E7%BA%BF%E5%AF%8C%E9%9B%86%E5%88%86%E6%9E%90/</url>
-    <content><![CDATA[<p>转自<a href="https://blog.csdn.net/xiaobai1_1/article/details/103596474">https://blog.csdn.net/xiaobai1_1/article/details/103596474</a></p>
-<p>原帖所用的是旧版的DAVID 因为各种原因，我用原帖的基因编号进行分析并没能得到同样的结果，故操作步骤与原帖相似，但重新选取了分析的基因。在一般的富集分析中被分析的基因往往来自于某一或一些列实验中差异分析的结果。</p>
-<h1 id="1-使用DAVID-进行-GO-KEGG-富集分析"><a href="#1-使用DAVID-进行-GO-KEGG-富集分析" class="headerlink" title="1.使用DAVID 进行 GO/ KEGG 富集分析"></a>1.使用DAVID 进行 GO/ KEGG 富集分析</h1><p>  a.打开DAVID官网：<a href="https://david.ncifcrf.gov/">https://david.ncifcrf.gov/</a></p>
-<p>  b.点击上侧功能菜单：shortcut to DAVID Tools 进入Function Annotation</p>
-<p>  c.进入到如下的页面中，页面中的大红框中就是进行分析所用的主要操作区域。进入分析页面后，通过如下三步即可完成分析：<br>提交基因列表 –&gt; 选定提交列表类型 –&gt; 开始分析</p>
-<p>  <code>用本文件夹下 用于练手的基因文件 可跳过d步骤，e步骤中选择数据类型为ENSEMBL_TRANSCRIPT_ID</code></p>
-<p>  d.在 “Enter Gene List” 中上传基因列表，格式是每行一个基因。按照 DAVID 的要求，总的基因个数不得超过 3000 个。我们这里去GO数据库以glyoxylate cycle为关键词对搜索出的蛋白进行分析。（以该循环内的蛋白为例）选中所需的蛋白（全部）点击Download，选择bioentity_internal_id 项，实际就是蛋白的UniProtAccession编号。</p>
-<p>  这一步是为了获取用于分析的原数据，也可以使用本文档的 000_差异分析 中获得的蛋白，ENSEMBL_TRANSCRIPT_ID 数据进行富集分析</p>
-<p>  <img src="https://user-images.githubusercontent.com/102901955/166140079-c8902b77-a27e-432c-98cd-464a71edc6d3.png" alt="image"></p>
-<p>  然后通过<a href="https://biodbnet-abcc.ncifcrf.gov/db/db2db.php">https://biodbnet-abcc.ncifcrf.gov/db/db2db.php</a> （一个基因格式转换的工具网站） 进行ID转换，input选择UniProtAccession， output选择AffyID，后将d步骤的UniProtAccession编号复制入转换框中进行转换</p>
-<p>  <img src="https://user-images.githubusercontent.com/102901955/166141328-e64b162a-fa97-48a8-ae69-7ec69e0dd4a4.png" alt="image"></p>
-<p>  结果如下图</p>
-<p>  <img src="https://user-images.githubusercontent.com/102901955/166141337-a3df761f-ae5c-460f-a623-f2e1a5829b9b.png" alt="image"></p>
-<p>  这种转换可能会产生缺项。</p>
-<p>  e.“Select Identifier” 中选择上传的基因类型，因为我们上传的是AffyID，所以在下拉菜单中选择 “AFFYMETRIX_3PRIME_IVT_ID”。</p>
-<p>  f.在 “List Type” 中有两个单选框，我们统一选择 “Gene List” 这一项。</p>
-<p>  g.点击 “Submit List” 即可</p>
-<p>  <img src="https://user-images.githubusercontent.com/102901955/166141385-45260d50-3960-47da-b02d-170dd9834381.png" alt="image"></p>
-<p>  h.提交基因列表之后，经过几秒钟的等待，如果分析顺利，就会弹出一个提示：Please note that multiple species have been detected in your gene list.<br>    这句话的意思就是在我们提交的基因列表中检测到多个物种，需要我们选择相应的物种。<br>    点击弹出框中的 “确定”，然后在 “List” 中的选择相应物种，于本次分析使用的是人类细胞，<br>    故这里我们选择 “Homo sapiens”，（读者可根据自己研究物种的类型进行选择）并点击下方的 “Select Species” 即可。</p>
-<p>  i.在功能富集分析的结果中有多个折叠栏，其中 Gene_Ontology 这一折叠栏中有有三个栏目：GOTERM_BP_FAT、GOTERM_CC_FAT、GOTERM_MF_FAT 就是我们想要的 GO 功能富集分析结果。<br>    而 Pathways 里面有一个 KEGG_PATHWAY 就是我们要的结果。找到 BP、CC、MF 和 KEGG 对应的详细结果， 点击每个栏目后面的 “Chart” 即可。<br>   <img src="https://user-images.githubusercontent.com/102901955/166135146-40de1cb7-b8d7-4201-af5b-211f8ab3346b.png" alt="20191218161843663"></p>
-<p>  j.点击 “Chart” 之后，即可出现如下图所示的结果，这里面有几列数据分别是：Category、Term、RT、Genes、Count、%、P-Value 和 Benjamini。<br>    这几列中我们比较关心的是：Term（GO语义）、P-Value（P值）、Count（基因数）、%（基因比例）点击红框中的 Download File 即可。<br>    打开一个新的网页，新打开的网页就是分析结果的文本文件，可以下载或者导入到作图软件中进行后续的操作。</p>
-<p>  <img src="https://user-images.githubusercontent.com/102901955/166141475-d371c498-c404-4bad-ab8c-004398b9b026.png" alt="image"></p>
+    <title>ibus在pycharm中不能进行汉字输入的问题</title>
+    <url>/2022/06/27/%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/ibus%E5%9C%A8pycharm%E4%B8%AD%E4%B8%8D%E8%83%BD%E8%BF%9B%E8%A1%8C%E6%B1%89%E5%AD%97%E8%BE%93%E5%85%A5%E7%9A%84%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>在使用pycharm过程中，发现pycharm没有办法输入中文，且ibus输入法的候选框一直在左下角，不跟随光标位置。<br>在网络上搜索了一下，目前中文互联网上能搜索到的大部分解决方案因为版本问题多多少少都有些问题。<br>所以这里写一篇基于我使用版本确实有效的一个解决方案。并且指出我在用其他方案来解决时遇到的问题</p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>打开pycharm  —-&gt;&gt; help —-&gt;&gt; Edit Custom VM Options </p>
+<p>在出现的交互窗中输入</p>
+ <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-Drecreate.x11.input.method=true</span><br></pre></td></tr></table></figure>
+<p>重启pycharm 可以正常的输入中文，但是光标跟随问题仍未解决。目前为之还没有找到很好的解决方案</p>
+<h2 id="其他方案"><a href="#其他方案" class="headerlink" title="其他方案"></a>其他方案</h2><h3 id="1-修改pycharm-sh文件"><a href="#1-修改pycharm-sh文件" class="headerlink" title="1.修改pycharm.sh文件"></a>1.<a href="https://blog.csdn.net/weixin_39628498/article/details/110485125">修改pycharm.sh文件</a></h3><p>该方法尝试最大的问题是我的pycharm是从snap中下载的。<br>而通过snap安装的软件，赋予的权限特别高，无论怎么改它的权限，都没有办法写入。<br>chmod命令，chattr命令都试过了，没有用。</p>
+<h3 id="2-加载第三方插件的方法"><a href="#2-加载第三方插件的方法" class="headerlink" title="2.加载第三方插件的方法"></a>2.<a href="https://zhuanlan.zhihu.com/p/342670244">加载第三方插件的方法</a></h3><p>这个方案尝试过程中，遇到的最大问题是本版本pycharm搜索不到choose runtime 需要自己手动下载。<br>而且文章中给的JBR文件链接也是无效的。<br>这里提供一个<a href="https://plugins.jetbrains.com/plugin/12836-choose-runtime/versions">choose runtime</a>的手动下载链接。<br>下载后在pycharm插件界面本地添加插件添加choose runtime即可。</p>
+<p>需要注意的是，这个方案的尝试中，我确实成功了。<br>但是也只是解决了pycharm中不能输入中文的问题。<br>光标不跟随问题仍不能解决。<br>并且按这个方案做完之后 pycharm 中 markdown 插件会出bug，直接失效。<br>这里写出来仅供参考。</p>
+<h2 id="版本信息"><a href="#版本信息" class="headerlink" title="版本信息"></a>版本信息</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Distributor 		 Ubuntu 22.04 LTS  </span><br><span class="line">Codename: 		 jammy  </span><br><span class="line">架构: 			 x86_64  </span><br><span class="line">ibus框架：		 IBus 1.5.26</span><br><span class="line">ibus输入法：		 IBus 智能拼音 1.12.1</span><br><span class="line">pycharm:		 community_11.0.15</span><br></pre></td></tr></table></figure>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="https://blog.csdn.net/m0_54032194/article/details/119081008">https://blog.csdn.net/m0_54032194/article/details/119081008</a></p>
 ]]></content>
       <categories>
-        <category>生物信息学</category>
-        <category>富集分析</category>
+        <category>日常使用中的问题</category>
       </categories>
   </entry>
   <entry>
@@ -346,56 +315,30 @@ lty                 -改变标签线的类型, 可以设置通过与plot图像�
       </categories>
   </entry>
   <entry>
-    <title>差异分析</title>
-    <url>/2022/05/20/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6/%E5%B7%AE%E5%BC%82%E5%88%86%E6%9E%90/</url>
-    <content><![CDATA[<h1 id="一、什么是差异分析"><a href="#一、什么是差异分析" class="headerlink" title="一、什么是差异分析"></a>一、什么是差异分析</h1><p>差异分析简单来说就是我们通过一组实验后，实验组中所提取的总mRNA 较 对照组提取的总mRNA有显著性提高或者是降低的部分mRNA，寻找这部分有差异的mRNA就被称为差异分析</p>
-<p>在常见的差异分析中，有几个比较常用的库下面来介绍一下</p>
-<h2 id="1-GEO数据库"><a href="#1-GEO数据库" class="headerlink" title="1.GEO数据库"></a>1.GEO数据库</h2><p>  GEO数据库可以理解为一个实验原始数据的储存库。</p>
-<p>  如图所示，这是一个 研究某基因 对酮酸脱氢酶活性是否有促进性的实验。</p>
-<p>  <img src="https://user-images.githubusercontent.com/102901955/166443694-5c94a8e0-0e2b-4364-837e-e701537ac0a1.png" alt="image"></p>
-<p>  GSE号：是这组实验的编号，在GEO每个不同的实验编号唯一，用于检索。</p>
-<p>  GPL号：实验芯片平台，在GEO数据库的实验信息，往往是通过基因芯片高通量测序的方式测量转录组。简单来讲就是基因芯片中包含了这个实验测量了哪些基因的表达量</p>
-<p>  GSM号：是每一种样品处理方式的编号，一组实验中（一个GSE号）往往有多种处理（GSM号），例如，在研究pH压迫某微生物生长时，当你设置了5个梯度，则在一个GSE号中至少会有5个GSM号，即五种处理方式。如果设置了3个重复，则会有15个GSM号，GSM在GEO数据库中也是唯一的，可以通过GSM来唯一检索。</p>
-<p>  表达矩阵：表达矩阵中包含了每种处理下，样品被提取出的总mRNA的表达情况。简单来讲就是测量的“值域”，而平台信息就是测量的“定义域”</p>
-<h1 id="二、如何进行差异分析"><a href="#二、如何进行差异分析" class="headerlink" title="二、如何进行差异分析"></a>二、如何进行差异分析</h1><h2 id="1-下载原始文件"><a href="#1-下载原始文件" class="headerlink" title="1.下载原始文件"></a>1.下载原始文件</h2><p>   下载表达矩阵文件</p>
-<p>   <img src="https://user-images.githubusercontent.com/102901955/166445401-bf365267-070d-47a6-9d04-f496323ee36b.png" alt="image"></p>
-<p>   下载实验芯片平台信息</p>
-<p>   <img src="https://user-images.githubusercontent.com/102901955/166446074-3e9de36f-fb6d-4fe1-8ecb-dff09c444997.png" alt="image"></p>
-<p>   在处理样本量比较小的情况下，可以手动记录一下，每个GSM号对应的处理方式</p>
-<p>   在处理样本量比较大的请胯下，# 待编辑 #</p>
-<h2 id="2-将原始数据导入你的R中并且进行格式化处理"><a href="#2-将原始数据导入你的R中并且进行格式化处理" class="headerlink" title="2.将原始数据导入你的R中并且进行格式化处理"></a>2.将原始数据导入你的R中并且进行格式化处理</h2><p>   分析过程中依赖的包：limma，stringr</p>
-<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">library<span class="punctuation">(</span>limma<span class="punctuation">)</span></span><br><span class="line">library<span class="punctuation">(</span>stringr<span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 首先设置你的工作目录</span></span><br><span class="line">setwd<span class="punctuation">(</span><span class="string">&quot;E:/Project/R/差异分析&quot;</span><span class="punctuation">)</span> </span><br><span class="line">  </span><br><span class="line"><span class="comment"># 导入表达矩阵</span></span><br><span class="line">expmatrix_data <span class="operator">&lt;-</span> read.table<span class="punctuation">(</span><span class="string">&quot;GSE115269_series_matrix.txt&quot;</span><span class="punctuation">,</span> header <span class="operator">=</span> <span class="literal">TRUE</span><span class="punctuation">,</span> skip <span class="operator">=</span> <span class="number">64</span><span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 导入平台文件 </span></span><br><span class="line">pla_data <span class="operator">&lt;-</span> read.table<span class="punctuation">(</span><span class="string">&quot;GPL18233-21178.txt&quot;</span><span class="punctuation">,</span> sep <span class="operator">=</span> <span class="string">&quot;\t&quot;</span><span class="punctuation">,</span> header <span class="operator">=</span> <span class="built_in">T</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
-
-<p>   在表达矩阵导入中，因为我用的表达矩阵从第65行开始才是矩阵数据，所以设置了skip。</p>
-<p>   <img src="https://user-images.githubusercontent.com/102901955/166447821-199cb428-0458-48fa-8e46-abb11511e564.png" alt="image"></p>
-<figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 格式化平台文件（将转录组编号列提出，只保留ENSMUST编号）</span></span><br><span class="line">mRNA_assigment <span class="operator">&lt;-</span> pla_data<span class="punctuation">[</span><span class="punctuation">,</span> <span class="string">&quot;mrna_assignment&quot;</span><span class="punctuation">]</span>   </span><br><span class="line"></span><br><span class="line">pattern <span class="operator">&lt;-</span> <span class="string">&quot;ENSMUST\\d*&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> <span class="punctuation">(</span>i <span class="keyword">in</span> <span class="number">1</span><span class="operator">:</span><span class="built_in">length</span><span class="punctuation">(</span>mRNA_assigment<span class="punctuation">)</span><span class="punctuation">)</span><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="comment"># 用正则表达式循环替换单元格内的内容</span></span><br><span class="line">  mRNA_assigment<span class="punctuation">[</span>i<span class="punctuation">]</span> <span class="operator">&lt;-</span> str_match<span class="punctuation">(</span>string <span class="operator">=</span> mRNA_assigment<span class="punctuation">[</span>i<span class="punctuation">]</span><span class="punctuation">,</span> pattern <span class="operator">=</span> pattern<span class="punctuation">)</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br><span class="line"></span><br><span class="line">pla_data<span class="punctuation">[</span><span class="punctuation">,</span> <span class="string">&quot;mrna_assignment&quot;</span><span class="punctuation">]</span> <span class="operator">&lt;-</span> mRNA_assigment</span><br><span class="line"></span><br><span class="line">  <span class="comment"># 让平台文件以ID列重排序</span></span><br><span class="line">pla_data <span class="operator">&lt;-</span> pla_data<span class="punctuation">[</span>order<span class="punctuation">(</span>pla_data<span class="punctuation">[</span><span class="punctuation">,</span> <span class="string">&#x27;ID&#x27;</span><span class="punctuation">]</span><span class="punctuation">)</span><span class="punctuation">,</span> <span class="punctuation">]</span></span><br></pre></td></tr></table></figure>
-<p>   格式化的目的是从上图到下图，</p>
-<p>   <img src="https://user-images.githubusercontent.com/102901955/166448469-d5f0dff7-f3a1-4a5e-acea-6e841a2d7737.png" alt="image"><br>   <img src="https://user-images.githubusercontent.com/102901955/166448601-266dc6e6-5625-46c5-84c1-b758cd39261c.png" alt="image"></p>
-<p>   即让多个转录组编号转成一个，并且让平台文件按基因编号排序，这样处理是为了后续富集分析的方便。可能会出现转录组缺失的情况，因为多个编号转成了一个。</p>
-<figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 将样品处理方式导入R --手动 这里写样品的处理方式，不同实验有所不同</span></span><br><span class="line">samp_treat <span class="operator">&lt;-</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="string">&quot;DJ-1+/+_01&quot;</span><span class="punctuation">,</span> <span class="string">&quot;DJ-1+/+_02&quot;</span><span class="punctuation">,</span> <span class="string">&quot;DJ-1+/+_03&quot;</span><span class="punctuation">,</span> <span class="string">&quot;DJ-1-/-_01&quot;</span><span class="punctuation">,</span> <span class="string">&quot;DJ-1-/-_02&quot;</span><span class="punctuation">,</span> <span class="string">&quot;DJ-1-/-_03&quot;</span><span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 以csv文件保存格式化后的平台注释文件</span></span><br><span class="line">write.table<span class="punctuation">(</span>pla_data<span class="punctuation">,</span> <span class="string">&quot;pla_data.csv&quot;</span><span class="punctuation">,</span> row.names <span class="operator">=</span> <span class="built_in">T</span><span class="punctuation">,</span> col.names <span class="operator">=</span> <span class="built_in">T</span><span class="punctuation">,</span> sep <span class="operator">=</span> <span class="string">&quot;,&quot;</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
-<p>   因为R使用不熟练的原因，后续富集部分操作可能需要在excel中进行，故导出格式化后的平台注释文件。</p>
-<figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 格式化表达矩阵</span></span><br><span class="line">rownames<span class="punctuation">(</span>expmatrix_data<span class="punctuation">)</span> <span class="operator">&lt;-</span> expmatrix_data<span class="punctuation">[</span><span class="punctuation">,</span> <span class="string">&quot;ID_REF&quot;</span><span class="punctuation">]</span></span><br><span class="line"></span><br><span class="line">expmatrix_data <span class="operator">&lt;-</span> expmatrix_data<span class="punctuation">[</span><span class="punctuation">,</span> <span class="operator">-</span><span class="number">1</span><span class="punctuation">]</span></span><br><span class="line"></span><br><span class="line">colnames<span class="punctuation">(</span>expmatrix_data<span class="punctuation">)</span> <span class="operator">&lt;-</span> samp_treat</span><br><span class="line"></span><br><span class="line">expmatrix_data <span class="operator">&lt;-</span> log2<span class="punctuation">(</span>expmatrix_data<span class="punctuation">)</span> </span><br></pre></td></tr></table></figure>
-<p>  格式化目的是上图到下图</p>
-<p>  <img src="https://user-images.githubusercontent.com/102901955/166449476-7360a7ae-858c-4aca-82ab-68ef6f66dedd.png" alt="image"><br>  <img src="https://user-images.githubusercontent.com/102901955/166449646-95bf82db-4fe6-4724-ab94-f921736897f4.png" alt="image"></p>
-<h2 id="3-用limma包进行差异分析"><a href="#3-用limma包进行差异分析" class="headerlink" title="3.用limma包进行差异分析"></a>3.用limma包进行差异分析</h2><figure class="highlight r"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># 根据样本处理方式设计design矩阵</span></span><br><span class="line">group_list <span class="operator">&lt;-</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="built_in">rep</span><span class="punctuation">(</span><span class="string">&quot;Control&quot;</span><span class="punctuation">,</span> <span class="number">3</span><span class="punctuation">)</span><span class="punctuation">,</span> <span class="built_in">rep</span><span class="punctuation">(</span><span class="string">&quot;Treatment&quot;</span><span class="punctuation">,</span> <span class="number">3</span><span class="punctuation">)</span><span class="punctuation">)</span> </span><br><span class="line"></span><br><span class="line">design <span class="operator">&lt;-</span> model.matrix<span class="punctuation">(</span><span class="operator">~</span><span class="number">0</span> <span class="operator">+</span> factor<span class="punctuation">(</span>group_list<span class="punctuation">)</span><span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line">colnames<span class="punctuation">(</span>design<span class="punctuation">)</span> <span class="operator">=</span> levels<span class="punctuation">(</span>factor<span class="punctuation">(</span>group_list<span class="punctuation">)</span><span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line">rownames<span class="punctuation">(</span>design<span class="punctuation">)</span> <span class="operator">=</span> colnames<span class="punctuation">(</span>expmatrix_data<span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
-
-<p>设置design矩阵的目的是为了对样本分组，但model.matrix函数的构造原理不是很清楚，这个需要进一步学习。总之就是构造出下图一样的分组。</p>
-<p><img src="https://user-images.githubusercontent.com/102901955/166450324-cba4ae19-fbc4-477e-b831-e26ceb873989.png" alt="image"></p>
-<p><img src="https://user-images.githubusercontent.com/102901955/166450398-3acded90-8d4b-4bfc-a0d1-196384dfef91.png" alt="image"></p>
-<p>这个design矩阵是含有level信息的。</p>
-<figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 模型拟合及分析</span></span><br><span class="line">fit <span class="operator">&lt;-</span> lmFit<span class="punctuation">(</span>expmatrix_data<span class="punctuation">,</span> design<span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line">contrast.matrix <span class="operator">&lt;-</span> makeContrasts<span class="punctuation">(</span><span class="string">&quot;Control-Treatment&quot;</span><span class="punctuation">,</span> levels <span class="operator">=</span> design<span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line">fit2 <span class="operator">&lt;-</span> contrasts.fit<span class="punctuation">(</span>fit<span class="punctuation">,</span> contrast.matrix<span class="punctuation">)</span> </span><br><span class="line"></span><br><span class="line">fit2 <span class="operator">&lt;-</span> eBayes<span class="punctuation">(</span>fit2<span class="punctuation">)</span> </span><br><span class="line"></span><br><span class="line">expDiff_data <span class="operator">&lt;-</span> topTable<span class="punctuation">(</span>fit2<span class="punctuation">,</span> coef <span class="operator">=</span> <span class="number">1</span><span class="punctuation">,</span> n <span class="operator">=</span> <span class="literal">Inf</span><span class="punctuation">)</span> <span class="operator">%&gt;%</span> na.omit<span class="punctuation">(</span><span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># 保存差异分析结果文件</span></span><br><span class="line">write.table<span class="punctuation">(</span>expDiff_data<span class="punctuation">,</span> <span class="string">&quot;expDiff.csv&quot;</span><span class="punctuation">,</span> row.names <span class="operator">=</span> <span class="literal">TRUE</span><span class="punctuation">,</span> col.names <span class="operator">=</span> <span class="literal">TRUE</span><span class="punctuation">,</span> sep <span class="operator">=</span> <span class="string">&quot;,&quot;</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
-
-<p>分析后得到的expDiff_data如图所示</p>
-<p><img src="https://user-images.githubusercontent.com/102901955/166450968-704e6eee-eb8d-4275-9ba9-13dd057e67dc.png" alt="image"></p>
-<p>后续操作转至excel</p>
-<p>打开expDiff.csv文件</p>
-<p><img src="https://user-images.githubusercontent.com/102901955/166451186-2118dcce-fda7-4145-8c54-b625bfb60de0.png" alt="image"></p>
-<p>将expDiff.csv文件列名调整好，并且将第一列转为数字格式，进行升序排序</p>
-<p>然后将平台信息中的，转录组编号复制至expDiff.csv文件中，注意检查基因编号是不是相同的。</p>
-<p>最后得到expDiff.csv文件如图所示</p>
-<p><img src="https://user-images.githubusercontent.com/102901955/166452304-f9c03157-becb-4bd1-a01b-c32b2d9d55b2.png" alt="image"></p>
-<p>Fold change 表示 实验组基因表达量 与 对照组基因表达量 的比值 </p>
-<p><img src="https://user-images.githubusercontent.com/102901955/166248412-302a40e9-2b30-488e-86fe-3c5439089f9a.png" alt="image"></p>
+    <title>DAVID富集分析(一)</title>
+    <url>/2022/05/20/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6/001_DAVID%E5%9C%A8%E7%BA%BF%E5%AF%8C%E9%9B%86%E5%88%86%E6%9E%90/</url>
+    <content><![CDATA[<p>转自<a href="https://blog.csdn.net/xiaobai1_1/article/details/103596474">https://blog.csdn.net/xiaobai1_1/article/details/103596474</a></p>
+<p>原帖所用的是旧版的DAVID 因为各种原因，我用原帖的基因编号进行分析并没能得到同样的结果，故操作步骤与原帖相似，但重新选取了分析的基因。在一般的富集分析中被分析的基因往往来自于某一或一些列实验中差异分析的结果。</p>
+<h1 id="1-使用DAVID-进行-GO-KEGG-富集分析"><a href="#1-使用DAVID-进行-GO-KEGG-富集分析" class="headerlink" title="1.使用DAVID 进行 GO/ KEGG 富集分析"></a>1.使用DAVID 进行 GO/ KEGG 富集分析</h1><p>  a.打开DAVID官网：<a href="https://david.ncifcrf.gov/">https://david.ncifcrf.gov/</a></p>
+<p>  b.点击上侧功能菜单：shortcut to DAVID Tools 进入Function Annotation</p>
+<p>  c.进入到如下的页面中，页面中的大红框中就是进行分析所用的主要操作区域。进入分析页面后，通过如下三步即可完成分析：<br>提交基因列表 –&gt; 选定提交列表类型 –&gt; 开始分析</p>
+<p>  <code>用本文件夹下 用于练手的基因文件 可跳过d步骤，e步骤中选择数据类型为ENSEMBL_TRANSCRIPT_ID</code></p>
+<p>  d.在 “Enter Gene List” 中上传基因列表，格式是每行一个基因。按照 DAVID 的要求，总的基因个数不得超过 3000 个。我们这里去GO数据库以glyoxylate cycle为关键词对搜索出的蛋白进行分析。（以该循环内的蛋白为例）选中所需的蛋白（全部）点击Download，选择bioentity_internal_id 项，实际就是蛋白的UniProtAccession编号。</p>
+<p>  这一步是为了获取用于分析的原数据，也可以使用本文档的 000_差异分析 中获得的蛋白，ENSEMBL_TRANSCRIPT_ID 数据进行富集分析</p>
+<p>  <img src="https://user-images.githubusercontent.com/102901955/166140079-c8902b77-a27e-432c-98cd-464a71edc6d3.png" alt="image"></p>
+<p>  然后通过<a href="https://biodbnet-abcc.ncifcrf.gov/db/db2db.php">https://biodbnet-abcc.ncifcrf.gov/db/db2db.php</a> （一个基因格式转换的工具网站） 进行ID转换，input选择UniProtAccession， output选择AffyID，后将d步骤的UniProtAccession编号复制入转换框中进行转换</p>
+<p>  <img src="https://user-images.githubusercontent.com/102901955/166141328-e64b162a-fa97-48a8-ae69-7ec69e0dd4a4.png" alt="image"></p>
+<p>  结果如下图</p>
+<p>  <img src="https://user-images.githubusercontent.com/102901955/166141337-a3df761f-ae5c-460f-a623-f2e1a5829b9b.png" alt="image"></p>
+<p>  这种转换可能会产生缺项。</p>
+<p>  e.“Select Identifier” 中选择上传的基因类型，因为我们上传的是AffyID，所以在下拉菜单中选择 “AFFYMETRIX_3PRIME_IVT_ID”。</p>
+<p>  f.在 “List Type” 中有两个单选框，我们统一选择 “Gene List” 这一项。</p>
+<p>  g.点击 “Submit List” 即可</p>
+<p>  <img src="https://user-images.githubusercontent.com/102901955/166141385-45260d50-3960-47da-b02d-170dd9834381.png" alt="image"></p>
+<p>  h.提交基因列表之后，经过几秒钟的等待，如果分析顺利，就会弹出一个提示：Please note that multiple species have been detected in your gene list.<br>    这句话的意思就是在我们提交的基因列表中检测到多个物种，需要我们选择相应的物种。<br>    点击弹出框中的 “确定”，然后在 “List” 中的选择相应物种，于本次分析使用的是人类细胞，<br>    故这里我们选择 “Homo sapiens”，（读者可根据自己研究物种的类型进行选择）并点击下方的 “Select Species” 即可。</p>
+<p>  i.在功能富集分析的结果中有多个折叠栏，其中 Gene_Ontology 这一折叠栏中有有三个栏目：GOTERM_BP_FAT、GOTERM_CC_FAT、GOTERM_MF_FAT 就是我们想要的 GO 功能富集分析结果。<br>    而 Pathways 里面有一个 KEGG_PATHWAY 就是我们要的结果。找到 BP、CC、MF 和 KEGG 对应的详细结果， 点击每个栏目后面的 “Chart” 即可。<br>   <img src="https://user-images.githubusercontent.com/102901955/166135146-40de1cb7-b8d7-4201-af5b-211f8ab3346b.png" alt="20191218161843663"></p>
+<p>  j.点击 “Chart” 之后，即可出现如下图所示的结果，这里面有几列数据分别是：Category、Term、RT、Genes、Count、%、P-Value 和 Benjamini。<br>    这几列中我们比较关心的是：Term（GO语义）、P-Value（P值）、Count（基因数）、%（基因比例）点击红框中的 Download File 即可。<br>    打开一个新的网页，新打开的网页就是分析结果的文本文件，可以下载或者导入到作图软件中进行后续的操作。</p>
+<p>  <img src="https://user-images.githubusercontent.com/102901955/166141475-d371c498-c404-4bad-ab8c-004398b9b026.png" alt="image"></p>
 ]]></content>
       <categories>
         <category>生物信息学</category>
@@ -508,6 +451,63 @@ lty                 -改变标签线的类型, 可以设置通过与plot图像�
       <categories>
         <category>生物信息学</category>
         <category>生物网络</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>差异分析</title>
+    <url>/2022/05/20/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6/%E5%B7%AE%E5%BC%82%E5%88%86%E6%9E%90/</url>
+    <content><![CDATA[<h1 id="一、什么是差异分析"><a href="#一、什么是差异分析" class="headerlink" title="一、什么是差异分析"></a>一、什么是差异分析</h1><p>差异分析简单来说就是我们通过一组实验后，实验组中所提取的总mRNA 较 对照组提取的总mRNA有显著性提高或者是降低的部分mRNA，寻找这部分有差异的mRNA就被称为差异分析</p>
+<p>在常见的差异分析中，有几个比较常用的库下面来介绍一下</p>
+<h2 id="1-GEO数据库"><a href="#1-GEO数据库" class="headerlink" title="1.GEO数据库"></a>1.GEO数据库</h2><p>  GEO数据库可以理解为一个实验原始数据的储存库。</p>
+<p>  如图所示，这是一个 研究某基因 对酮酸脱氢酶活性是否有促进性的实验。</p>
+<p>  <img src="https://user-images.githubusercontent.com/102901955/166443694-5c94a8e0-0e2b-4364-837e-e701537ac0a1.png" alt="image"></p>
+<p>  GSE号：是这组实验的编号，在GEO每个不同的实验编号唯一，用于检索。</p>
+<p>  GPL号：实验芯片平台，在GEO数据库的实验信息，往往是通过基因芯片高通量测序的方式测量转录组。简单来讲就是基因芯片中包含了这个实验测量了哪些基因的表达量</p>
+<p>  GSM号：是每一种样品处理方式的编号，一组实验中（一个GSE号）往往有多种处理（GSM号），例如，在研究pH压迫某微生物生长时，当你设置了5个梯度，则在一个GSE号中至少会有5个GSM号，即五种处理方式。如果设置了3个重复，则会有15个GSM号，GSM在GEO数据库中也是唯一的，可以通过GSM来唯一检索。</p>
+<p>  表达矩阵：表达矩阵中包含了每种处理下，样品被提取出的总mRNA的表达情况。简单来讲就是测量的“值域”，而平台信息就是测量的“定义域”</p>
+<h1 id="二、如何进行差异分析"><a href="#二、如何进行差异分析" class="headerlink" title="二、如何进行差异分析"></a>二、如何进行差异分析</h1><h2 id="1-下载原始文件"><a href="#1-下载原始文件" class="headerlink" title="1.下载原始文件"></a>1.下载原始文件</h2><p>   下载表达矩阵文件</p>
+<p>   <img src="https://user-images.githubusercontent.com/102901955/166445401-bf365267-070d-47a6-9d04-f496323ee36b.png" alt="image"></p>
+<p>   下载实验芯片平台信息</p>
+<p>   <img src="https://user-images.githubusercontent.com/102901955/166446074-3e9de36f-fb6d-4fe1-8ecb-dff09c444997.png" alt="image"></p>
+<p>   在处理样本量比较小的情况下，可以手动记录一下，每个GSM号对应的处理方式</p>
+<p>   在处理样本量比较大的请胯下，# 待编辑 #</p>
+<h2 id="2-将原始数据导入你的R中并且进行格式化处理"><a href="#2-将原始数据导入你的R中并且进行格式化处理" class="headerlink" title="2.将原始数据导入你的R中并且进行格式化处理"></a>2.将原始数据导入你的R中并且进行格式化处理</h2><p>   分析过程中依赖的包：limma，stringr</p>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">library<span class="punctuation">(</span>limma<span class="punctuation">)</span></span><br><span class="line">library<span class="punctuation">(</span>stringr<span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 首先设置你的工作目录</span></span><br><span class="line">setwd<span class="punctuation">(</span><span class="string">&quot;E:/Project/R/差异分析&quot;</span><span class="punctuation">)</span> </span><br><span class="line">  </span><br><span class="line"><span class="comment"># 导入表达矩阵</span></span><br><span class="line">expmatrix_data <span class="operator">&lt;-</span> read.table<span class="punctuation">(</span><span class="string">&quot;GSE115269_series_matrix.txt&quot;</span><span class="punctuation">,</span> header <span class="operator">=</span> <span class="literal">TRUE</span><span class="punctuation">,</span> skip <span class="operator">=</span> <span class="number">64</span><span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 导入平台文件 </span></span><br><span class="line">pla_data <span class="operator">&lt;-</span> read.table<span class="punctuation">(</span><span class="string">&quot;GPL18233-21178.txt&quot;</span><span class="punctuation">,</span> sep <span class="operator">=</span> <span class="string">&quot;\t&quot;</span><span class="punctuation">,</span> header <span class="operator">=</span> <span class="built_in">T</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+
+<p>   在表达矩阵导入中，因为我用的表达矩阵从第65行开始才是矩阵数据，所以设置了skip。</p>
+<p>   <img src="https://user-images.githubusercontent.com/102901955/166447821-199cb428-0458-48fa-8e46-abb11511e564.png" alt="image"></p>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 格式化平台文件（将转录组编号列提出，只保留ENSMUST编号）</span></span><br><span class="line">mRNA_assigment <span class="operator">&lt;-</span> pla_data<span class="punctuation">[</span><span class="punctuation">,</span> <span class="string">&quot;mrna_assignment&quot;</span><span class="punctuation">]</span>   </span><br><span class="line"></span><br><span class="line">pattern <span class="operator">&lt;-</span> <span class="string">&quot;ENSMUST\\d*&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> <span class="punctuation">(</span>i <span class="keyword">in</span> <span class="number">1</span><span class="operator">:</span><span class="built_in">length</span><span class="punctuation">(</span>mRNA_assigment<span class="punctuation">)</span><span class="punctuation">)</span><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="comment"># 用正则表达式循环替换单元格内的内容</span></span><br><span class="line">  mRNA_assigment<span class="punctuation">[</span>i<span class="punctuation">]</span> <span class="operator">&lt;-</span> str_match<span class="punctuation">(</span>string <span class="operator">=</span> mRNA_assigment<span class="punctuation">[</span>i<span class="punctuation">]</span><span class="punctuation">,</span> pattern <span class="operator">=</span> pattern<span class="punctuation">)</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br><span class="line"></span><br><span class="line">pla_data<span class="punctuation">[</span><span class="punctuation">,</span> <span class="string">&quot;mrna_assignment&quot;</span><span class="punctuation">]</span> <span class="operator">&lt;-</span> mRNA_assigment</span><br><span class="line"></span><br><span class="line">  <span class="comment"># 让平台文件以ID列重排序</span></span><br><span class="line">pla_data <span class="operator">&lt;-</span> pla_data<span class="punctuation">[</span>order<span class="punctuation">(</span>pla_data<span class="punctuation">[</span><span class="punctuation">,</span> <span class="string">&#x27;ID&#x27;</span><span class="punctuation">]</span><span class="punctuation">)</span><span class="punctuation">,</span> <span class="punctuation">]</span></span><br></pre></td></tr></table></figure>
+<p>   格式化的目的是从上图到下图，</p>
+<p>   <img src="https://user-images.githubusercontent.com/102901955/166448469-d5f0dff7-f3a1-4a5e-acea-6e841a2d7737.png" alt="image"><br>   <img src="https://user-images.githubusercontent.com/102901955/166448601-266dc6e6-5625-46c5-84c1-b758cd39261c.png" alt="image"></p>
+<p>   即让多个转录组编号转成一个，并且让平台文件按基因编号排序，这样处理是为了后续富集分析的方便。可能会出现转录组缺失的情况，因为多个编号转成了一个。</p>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 将样品处理方式导入R --手动 这里写样品的处理方式，不同实验有所不同</span></span><br><span class="line">samp_treat <span class="operator">&lt;-</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="string">&quot;DJ-1+/+_01&quot;</span><span class="punctuation">,</span> <span class="string">&quot;DJ-1+/+_02&quot;</span><span class="punctuation">,</span> <span class="string">&quot;DJ-1+/+_03&quot;</span><span class="punctuation">,</span> <span class="string">&quot;DJ-1-/-_01&quot;</span><span class="punctuation">,</span> <span class="string">&quot;DJ-1-/-_02&quot;</span><span class="punctuation">,</span> <span class="string">&quot;DJ-1-/-_03&quot;</span><span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 以csv文件保存格式化后的平台注释文件</span></span><br><span class="line">write.table<span class="punctuation">(</span>pla_data<span class="punctuation">,</span> <span class="string">&quot;pla_data.csv&quot;</span><span class="punctuation">,</span> row.names <span class="operator">=</span> <span class="built_in">T</span><span class="punctuation">,</span> col.names <span class="operator">=</span> <span class="built_in">T</span><span class="punctuation">,</span> sep <span class="operator">=</span> <span class="string">&quot;,&quot;</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+<p>   因为R使用不熟练的原因，后续富集部分操作可能需要在excel中进行，故导出格式化后的平台注释文件。</p>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 格式化表达矩阵</span></span><br><span class="line">rownames<span class="punctuation">(</span>expmatrix_data<span class="punctuation">)</span> <span class="operator">&lt;-</span> expmatrix_data<span class="punctuation">[</span><span class="punctuation">,</span> <span class="string">&quot;ID_REF&quot;</span><span class="punctuation">]</span></span><br><span class="line"></span><br><span class="line">expmatrix_data <span class="operator">&lt;-</span> expmatrix_data<span class="punctuation">[</span><span class="punctuation">,</span> <span class="operator">-</span><span class="number">1</span><span class="punctuation">]</span></span><br><span class="line"></span><br><span class="line">colnames<span class="punctuation">(</span>expmatrix_data<span class="punctuation">)</span> <span class="operator">&lt;-</span> samp_treat</span><br><span class="line"></span><br><span class="line">expmatrix_data <span class="operator">&lt;-</span> log2<span class="punctuation">(</span>expmatrix_data<span class="punctuation">)</span> </span><br></pre></td></tr></table></figure>
+<p>  格式化目的是上图到下图</p>
+<p>  <img src="https://user-images.githubusercontent.com/102901955/166449476-7360a7ae-858c-4aca-82ab-68ef6f66dedd.png" alt="image"><br>  <img src="https://user-images.githubusercontent.com/102901955/166449646-95bf82db-4fe6-4724-ab94-f921736897f4.png" alt="image"></p>
+<h2 id="3-用limma包进行差异分析"><a href="#3-用limma包进行差异分析" class="headerlink" title="3.用limma包进行差异分析"></a>3.用limma包进行差异分析</h2><figure class="highlight r"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># 根据样本处理方式设计design矩阵</span></span><br><span class="line">group_list <span class="operator">&lt;-</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="built_in">rep</span><span class="punctuation">(</span><span class="string">&quot;Control&quot;</span><span class="punctuation">,</span> <span class="number">3</span><span class="punctuation">)</span><span class="punctuation">,</span> <span class="built_in">rep</span><span class="punctuation">(</span><span class="string">&quot;Treatment&quot;</span><span class="punctuation">,</span> <span class="number">3</span><span class="punctuation">)</span><span class="punctuation">)</span> </span><br><span class="line"></span><br><span class="line">design <span class="operator">&lt;-</span> model.matrix<span class="punctuation">(</span><span class="operator">~</span><span class="number">0</span> <span class="operator">+</span> factor<span class="punctuation">(</span>group_list<span class="punctuation">)</span><span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line">colnames<span class="punctuation">(</span>design<span class="punctuation">)</span> <span class="operator">=</span> levels<span class="punctuation">(</span>factor<span class="punctuation">(</span>group_list<span class="punctuation">)</span><span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line">rownames<span class="punctuation">(</span>design<span class="punctuation">)</span> <span class="operator">=</span> colnames<span class="punctuation">(</span>expmatrix_data<span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+
+<p>设置design矩阵的目的是为了对样本分组，但model.matrix函数的构造原理不是很清楚，这个需要进一步学习。总之就是构造出下图一样的分组。</p>
+<p><img src="https://user-images.githubusercontent.com/102901955/166450324-cba4ae19-fbc4-477e-b831-e26ceb873989.png" alt="image"></p>
+<p><img src="https://user-images.githubusercontent.com/102901955/166450398-3acded90-8d4b-4bfc-a0d1-196384dfef91.png" alt="image"></p>
+<p>这个design矩阵是含有level信息的。</p>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 模型拟合及分析</span></span><br><span class="line">fit <span class="operator">&lt;-</span> lmFit<span class="punctuation">(</span>expmatrix_data<span class="punctuation">,</span> design<span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line">contrast.matrix <span class="operator">&lt;-</span> makeContrasts<span class="punctuation">(</span><span class="string">&quot;Control-Treatment&quot;</span><span class="punctuation">,</span> levels <span class="operator">=</span> design<span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line">fit2 <span class="operator">&lt;-</span> contrasts.fit<span class="punctuation">(</span>fit<span class="punctuation">,</span> contrast.matrix<span class="punctuation">)</span> </span><br><span class="line"></span><br><span class="line">fit2 <span class="operator">&lt;-</span> eBayes<span class="punctuation">(</span>fit2<span class="punctuation">)</span> </span><br><span class="line"></span><br><span class="line">expDiff_data <span class="operator">&lt;-</span> topTable<span class="punctuation">(</span>fit2<span class="punctuation">,</span> coef <span class="operator">=</span> <span class="number">1</span><span class="punctuation">,</span> n <span class="operator">=</span> <span class="literal">Inf</span><span class="punctuation">)</span> <span class="operator">%&gt;%</span> na.omit<span class="punctuation">(</span><span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># 保存差异分析结果文件</span></span><br><span class="line">write.table<span class="punctuation">(</span>expDiff_data<span class="punctuation">,</span> <span class="string">&quot;expDiff.csv&quot;</span><span class="punctuation">,</span> row.names <span class="operator">=</span> <span class="literal">TRUE</span><span class="punctuation">,</span> col.names <span class="operator">=</span> <span class="literal">TRUE</span><span class="punctuation">,</span> sep <span class="operator">=</span> <span class="string">&quot;,&quot;</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+
+<p>分析后得到的expDiff_data如图所示</p>
+<p><img src="https://user-images.githubusercontent.com/102901955/166450968-704e6eee-eb8d-4275-9ba9-13dd057e67dc.png" alt="image"></p>
+<p>后续操作转至excel</p>
+<p>打开expDiff.csv文件</p>
+<p><img src="https://user-images.githubusercontent.com/102901955/166451186-2118dcce-fda7-4145-8c54-b625bfb60de0.png" alt="image"></p>
+<p>将expDiff.csv文件列名调整好，并且将第一列转为数字格式，进行升序排序</p>
+<p>然后将平台信息中的，转录组编号复制至expDiff.csv文件中，注意检查基因编号是不是相同的。</p>
+<p>最后得到expDiff.csv文件如图所示</p>
+<p><img src="https://user-images.githubusercontent.com/102901955/166452304-f9c03157-becb-4bd1-a01b-c32b2d9d55b2.png" alt="image"></p>
+<p>Fold change 表示 实验组基因表达量 与 对照组基因表达量 的比值 </p>
+<p><img src="https://user-images.githubusercontent.com/102901955/166248412-302a40e9-2b30-488e-86fe-3c5439089f9a.png" alt="image"></p>
+]]></content>
+      <categories>
+        <category>生物信息学</category>
+        <category>富集分析</category>
       </categories>
   </entry>
 </search>
