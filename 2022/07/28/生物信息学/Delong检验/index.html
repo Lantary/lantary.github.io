@@ -19,23 +19,30 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"lantary.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.12.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Lantary">
-<meta property="og:url" content="https://lantary.github.io/default-index/index.html">
+    <meta name="description" content="Delong检验一、Delong检验的作用用于比较两个ROC曲线的性能，Delong检验是用于AUC面积的显著性检验的。如果两个模型的AUC大小有异但是没有通过Delong检验，那么也不能说明这两个模型有显著的不同。 总之，Delong检验就是一种统计学上用于检验AUC显著性的检验方法。 二、Delong检验的原理Delong检验本质上是构造一个变量，这个变量涉及了用于比较的两个AUC值，并且是服">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Delong检验">
+<meta property="og:url" content="https://lantary.github.io/2022/07/28/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6/Delong%E6%A3%80%E9%AA%8C/index.html">
 <meta property="og:site_name" content="Lantary">
+<meta property="og:description" content="Delong检验一、Delong检验的作用用于比较两个ROC曲线的性能，Delong检验是用于AUC面积的显著性检验的。如果两个模型的AUC大小有异但是没有通过Delong检验，那么也不能说明这两个模型有显著的不同。 总之，Delong检验就是一种统计学上用于检验AUC显著性的检验方法。 二、Delong检验的原理Delong检验本质上是构造一个变量，这个变量涉及了用于比较的两个AUC值，并且是服">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/Lantary/Private_warehouses/main/Delong%E6%A3%80%E9%AA%8C/AUC%E8%AE%A1%E7%AE%97%E5%9B%BE%E8%A7%A3.gif">
+<meta property="og:image" content="https://github.com/Lantary/Private_warehouses/blob/main/Delong%E6%A3%80%E9%AA%8C/%E7%BB%93%E6%9E%84%E7%BB%84%E4%BB%B6%E8%A7%A3%E9%87%8A.jpg?raw=true">
+<meta property="article:published_time" content="2022-07-27T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-07-28T11:21:44.613Z">
 <meta property="article:author" content="lantary">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/Lantary/Private_warehouses/main/Delong%E6%A3%80%E9%AA%8C/AUC%E8%AE%A1%E7%AE%97%E5%9B%BE%E8%A7%A3.gif">
 
 
-<link rel="canonical" href="https://lantary.github.io/default-index/">
+<link rel="canonical" href="https://lantary.github.io/2022/07/28/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6/Delong%E6%A3%80%E9%AA%8C/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"default-index/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://lantary.github.io/2022/07/28/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6/Delong%E6%A3%80%E9%AA%8C/","path":"2022/07/28/生物信息学/Delong检验/","title":"Delong检验"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Lantary</title>
+<title>Delong检验 | Lantary</title>
   
 
 
@@ -177,7 +184,7 @@ mjx-container[display="true"] + br {
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">Lantary</h1>
+      <p class="site-title">Lantary</p>
       <i class="logo-line"></i>
     </a>
   </div>
@@ -236,7 +243,7 @@ mjx-container[display="true"] + br {
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -249,6 +256,7 @@ mjx-container[display="true"] + br {
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Delong%E6%A3%80%E9%AA%8C"><span class="nav-number">1.</span> <span class="nav-text">Delong检验</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81Delong%E6%A3%80%E9%AA%8C%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">1.1.</span> <span class="nav-text">一、Delong检验的作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81Delong%E6%A3%80%E9%AA%8C%E7%9A%84%E5%8E%9F%E7%90%86"><span class="nav-number">1.2.</span> <span class="nav-text">二、Delong检验的原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E7%AC%A6%E5%8F%B7%E5%8F%82%E6%95%B0%E7%9A%84%E8%A7%A3%E9%87%8A"><span class="nav-number">1.2.1.</span> <span class="nav-text">1.符号参数的解释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-AUC%E7%9A%84%E8%AE%A1%E7%AE%97"><span class="nav-number">1.2.2.</span> <span class="nav-text">2. AUC的计算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E6%9E%84%E9%80%A0%E7%BB%9F%E8%AE%A1%E9%87%8F%E8%BF%9B%E8%A1%8C%E6%A3%80%E9%AA%8C"><span class="nav-number">1.2.3.</span> <span class="nav-text">3. 构造统计量进行检验</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E6%96%B9%E5%B7%AE%E4%B8%8E%E5%8D%8F%E6%96%B9%E5%B7%AE%E7%9A%84%E8%AE%A1%E7%AE%97"><span class="nav-number">1.2.4.</span> <span class="nav-text">4. 方差与协方差的计算</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E6%96%B9%E5%B7%AE%E8%AE%A1%E7%AE%97"><span class="nav-number">1.2.4.1.</span> <span class="nav-text">(1)方差计算</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E5%8D%8F%E6%96%B9%E5%B7%AE%E7%9A%84%E8%AE%A1%E7%AE%97"><span class="nav-number">1.2.4.2.</span> <span class="nav-text">(2)协方差的计算</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="nav-number">2.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -305,16 +313,17 @@ mjx-container[display="true"] + br {
 </noscript>
 
 
-    <div class="main-inner index posts-expand">
+    <div class="main-inner post posts-expand">
 
-    
+
+  
 
 
 <div class="post-block">
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://lantary.github.io/2022/07/28/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6/Delong%E6%A3%80%E9%AA%8C/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -328,13 +337,13 @@ mjx-container[display="true"] + br {
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Lantary">
+      <meta itemprop="name" content="Delong检验 | Lantary">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/07/28/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6/Delong%E6%A3%80%E9%AA%8C/" class="post-title-link" itemprop="url">Delong检验</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          Delong检验
+        </h1>
 
         <div class="post-meta-container">
           <div class="post-meta">
@@ -385,7 +394,7 @@ mjx-container[display="true"] + br {
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="Delong检验"><a href="#Delong检验" class="headerlink" title="Delong检验"></a>Delong检验</h1><h2 id="一、Delong检验的作用"><a href="#一、Delong检验的作用" class="headerlink" title="一、Delong检验的作用"></a>一、Delong检验的作用</h2><p>用于比较两个ROC曲线的性能，Delong检验是用于AUC面积的显著性检验的。如果两个模型的AUC大小有异但是没有通过Delong检验，那么也不能说明这两个模型有显著的不同。</p>
+        <h1 id="Delong检验"><a href="#Delong检验" class="headerlink" title="Delong检验"></a>Delong检验</h1><h2 id="一、Delong检验的作用"><a href="#一、Delong检验的作用" class="headerlink" title="一、Delong检验的作用"></a>一、Delong检验的作用</h2><p>用于比较两个ROC曲线的性能，Delong检验是用于AUC面积的显著性检验的。如果两个模型的AUC大小有异但是没有通过Delong检验，那么也不能说明这两个模型有显著的不同。</p>
 <p>总之，Delong检验就是一种统计学上用于检验AUC显著性的检验方法。</p>
 <h2 id="二、Delong检验的原理"><a href="#二、Delong检验的原理" class="headerlink" title="二、Delong检验的原理"></a>二、Delong检验的原理</h2><p>Delong检验本质上是构造一个变量，这个变量涉及了用于比较的两个AUC值，并且是服从或近似服从正态分布的。然后利用正态分布对其做一个假设检验。</p>
 <h3 id="1-符号参数的解释"><a href="#1-符号参数的解释" class="headerlink" title="1.符号参数的解释"></a>1.符号参数的解释</h3><table>
@@ -446,7 +455,6 @@ mjx-container[display="true"] + br {
 <h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/z13653662052/article/details/89215196">[1] 简述</a><br><a target="_blank" rel="noopener" href="http://www.datasoldier.net/archives/3525">[2] 算法</a><br><a target="_blank" rel="noopener" href="https://statisticaloddsandends.wordpress.com/2020/06/07/what-is-the-delong-test-for-comparing-aucs/">[3] Delong检验原理</a><br><a target="_blank" rel="noopener" href="https://glassboxmedicine.com/2020/02/04/comparing-aucs-of-machine-learning-models-with-delongs-test/">[4] Delong检验具体例子</a><br><a target="_blank" rel="noopener" href="https://ncss-wpengine.netdna-ssl.com/wp-content/themes/ncss/pdf/Procedures/NCSS/Comparing_Two_ROC_Curves-Paired_Design.pdf">[5] Comparing Two ROC Curves-Paired Design</a></p>
 <hr>
 
-      
     </div>
 
     
@@ -454,399 +462,35 @@ mjx-container[display="true"] + br {
     
 
     <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
+          
 
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lantary.github.io/2022/07/25/%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96/%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E5%85%AC%E5%BC%8F%E7%B3%BB%E7%BB%9F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/%E5%A4%B4%E5%83%8F.png">
-      <meta itemprop="name" content="lantary">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lantary">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Lantary">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/07/25/%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96/%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E5%85%AC%E5%BC%8F%E7%B3%BB%E7%BB%9F/" class="post-title-link" itemprop="url">博客添加公式系统</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-07-25 00:00:00" itemprop="dateCreated datePublished" datetime="2022-07-25T00:00:00+08:00">2022-07-25</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-07-28 13:57:05" itemprop="dateModified" datetime="2022-07-28T13:57:05+08:00">2022-07-28</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96/" itemprop="url" rel="index"><span itemprop="name">博客优化</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/2022/07/25/%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96/%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E5%85%AC%E5%BC%8F%E7%B3%BB%E7%BB%9F/#waline" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" data-path="/2022/07/25/%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96/%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E5%85%AC%E5%BC%8F%E7%B3%BB%E7%BB%9F/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h3 id="博客优化内容"><a href="#博客优化内容" class="headerlink" title="博客优化内容"></a>博客优化内容</h3><p>在hexo框架下的博客中添加可以使markdown显示出数学公式的方案。</p>
-<h3 id="优化方案"><a href="#优化方案" class="headerlink" title="优化方案"></a>优化方案</h3><p>通过添加<a target="_blank" rel="noopener" href="https://github.com/next-theme/hexo-filter-mathjax">hexo-filter-mathjax</a>插件来实现这一功能。</p>
-<ol>
-<li><p>安装插件<br> cd到博客的根目录，输入命令:</p>
- <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-filter-mathjax</span><br></pre></td></tr></table></figure></li>
-<li><p>配置设置<br> 在博客的配置文件 <code>_config.yml</code> 中添加:</p>
- <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">mathjax:</span><br><span class="line">  tags: none # or 'ams' or 'all'</span><br><span class="line">  single_dollars: true # enable single dollar signs as in-line math delimiters</span><br><span class="line">  cjk_width: 0.9 # relative CJK char width</span><br><span class="line">  normal_width: 0.6 # relative normal (monospace) width</span><br><span class="line">  append_css: true # add CSS to pages rendered by MathJax</span><br><span class="line">  every_page: false # if true, every page will be rendered by MathJax regardless the `mathjax` setting in Front-matter</span><br><span class="line">  extension_options: {}</span><br><span class="line">    # you can put your extension options here</span><br><span class="line">    # see http://docs.mathjax.org/en/latest/options/input/tex.html#tex-extension-options for more detail</span><br></pre></td></tr></table></figure></li>
-<li><p>使用方式<br>在使用mathjax时，需要在每篇需要使用的文章开头添加 <code>mathjax: true</code> 参数。插入的方式为 <code>$[公式代码]$</code> ，公式的代码可以在<a target="_blank" rel="noopener" href="https://www.latexlive.com/">在线latex公式编辑器</a>进行在线编辑。  </p>
-<p> 如 <code>$\lim_{x \to 0} \frac{\sin x}{x}$</code> 渲染的是 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.798ex;" xmlns="http://www.w3.org/2000/svg" width="11.164ex" height="2.76ex" role="img" focusable="false" viewBox="0 -867.1 4934.4 1219.8"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="munder"><g data-mml-node="mo"><path data-c="6C" d="M42 46H56Q95 46 103 60V68Q103 77 103 91T103 124T104 167T104 217T104 272T104 329Q104 366 104 407T104 482T104 542T103 586T103 603Q100 622 89 628T44 637H26V660Q26 683 28 683L38 684Q48 685 67 686T104 688Q121 689 141 690T171 693T182 694H185V379Q185 62 186 60Q190 52 198 49Q219 46 247 46H263V0H255L232 1Q209 2 183 2T145 3T107 3T57 1L34 0H26V46H42Z"></path><path data-c="69" d="M69 609Q69 637 87 653T131 669Q154 667 171 652T188 609Q188 579 171 564T129 549Q104 549 87 564T69 609ZM247 0Q232 3 143 3Q132 3 106 3T56 1L34 0H26V46H42Q70 46 91 49Q100 53 102 60T104 102V205V293Q104 345 102 359T88 378Q74 385 41 385H30V408Q30 431 32 431L42 432Q52 433 70 434T106 436Q123 437 142 438T171 441T182 442H185V62Q190 52 197 50T232 46H255V0H247Z" transform="translate(278,0)"></path><path data-c="6D" d="M41 46H55Q94 46 102 60V68Q102 77 102 91T102 122T103 161T103 203Q103 234 103 269T102 328V351Q99 370 88 376T43 385H25V408Q25 431 27 431L37 432Q47 433 65 434T102 436Q119 437 138 438T167 441T178 442H181V402Q181 364 182 364T187 369T199 384T218 402T247 421T285 437Q305 442 336 442Q351 442 364 440T387 434T406 426T421 417T432 406T441 395T448 384T452 374T455 366L457 361L460 365Q463 369 466 373T475 384T488 397T503 410T523 422T546 432T572 439T603 442Q729 442 740 329Q741 322 741 190V104Q741 66 743 59T754 49Q775 46 803 46H819V0H811L788 1Q764 2 737 2T699 3Q596 3 587 0H579V46H595Q656 46 656 62Q657 64 657 200Q656 335 655 343Q649 371 635 385T611 402T585 404Q540 404 506 370Q479 343 472 315T464 232V168V108Q464 78 465 68T468 55T477 49Q498 46 526 46H542V0H534L510 1Q487 2 460 2T422 3Q319 3 310 0H302V46H318Q379 46 379 62Q380 64 380 200Q379 335 378 343Q372 371 358 385T334 402T308 404Q263 404 229 370Q202 343 195 315T187 232V168V108Q187 78 188 68T191 55T200 49Q221 46 249 46H265V0H257L234 1Q210 2 183 2T145 3Q42 3 33 0H25V46H41Z" transform="translate(556,0)"></path></g><g data-mml-node="TeXAtom" transform="translate(1422,-150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g><g data-mml-node="mo" transform="translate(572,0)"><path data-c="2192" d="M56 237T56 250T70 270H835Q719 357 692 493Q692 494 692 496T691 499Q691 511 708 511H711Q720 511 723 510T729 506T732 497T735 481T743 456Q765 389 816 336T935 261Q944 258 944 250Q944 244 939 241T915 231T877 212Q836 186 806 152T761 85T740 35T732 4Q730 -6 727 -8T711 -11Q691 -11 691 0Q691 7 696 25Q728 151 835 230H70Q56 237 56 250Z"></path></g><g data-mml-node="mn" transform="translate(1572,0)"><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path></g></g></g><g data-mml-node="mfrac" transform="translate(3103.8,0)"><g data-mml-node="mrow" transform="translate(220,394) scale(0.707)"><g data-mml-node="mi"><path data-c="73" d="M295 316Q295 356 268 385T190 414Q154 414 128 401Q98 382 98 349Q97 344 98 336T114 312T157 287Q175 282 201 278T245 269T277 256Q294 248 310 236T342 195T359 133Q359 71 321 31T198 -10H190Q138 -10 94 26L86 19L77 10Q71 4 65 -1L54 -11H46H42Q39 -11 33 -5V74V132Q33 153 35 157T45 162H54Q66 162 70 158T75 146T82 119T101 77Q136 26 198 26Q295 26 295 104Q295 133 277 151Q257 175 194 187T111 210Q75 227 54 256T33 318Q33 357 50 384T93 424T143 442T187 447H198Q238 447 268 432L283 424L292 431Q302 440 314 448H322H326Q329 448 335 442V310L329 304H301Q295 310 295 316Z"></path><path data-c="69" d="M69 609Q69 637 87 653T131 669Q154 667 171 652T188 609Q188 579 171 564T129 549Q104 549 87 564T69 609ZM247 0Q232 3 143 3Q132 3 106 3T56 1L34 0H26V46H42Q70 46 91 49Q100 53 102 60T104 102V205V293Q104 345 102 359T88 378Q74 385 41 385H30V408Q30 431 32 431L42 432Q52 433 70 434T106 436Q123 437 142 438T171 441T182 442H185V62Q190 52 197 50T232 46H255V0H247Z" transform="translate(394,0)"></path><path data-c="6E" d="M41 46H55Q94 46 102 60V68Q102 77 102 91T102 122T103 161T103 203Q103 234 103 269T102 328V351Q99 370 88 376T43 385H25V408Q25 431 27 431L37 432Q47 433 65 434T102 436Q119 437 138 438T167 441T178 442H181V402Q181 364 182 364T187 369T199 384T218 402T247 421T285 437Q305 442 336 442Q450 438 463 329Q464 322 464 190V104Q464 66 466 59T477 49Q498 46 526 46H542V0H534L510 1Q487 2 460 2T422 3Q319 3 310 0H302V46H318Q379 46 379 62Q380 64 380 200Q379 335 378 343Q372 371 358 385T334 402T308 404Q263 404 229 370Q202 343 195 315T187 232V168V108Q187 78 188 68T191 55T200 49Q221 46 249 46H265V0H257L234 1Q210 2 183 2T145 3Q42 3 33 0H25V46H41Z" transform="translate(672,0)"></path></g><g data-mml-node="mo" transform="translate(1228,0)"><path data-c="2061" d=""></path></g><g data-mml-node="mi" transform="translate(1394.7,0)"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g></g><g data-mml-node="mi" transform="translate(713.1,-345) scale(0.707)"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g><rect width="1590.6" height="60" x="120" y="220"></rect></g></g></g></svg></mjx-container></p>
-<p> 也可以进行多行的输出如：</p>
- <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line">\begin{eqnarray}</span><br><span class="line"> \lim_{x \to 0} \frac{\sin x + x^2 + x^3}{x} &amp; = &amp; \lim_{x \to 0} \frac{\sin x }{x} + \lim_{x \to 0} \frac{x^2 }{x} + \lim_{x \to 0}\frac{x^3}{x} </span><br><span class="line">\\\\ &amp; = &amp; \lim_{x \to 0}\frac{\sin x}{x} </span><br><span class="line">\\\\ &amp; = &amp; 1</span><br><span class="line">\end{eqnarray}</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
-<p> 渲染为</p>
-<p> <mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: -6.179ex;" xmlns="http://www.w3.org/2000/svg" width="51.233ex" height="13.488ex" role="img" focusable="false" viewBox="0 -3231 22644.9 5961.9"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mtable"><g data-mml-node="mtr" transform="translate(0,1721)"><g data-mml-node="mtd"><g data-mml-node="munder"><g data-mml-node="mo" transform="translate(38.1,0)"><path data-c="6C" d="M42 46H56Q95 46 103 60V68Q103 77 103 91T103 124T104 167T104 217T104 272T104 329Q104 366 104 407T104 482T104 542T103 586T103 603Q100 622 89 628T44 637H26V660Q26 683 28 683L38 684Q48 685 67 686T104 688Q121 689 141 690T171 693T182 694H185V379Q185 62 186 60Q190 52 198 49Q219 46 247 46H263V0H255L232 1Q209 2 183 2T145 3T107 3T57 1L34 0H26V46H42Z"></path><path data-c="69" d="M69 609Q69 637 87 653T131 669Q154 667 171 652T188 609Q188 579 171 564T129 549Q104 549 87 564T69 609ZM247 0Q232 3 143 3Q132 3 106 3T56 1L34 0H26V46H42Q70 46 91 49Q100 53 102 60T104 102V205V293Q104 345 102 359T88 378Q74 385 41 385H30V408Q30 431 32 431L42 432Q52 433 70 434T106 436Q123 437 142 438T171 441T182 442H185V62Q190 52 197 50T232 46H255V0H247Z" transform="translate(278,0)"></path><path data-c="6D" d="M41 46H55Q94 46 102 60V68Q102 77 102 91T102 122T103 161T103 203Q103 234 103 269T102 328V351Q99 370 88 376T43 385H25V408Q25 431 27 431L37 432Q47 433 65 434T102 436Q119 437 138 438T167 441T178 442H181V402Q181 364 182 364T187 369T199 384T218 402T247 421T285 437Q305 442 336 442Q351 442 364 440T387 434T406 426T421 417T432 406T441 395T448 384T452 374T455 366L457 361L460 365Q463 369 466 373T475 384T488 397T503 410T523 422T546 432T572 439T603 442Q729 442 740 329Q741 322 741 190V104Q741 66 743 59T754 49Q775 46 803 46H819V0H811L788 1Q764 2 737 2T699 3Q596 3 587 0H579V46H595Q656 46 656 62Q657 64 657 200Q656 335 655 343Q649 371 635 385T611 402T585 404Q540 404 506 370Q479 343 472 315T464 232V168V108Q464 78 465 68T468 55T477 49Q498 46 526 46H542V0H534L510 1Q487 2 460 2T422 3Q319 3 310 0H302V46H318Q379 46 379 62Q380 64 380 200Q379 335 378 343Q372 371 358 385T334 402T308 404Q263 404 229 370Q202 343 195 315T187 232V168V108Q187 78 188 68T191 55T200 49Q221 46 249 46H265V0H257L234 1Q210 2 183 2T145 3Q42 3 33 0H25V46H41Z" transform="translate(556,0)"></path></g><g data-mml-node="TeXAtom" transform="translate(0,-637.9) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g><g data-mml-node="mo" transform="translate(572,0)"><path data-c="2192" d="M56 237T56 250T70 270H835Q719 357 692 493Q692 494 692 496T691 499Q691 511 708 511H711Q720 511 723 510T729 506T732 497T735 481T743 456Q765 389 816 336T935 261Q944 258 944 250Q944 244 939 241T915 231T877 212Q836 186 806 152T761 85T740 35T732 4Q730 -6 727 -8T711 -11Q691 -11 691 0Q691 7 696 25Q728 151 835 230H70Q56 237 56 250Z"></path></g><g data-mml-node="mn" transform="translate(1572,0)"><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path></g></g></g><g data-mml-node="mfrac" transform="translate(1631.8,0)"><g data-mml-node="mrow" transform="translate(220,676)"><g data-mml-node="mi"><path data-c="73" d="M295 316Q295 356 268 385T190 414Q154 414 128 401Q98 382 98 349Q97 344 98 336T114 312T157 287Q175 282 201 278T245 269T277 256Q294 248 310 236T342 195T359 133Q359 71 321 31T198 -10H190Q138 -10 94 26L86 19L77 10Q71 4 65 -1L54 -11H46H42Q39 -11 33 -5V74V132Q33 153 35 157T45 162H54Q66 162 70 158T75 146T82 119T101 77Q136 26 198 26Q295 26 295 104Q295 133 277 151Q257 175 194 187T111 210Q75 227 54 256T33 318Q33 357 50 384T93 424T143 442T187 447H198Q238 447 268 432L283 424L292 431Q302 440 314 448H322H326Q329 448 335 442V310L329 304H301Q295 310 295 316Z"></path><path data-c="69" d="M69 609Q69 637 87 653T131 669Q154 667 171 652T188 609Q188 579 171 564T129 549Q104 549 87 564T69 609ZM247 0Q232 3 143 3Q132 3 106 3T56 1L34 0H26V46H42Q70 46 91 49Q100 53 102 60T104 102V205V293Q104 345 102 359T88 378Q74 385 41 385H30V408Q30 431 32 431L42 432Q52 433 70 434T106 436Q123 437 142 438T171 441T182 442H185V62Q190 52 197 50T232 46H255V0H247Z" transform="translate(394,0)"></path><path data-c="6E" d="M41 46H55Q94 46 102 60V68Q102 77 102 91T102 122T103 161T103 203Q103 234 103 269T102 328V351Q99 370 88 376T43 385H25V408Q25 431 27 431L37 432Q47 433 65 434T102 436Q119 437 138 438T167 441T178 442H181V402Q181 364 182 364T187 369T199 384T218 402T247 421T285 437Q305 442 336 442Q450 438 463 329Q464 322 464 190V104Q464 66 466 59T477 49Q498 46 526 46H542V0H534L510 1Q487 2 460 2T422 3Q319 3 310 0H302V46H318Q379 46 379 62Q380 64 380 200Q379 335 378 343Q372 371 358 385T334 402T308 404Q263 404 229 370Q202 343 195 315T187 232V168V108Q187 78 188 68T191 55T200 49Q221 46 249 46H265V0H257L234 1Q210 2 183 2T145 3Q42 3 33 0H25V46H41Z" transform="translate(672,0)"></path></g><g data-mml-node="mo" transform="translate(1228,0)"><path data-c="2061" d=""></path></g><g data-mml-node="mi" transform="translate(1394.7,0)"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g><g data-mml-node="mo" transform="translate(2188.9,0)"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path></g><g data-mml-node="msup" transform="translate(3189.1,0)"><g data-mml-node="mi"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g><g data-mml-node="mn" transform="translate(605,363) scale(0.707)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g></g><g data-mml-node="mo" transform="translate(4419.9,0)"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path></g><g data-mml-node="msup" transform="translate(5420.1,0)"><g data-mml-node="mi"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g><g data-mml-node="mn" transform="translate(605,363) scale(0.707)"><path data-c="33" d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664Q351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336T375 315Q457 262 457 175Q457 96 395 37T238 -22Q158 -22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94T148 82T136 74T126 70T118 67L114 66Q165 21 238 21Q293 21 321 74Q338 107 338 175V195Q338 290 274 322Q259 328 213 329L171 330L168 332Q166 335 166 348Q166 366 174 366Q202 366 232 371Q266 376 294 413T322 525V533Q322 590 287 612Q265 626 240 626Q208 626 181 615T143 592T132 580H135Q138 579 143 578T153 573T165 566T175 555T183 540T186 520Q186 498 172 481T127 463Z"></path></g></g></g><g data-mml-node="mi" transform="translate(3148.3,-686)"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g><rect width="6628.7" height="60" x="120" y="220"></rect></g></g><g data-mml-node="mtd" transform="translate(8500.5,0)"><g data-mml-node="mi"></g><g data-mml-node="mo" transform="translate(277.8,0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path></g></g><g data-mml-node="mtd" transform="translate(9834.2,0)"><g data-mml-node="mi"></g><g data-mml-node="munder" transform="translate(166.7,0)"><g data-mml-node="mo" transform="translate(38.1,0)"><path data-c="6C" d="M42 46H56Q95 46 103 60V68Q103 77 103 91T103 124T104 167T104 217T104 272T104 329Q104 366 104 407T104 482T104 542T103 586T103 603Q100 622 89 628T44 637H26V660Q26 683 28 683L38 684Q48 685 67 686T104 688Q121 689 141 690T171 693T182 694H185V379Q185 62 186 60Q190 52 198 49Q219 46 247 46H263V0H255L232 1Q209 2 183 2T145 3T107 3T57 1L34 0H26V46H42Z"></path><path data-c="69" d="M69 609Q69 637 87 653T131 669Q154 667 171 652T188 609Q188 579 171 564T129 549Q104 549 87 564T69 609ZM247 0Q232 3 143 3Q132 3 106 3T56 1L34 0H26V46H42Q70 46 91 49Q100 53 102 60T104 102V205V293Q104 345 102 359T88 378Q74 385 41 385H30V408Q30 431 32 431L42 432Q52 433 70 434T106 436Q123 437 142 438T171 441T182 442H185V62Q190 52 197 50T232 46H255V0H247Z" transform="translate(278,0)"></path><path data-c="6D" d="M41 46H55Q94 46 102 60V68Q102 77 102 91T102 122T103 161T103 203Q103 234 103 269T102 328V351Q99 370 88 376T43 385H25V408Q25 431 27 431L37 432Q47 433 65 434T102 436Q119 437 138 438T167 441T178 442H181V402Q181 364 182 364T187 369T199 384T218 402T247 421T285 437Q305 442 336 442Q351 442 364 440T387 434T406 426T421 417T432 406T441 395T448 384T452 374T455 366L457 361L460 365Q463 369 466 373T475 384T488 397T503 410T523 422T546 432T572 439T603 442Q729 442 740 329Q741 322 741 190V104Q741 66 743 59T754 49Q775 46 803 46H819V0H811L788 1Q764 2 737 2T699 3Q596 3 587 0H579V46H595Q656 46 656 62Q657 64 657 200Q656 335 655 343Q649 371 635 385T611 402T585 404Q540 404 506 370Q479 343 472 315T464 232V168V108Q464 78 465 68T468 55T477 49Q498 46 526 46H542V0H534L510 1Q487 2 460 2T422 3Q319 3 310 0H302V46H318Q379 46 379 62Q380 64 380 200Q379 335 378 343Q372 371 358 385T334 402T308 404Q263 404 229 370Q202 343 195 315T187 232V168V108Q187 78 188 68T191 55T200 49Q221 46 249 46H265V0H257L234 1Q210 2 183 2T145 3Q42 3 33 0H25V46H41Z" transform="translate(556,0)"></path></g><g data-mml-node="TeXAtom" transform="translate(0,-637.9) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g><g data-mml-node="mo" transform="translate(572,0)"><path data-c="2192" d="M56 237T56 250T70 270H835Q719 357 692 493Q692 494 692 496T691 499Q691 511 708 511H711Q720 511 723 510T729 506T732 497T735 481T743 456Q765 389 816 336T935 261Q944 258 944 250Q944 244 939 241T915 231T877 212Q836 186 806 152T761 85T740 35T732 4Q730 -6 727 -8T711 -11Q691 -11 691 0Q691 7 696 25Q728 151 835 230H70Q56 237 56 250Z"></path></g><g data-mml-node="mn" transform="translate(1572,0)"><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path></g></g></g><g data-mml-node="mfrac" transform="translate(1798.5,0)"><g data-mml-node="mrow" transform="translate(220,676)"><g data-mml-node="mi"><path data-c="73" d="M295 316Q295 356 268 385T190 414Q154 414 128 401Q98 382 98 349Q97 344 98 336T114 312T157 287Q175 282 201 278T245 269T277 256Q294 248 310 236T342 195T359 133Q359 71 321 31T198 -10H190Q138 -10 94 26L86 19L77 10Q71 4 65 -1L54 -11H46H42Q39 -11 33 -5V74V132Q33 153 35 157T45 162H54Q66 162 70 158T75 146T82 119T101 77Q136 26 198 26Q295 26 295 104Q295 133 277 151Q257 175 194 187T111 210Q75 227 54 256T33 318Q33 357 50 384T93 424T143 442T187 447H198Q238 447 268 432L283 424L292 431Q302 440 314 448H322H326Q329 448 335 442V310L329 304H301Q295 310 295 316Z"></path><path data-c="69" d="M69 609Q69 637 87 653T131 669Q154 667 171 652T188 609Q188 579 171 564T129 549Q104 549 87 564T69 609ZM247 0Q232 3 143 3Q132 3 106 3T56 1L34 0H26V46H42Q70 46 91 49Q100 53 102 60T104 102V205V293Q104 345 102 359T88 378Q74 385 41 385H30V408Q30 431 32 431L42 432Q52 433 70 434T106 436Q123 437 142 438T171 441T182 442H185V62Q190 52 197 50T232 46H255V0H247Z" transform="translate(394,0)"></path><path data-c="6E" d="M41 46H55Q94 46 102 60V68Q102 77 102 91T102 122T103 161T103 203Q103 234 103 269T102 328V351Q99 370 88 376T43 385H25V408Q25 431 27 431L37 432Q47 433 65 434T102 436Q119 437 138 438T167 441T178 442H181V402Q181 364 182 364T187 369T199 384T218 402T247 421T285 437Q305 442 336 442Q450 438 463 329Q464 322 464 190V104Q464 66 466 59T477 49Q498 46 526 46H542V0H534L510 1Q487 2 460 2T422 3Q319 3 310 0H302V46H318Q379 46 379 62Q380 64 380 200Q379 335 378 343Q372 371 358 385T334 402T308 404Q263 404 229 370Q202 343 195 315T187 232V168V108Q187 78 188 68T191 55T200 49Q221 46 249 46H265V0H257L234 1Q210 2 183 2T145 3Q42 3 33 0H25V46H41Z" transform="translate(672,0)"></path></g><g data-mml-node="mo" transform="translate(1228,0)"><path data-c="2061" d=""></path></g><g data-mml-node="mi" transform="translate(1394.7,0)"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g></g><g data-mml-node="mi" transform="translate(917.3,-686)"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g><rect width="2166.7" height="60" x="120" y="220"></rect></g><g data-mml-node="mo" transform="translate(4427.3,0)"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path></g><g data-mml-node="munder" transform="translate(5427.6,0)"><g data-mml-node="mo" transform="translate(38.1,0)"><path data-c="6C" d="M42 46H56Q95 46 103 60V68Q103 77 103 91T103 124T104 167T104 217T104 272T104 329Q104 366 104 407T104 482T104 542T103 586T103 603Q100 622 89 628T44 637H26V660Q26 683 28 683L38 684Q48 685 67 686T104 688Q121 689 141 690T171 693T182 694H185V379Q185 62 186 60Q190 52 198 49Q219 46 247 46H263V0H255L232 1Q209 2 183 2T145 3T107 3T57 1L34 0H26V46H42Z"></path><path data-c="69" d="M69 609Q69 637 87 653T131 669Q154 667 171 652T188 609Q188 579 171 564T129 549Q104 549 87 564T69 609ZM247 0Q232 3 143 3Q132 3 106 3T56 1L34 0H26V46H42Q70 46 91 49Q100 53 102 60T104 102V205V293Q104 345 102 359T88 378Q74 385 41 385H30V408Q30 431 32 431L42 432Q52 433 70 434T106 436Q123 437 142 438T171 441T182 442H185V62Q190 52 197 50T232 46H255V0H247Z" transform="translate(278,0)"></path><path data-c="6D" d="M41 46H55Q94 46 102 60V68Q102 77 102 91T102 122T103 161T103 203Q103 234 103 269T102 328V351Q99 370 88 376T43 385H25V408Q25 431 27 431L37 432Q47 433 65 434T102 436Q119 437 138 438T167 441T178 442H181V402Q181 364 182 364T187 369T199 384T218 402T247 421T285 437Q305 442 336 442Q351 442 364 440T387 434T406 426T421 417T432 406T441 395T448 384T452 374T455 366L457 361L460 365Q463 369 466 373T475 384T488 397T503 410T523 422T546 432T572 439T603 442Q729 442 740 329Q741 322 741 190V104Q741 66 743 59T754 49Q775 46 803 46H819V0H811L788 1Q764 2 737 2T699 3Q596 3 587 0H579V46H595Q656 46 656 62Q657 64 657 200Q656 335 655 343Q649 371 635 385T611 402T585 404Q540 404 506 370Q479 343 472 315T464 232V168V108Q464 78 465 68T468 55T477 49Q498 46 526 46H542V0H534L510 1Q487 2 460 2T422 3Q319 3 310 0H302V46H318Q379 46 379 62Q380 64 380 200Q379 335 378 343Q372 371 358 385T334 402T308 404Q263 404 229 370Q202 343 195 315T187 232V168V108Q187 78 188 68T191 55T200 49Q221 46 249 46H265V0H257L234 1Q210 2 183 2T145 3Q42 3 33 0H25V46H41Z" transform="translate(556,0)"></path></g><g data-mml-node="TeXAtom" transform="translate(0,-637.9) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g><g data-mml-node="mo" transform="translate(572,0)"><path data-c="2192" d="M56 237T56 250T70 270H835Q719 357 692 493Q692 494 692 496T691 499Q691 511 708 511H711Q720 511 723 510T729 506T732 497T735 481T743 456Q765 389 816 336T935 261Q944 258 944 250Q944 244 939 241T915 231T877 212Q836 186 806 152T761 85T740 35T732 4Q730 -6 727 -8T711 -11Q691 -11 691 0Q691 7 696 25Q728 151 835 230H70Q56 237 56 250Z"></path></g><g data-mml-node="mn" transform="translate(1572,0)"><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path></g></g></g><g data-mml-node="mfrac" transform="translate(7059.4,0)"><g data-mml-node="msup" transform="translate(220,676)"><g data-mml-node="mi"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g><g data-mml-node="mn" transform="translate(605,363) scale(0.707)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g></g><g data-mml-node="mi" transform="translate(438.3,-686)"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g><rect width="1208.6" height="60" x="120" y="220"></rect></g><g data-mml-node="mo" transform="translate(8730.1,0)"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path></g><g data-mml-node="munder" transform="translate(9730.4,0)"><g data-mml-node="mo" transform="translate(38.1,0)"><path data-c="6C" d="M42 46H56Q95 46 103 60V68Q103 77 103 91T103 124T104 167T104 217T104 272T104 329Q104 366 104 407T104 482T104 542T103 586T103 603Q100 622 89 628T44 637H26V660Q26 683 28 683L38 684Q48 685 67 686T104 688Q121 689 141 690T171 693T182 694H185V379Q185 62 186 60Q190 52 198 49Q219 46 247 46H263V0H255L232 1Q209 2 183 2T145 3T107 3T57 1L34 0H26V46H42Z"></path><path data-c="69" d="M69 609Q69 637 87 653T131 669Q154 667 171 652T188 609Q188 579 171 564T129 549Q104 549 87 564T69 609ZM247 0Q232 3 143 3Q132 3 106 3T56 1L34 0H26V46H42Q70 46 91 49Q100 53 102 60T104 102V205V293Q104 345 102 359T88 378Q74 385 41 385H30V408Q30 431 32 431L42 432Q52 433 70 434T106 436Q123 437 142 438T171 441T182 442H185V62Q190 52 197 50T232 46H255V0H247Z" transform="translate(278,0)"></path><path data-c="6D" d="M41 46H55Q94 46 102 60V68Q102 77 102 91T102 122T103 161T103 203Q103 234 103 269T102 328V351Q99 370 88 376T43 385H25V408Q25 431 27 431L37 432Q47 433 65 434T102 436Q119 437 138 438T167 441T178 442H181V402Q181 364 182 364T187 369T199 384T218 402T247 421T285 437Q305 442 336 442Q351 442 364 440T387 434T406 426T421 417T432 406T441 395T448 384T452 374T455 366L457 361L460 365Q463 369 466 373T475 384T488 397T503 410T523 422T546 432T572 439T603 442Q729 442 740 329Q741 322 741 190V104Q741 66 743 59T754 49Q775 46 803 46H819V0H811L788 1Q764 2 737 2T699 3Q596 3 587 0H579V46H595Q656 46 656 62Q657 64 657 200Q656 335 655 343Q649 371 635 385T611 402T585 404Q540 404 506 370Q479 343 472 315T464 232V168V108Q464 78 465 68T468 55T477 49Q498 46 526 46H542V0H534L510 1Q487 2 460 2T422 3Q319 3 310 0H302V46H318Q379 46 379 62Q380 64 380 200Q379 335 378 343Q372 371 358 385T334 402T308 404Q263 404 229 370Q202 343 195 315T187 232V168V108Q187 78 188 68T191 55T200 49Q221 46 249 46H265V0H257L234 1Q210 2 183 2T145 3Q42 3 33 0H25V46H41Z" transform="translate(556,0)"></path></g><g data-mml-node="TeXAtom" transform="translate(0,-637.9) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g><g data-mml-node="mo" transform="translate(572,0)"><path data-c="2192" d="M56 237T56 250T70 270H835Q719 357 692 493Q692 494 692 496T691 499Q691 511 708 511H711Q720 511 723 510T729 506T732 497T735 481T743 456Q765 389 816 336T935 261Q944 258 944 250Q944 244 939 241T915 231T877 212Q836 186 806 152T761 85T740 35T732 4Q730 -6 727 -8T711 -11Q691 -11 691 0Q691 7 696 25Q728 151 835 230H70Q56 237 56 250Z"></path></g><g data-mml-node="mn" transform="translate(1572,0)"><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path></g></g></g><g data-mml-node="mfrac" transform="translate(11362.2,0)"><g data-mml-node="msup" transform="translate(220,676)"><g data-mml-node="mi"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g><g data-mml-node="mn" transform="translate(605,363) scale(0.707)"><path data-c="33" d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664Q351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336T375 315Q457 262 457 175Q457 96 395 37T238 -22Q158 -22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94T148 82T136 74T126 70T118 67L114 66Q165 21 238 21Q293 21 321 74Q338 107 338 175V195Q338 290 274 322Q259 328 213 329L171 330L168 332Q166 335 166 348Q166 366 174 366Q202 366 232 371Q266 376 294 413T322 525V533Q322 590 287 612Q265 626 240 626Q208 626 181 615T143 592T132 580H135Q138 579 143 578T153 573T165 566T175 555T183 540T186 520Q186 498 172 481T127 463Z"></path></g></g><g data-mml-node="mi" transform="translate(438.3,-686)"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g><rect width="1208.6" height="60" x="120" y="220"></rect></g></g></g><g data-mml-node="mtr" transform="translate(0,-677.5)"><g data-mml-node="mtd" transform="translate(8500.5,0)"></g><g data-mml-node="mtd" transform="translate(8500.5,0)"><g data-mml-node="mi"></g><g data-mml-node="mo" transform="translate(277.8,0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path></g></g><g data-mml-node="mtd" transform="translate(9834.2,0)"><g data-mml-node="mi"></g><g data-mml-node="munder" transform="translate(166.7,0)"><g data-mml-node="mo" transform="translate(38.1,0)"><path data-c="6C" d="M42 46H56Q95 46 103 60V68Q103 77 103 91T103 124T104 167T104 217T104 272T104 329Q104 366 104 407T104 482T104 542T103 586T103 603Q100 622 89 628T44 637H26V660Q26 683 28 683L38 684Q48 685 67 686T104 688Q121 689 141 690T171 693T182 694H185V379Q185 62 186 60Q190 52 198 49Q219 46 247 46H263V0H255L232 1Q209 2 183 2T145 3T107 3T57 1L34 0H26V46H42Z"></path><path data-c="69" d="M69 609Q69 637 87 653T131 669Q154 667 171 652T188 609Q188 579 171 564T129 549Q104 549 87 564T69 609ZM247 0Q232 3 143 3Q132 3 106 3T56 1L34 0H26V46H42Q70 46 91 49Q100 53 102 60T104 102V205V293Q104 345 102 359T88 378Q74 385 41 385H30V408Q30 431 32 431L42 432Q52 433 70 434T106 436Q123 437 142 438T171 441T182 442H185V62Q190 52 197 50T232 46H255V0H247Z" transform="translate(278,0)"></path><path data-c="6D" d="M41 46H55Q94 46 102 60V68Q102 77 102 91T102 122T103 161T103 203Q103 234 103 269T102 328V351Q99 370 88 376T43 385H25V408Q25 431 27 431L37 432Q47 433 65 434T102 436Q119 437 138 438T167 441T178 442H181V402Q181 364 182 364T187 369T199 384T218 402T247 421T285 437Q305 442 336 442Q351 442 364 440T387 434T406 426T421 417T432 406T441 395T448 384T452 374T455 366L457 361L460 365Q463 369 466 373T475 384T488 397T503 410T523 422T546 432T572 439T603 442Q729 442 740 329Q741 322 741 190V104Q741 66 743 59T754 49Q775 46 803 46H819V0H811L788 1Q764 2 737 2T699 3Q596 3 587 0H579V46H595Q656 46 656 62Q657 64 657 200Q656 335 655 343Q649 371 635 385T611 402T585 404Q540 404 506 370Q479 343 472 315T464 232V168V108Q464 78 465 68T468 55T477 49Q498 46 526 46H542V0H534L510 1Q487 2 460 2T422 3Q319 3 310 0H302V46H318Q379 46 379 62Q380 64 380 200Q379 335 378 343Q372 371 358 385T334 402T308 404Q263 404 229 370Q202 343 195 315T187 232V168V108Q187 78 188 68T191 55T200 49Q221 46 249 46H265V0H257L234 1Q210 2 183 2T145 3Q42 3 33 0H25V46H41Z" transform="translate(556,0)"></path></g><g data-mml-node="TeXAtom" transform="translate(0,-637.9) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g><g data-mml-node="mo" transform="translate(572,0)"><path data-c="2192" d="M56 237T56 250T70 270H835Q719 357 692 493Q692 494 692 496T691 499Q691 511 708 511H711Q720 511 723 510T729 506T732 497T735 481T743 456Q765 389 816 336T935 261Q944 258 944 250Q944 244 939 241T915 231T877 212Q836 186 806 152T761 85T740 35T732 4Q730 -6 727 -8T711 -11Q691 -11 691 0Q691 7 696 25Q728 151 835 230H70Q56 237 56 250Z"></path></g><g data-mml-node="mn" transform="translate(1572,0)"><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path></g></g></g><g data-mml-node="mfrac" transform="translate(1798.5,0)"><g data-mml-node="mrow" transform="translate(220,676)"><g data-mml-node="mi"><path data-c="73" d="M295 316Q295 356 268 385T190 414Q154 414 128 401Q98 382 98 349Q97 344 98 336T114 312T157 287Q175 282 201 278T245 269T277 256Q294 248 310 236T342 195T359 133Q359 71 321 31T198 -10H190Q138 -10 94 26L86 19L77 10Q71 4 65 -1L54 -11H46H42Q39 -11 33 -5V74V132Q33 153 35 157T45 162H54Q66 162 70 158T75 146T82 119T101 77Q136 26 198 26Q295 26 295 104Q295 133 277 151Q257 175 194 187T111 210Q75 227 54 256T33 318Q33 357 50 384T93 424T143 442T187 447H198Q238 447 268 432L283 424L292 431Q302 440 314 448H322H326Q329 448 335 442V310L329 304H301Q295 310 295 316Z"></path><path data-c="69" d="M69 609Q69 637 87 653T131 669Q154 667 171 652T188 609Q188 579 171 564T129 549Q104 549 87 564T69 609ZM247 0Q232 3 143 3Q132 3 106 3T56 1L34 0H26V46H42Q70 46 91 49Q100 53 102 60T104 102V205V293Q104 345 102 359T88 378Q74 385 41 385H30V408Q30 431 32 431L42 432Q52 433 70 434T106 436Q123 437 142 438T171 441T182 442H185V62Q190 52 197 50T232 46H255V0H247Z" transform="translate(394,0)"></path><path data-c="6E" d="M41 46H55Q94 46 102 60V68Q102 77 102 91T102 122T103 161T103 203Q103 234 103 269T102 328V351Q99 370 88 376T43 385H25V408Q25 431 27 431L37 432Q47 433 65 434T102 436Q119 437 138 438T167 441T178 442H181V402Q181 364 182 364T187 369T199 384T218 402T247 421T285 437Q305 442 336 442Q450 438 463 329Q464 322 464 190V104Q464 66 466 59T477 49Q498 46 526 46H542V0H534L510 1Q487 2 460 2T422 3Q319 3 310 0H302V46H318Q379 46 379 62Q380 64 380 200Q379 335 378 343Q372 371 358 385T334 402T308 404Q263 404 229 370Q202 343 195 315T187 232V168V108Q187 78 188 68T191 55T200 49Q221 46 249 46H265V0H257L234 1Q210 2 183 2T145 3Q42 3 33 0H25V46H41Z" transform="translate(672,0)"></path></g><g data-mml-node="mo" transform="translate(1228,0)"><path data-c="2061" d=""></path></g><g data-mml-node="mi" transform="translate(1394.7,0)"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g></g><g data-mml-node="mi" transform="translate(917.3,-686)"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g><rect width="2166.7" height="60" x="120" y="220"></rect></g></g></g><g data-mml-node="mtr" transform="translate(0,-2481)"><g data-mml-node="mtd" transform="translate(8500.5,0)"></g><g data-mml-node="mtd" transform="translate(8500.5,0)"><g data-mml-node="mi"></g><g data-mml-node="mo" transform="translate(277.8,0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path></g></g><g data-mml-node="mtd" transform="translate(9834.2,0)"><g data-mml-node="mn"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g></g></g></g></g></g></svg></mjx-container></p>
-</li>
-</ol>
-<h3 id="版本信息"><a href="#版本信息" class="headerlink" title="版本信息"></a>版本信息</h3><table>
-<thead>
-<tr>
-<th align="center">内容</th>
-<th align="center">版本</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">博客框架</td>
-<td align="center">hexo-cli_4.3.0</td>
-</tr>
-<tr>
-<td align="center">主题版本</td>
-<td align="center">NexT_8.12.0</td>
-</tr>
-<tr>
-<td align="center">hexo</td>
-<td align="center">5.4.2</td>
-</tr>
-</tbody></table>
-<h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45511189/article/details/115798563">[1] hexo博客next主题添加对数学公式的支持</a></p>
-<p><a target="_blank" rel="noopener" href="https://hexo.io/plugins/">[2] hexo官方插件交流论坛</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lantary.github.io/2022/07/16/%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/ubuntu%E7%B3%BB%E7%BB%9F%E4%B8%8B%E5%B0%86matepad11%E4%BD%9C%E4%B8%BA%E5%89%AF%E5%B1%8F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/%E5%A4%B4%E5%83%8F.png">
-      <meta itemprop="name" content="lantary">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lantary">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Lantary">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/07/16/%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/ubuntu%E7%B3%BB%E7%BB%9F%E4%B8%8B%E5%B0%86matepad11%E4%BD%9C%E4%B8%BA%E5%89%AF%E5%B1%8F/" class="post-title-link" itemprop="url">ubuntu系统下将matepad11作为副屏</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-07-16 00:00:00" itemprop="dateCreated datePublished" datetime="2022-07-16T00:00:00+08:00">2022-07-16</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-07-25 20:25:17" itemprop="dateModified" datetime="2022-07-25T20:25:17+08:00">2022-07-25</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">日常使用中的问题</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/2022/07/16/%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/ubuntu%E7%B3%BB%E7%BB%9F%E4%B8%8B%E5%B0%86matepad11%E4%BD%9C%E4%B8%BA%E5%89%AF%E5%B1%8F/#waline" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" data-path="/2022/07/16/%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/ubuntu%E7%B3%BB%E7%BB%9F%E4%B8%8B%E5%B0%86matepad11%E4%BD%9C%E4%B8%BA%E5%89%AF%E5%B1%8F/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>电脑需要一个第二屏幕，而买来的平板暂时用不到。所以想要将平板作为电脑的副屏使用。</p>
-<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>这里提供的解决方案是基于软件deskreen而实现。deskreen软件是一款通过游览器共享屏幕的软件。在电脑端部署一个虚拟的显示器，然后用deskreen网络共享这个虚拟屏幕就可以实现分屏。</p>
-<ol>
-<li>deskreen下载安装 <a href="link2">[此处下载]</a> 下载linux的deb包后，cd到下载目录 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -i deb的名字.deb</span><br></pre></td></tr></table></figure>
- 打开deskreen，需要保证你的平板和电脑在同一个wifi下，然后部署完虚拟屏幕后进行，下一步操作。 <img src="https://deskreen.com/img/steps/1.jpg" alt="p1"> 如果是先进行虚拟屏幕部署，然后在打开deskreen，可能会因为deskreen开在虚拟屏幕而无法看到。</li>
-</ol>
-<ol start="2">
-<li><p>虚拟屏幕部署</p>
-<blockquote>
-<p>需要注意： 此虚拟部署方案适用于带集成显卡的inter芯片。Nvidia GPU 请看参考链接</p>
-</blockquote>
-<p> 下载<a href="link1">VDL Monitor</a>到系统。ubuntu下打开终端，cd到你喜欢的文件夹。输入如下命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/dianariyanto/virtual-display-linux.git</span><br><span class="line"></span><br><span class="line">cd virtual-display-linux</span><br><span class="line"></span><br><span class="line">sudo chmod 777 vdl-monitor</span><br></pre></td></tr></table></figure>
-
-<p> 确定你电脑能配置的清晰度。通过 <code>xrandr</code> 命令查询电脑支持的清晰度。更改 <code>virtual-display-linux</code> 文件夹下的 <code>vdl-monitor.conf</code> 中的清晰度。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># config for screen 1</span><br><span class="line">screen1=&quot;1366x768&quot;</span><br><span class="line"></span><br><span class="line"># config for screen 2</span><br><span class="line">#screen2=&quot;1366x768&quot;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>屏幕链接</p>
-<p>更改完成后，用平板扫描deskreen的二维码进行链接。在电脑端允许后。</p>
-<p> <img src="https://deskreen.com/img/steps/3.jpg" alt="p2"></p>
-<p> 点击整个屏幕分享。此时会出现第二屏幕的选项，点击第二屏幕即可完成部署。</p>
-<p> <img src="https://deskreen.com/img/steps/4.jpg" alt="p3"></p>
-</li>
-</ol>
-<h3 id="版本信息"><a href="#版本信息" class="headerlink" title="版本信息"></a>版本信息</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">芯片          inter i5-7200U CPU @ 2.50GHz</span><br><span class="line">系统          ubuntu 22.04</span><br><span class="line">deskreen     deskreen_2.0.3_amd64 </span><br><span class="line">VDL          v0.1-alpha</span><br></pre></td></tr></table></figure>
-<h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><p><a target="_blank" rel="noopener" href="https://www.twblogs.net/a/5cb3844abd9eee48d788b399/?lang=zh-cn">[1] vnc, teamviewer, anydesk组件 实现方案</a></p>
-<p><a target="_blank" rel="noopener" href="https://deskreen.com/lang-zh_CN#features">[2] DESKREEN</a></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/pavlobu/deskreen/discussions/86">[3] 虚拟屏幕部署方案</a></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/dianariyanto/virtual-display-linux/issues/9#issuecomment-786389065">[4] Nvidia GPU虚拟屏幕部署方案</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lantary.github.io/2022/07/14/%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96/blog%E5%A2%9E%E5%8A%A0%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/%E5%A4%B4%E5%83%8F.png">
-      <meta itemprop="name" content="lantary">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lantary">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Lantary">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/07/14/%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96/blog%E5%A2%9E%E5%8A%A0%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/" class="post-title-link" itemprop="url">blog增加评论系统</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-07-14 00:00:00" itemprop="dateCreated datePublished" datetime="2022-07-14T00:00:00+08:00">2022-07-14</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-07-25 20:25:17" itemprop="dateModified" datetime="2022-07-25T20:25:17+08:00">2022-07-25</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96/" itemprop="url" rel="index"><span itemprop="name">博客优化</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/2022/07/14/%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96/blog%E5%A2%9E%E5%8A%A0%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/#waline" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" data-path="/2022/07/14/%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96/blog%E5%A2%9E%E5%8A%A0%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h3 id="博客优化内容"><a href="#博客优化内容" class="headerlink" title="博客优化内容"></a>博客优化内容</h3><ul>
-<li>为博客添加评论系统</li>
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>lantary
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://lantary.github.io/2022/07/28/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6/Delong%E6%A3%80%E9%AA%8C/" title="Delong检验">https://lantary.github.io/2022/07/28/生物信息学/Delong检验/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
 </ul>
-<h3 id="优化方案"><a href="#优化方案" class="headerlink" title="优化方案"></a>优化方案</h3><p>博主<a target="_blank" rel="noopener" href="https://qianfanguojin.top/">千帆过烬</a>，已经介绍的十分详细，这里具体方法不做详细论述。</p>
-<h3 id="版本信息"><a href="#版本信息" class="headerlink" title="版本信息"></a>版本信息</h3><table>
-<thead>
-<tr>
-<th align="center">内容</th>
-<th align="center">版本</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">博客框架</td>
-<td align="center">hexo-cli_4.3.0</td>
-</tr>
-<tr>
-<td align="center">主题版本</td>
-<td align="center">NexT_8.12.0</td>
-</tr>
-<tr>
-<td align="center">hexo</td>
-<td align="center">5.4.2</td>
-</tr>
-<tr>
-<td align="center">waline</td>
-<td align="center">v2.6.1</td>
-</tr>
-</tbody></table>
-<p>next主题7.8.0不能正常安装</p>
-<h3 id="参考信息"><a href="#参考信息" class="headerlink" title="参考信息"></a>参考信息</h3><p><a target="_blank" rel="noopener" href="https://qianfanguojin.top/2022/01/20/Hexo%E5%8D%9A%E5%AE%A2%E8%BF%9B%E9%98%B6%EF%BC%9A%E4%B8%BA-Next-%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0-Waline-%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/">[1] 为博客添加waline评论系统</a></p>
-<p><a target="_blank" rel="noopener" href="https://nobige.eu.org/post/20190718-hexoxiavalineguanbijingzhimougewenzhangyemianpinglun/">[2] 部分文章关闭评论</a></p>
+</div>
 
-      
-    </div>
 
-    
-    
-    
+        
 
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/07/25/%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96/%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E5%85%AC%E5%BC%8F%E7%B3%BB%E7%BB%9F/" rel="prev" title="博客添加公式系统">
+                  <i class="fa fa-chevron-left"></i> 博客添加公式系统
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
     </footer>
   </article>
 </div>
@@ -854,760 +498,9 @@ mjx-container[display="true"] + br {
 
 
 
-    
 
 
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lantary.github.io/2022/07/10/%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96/blog%E8%83%BD%E8%A2%AB%E6%90%9C%E7%B4%A2%E5%88%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/%E5%A4%B4%E5%83%8F.png">
-      <meta itemprop="name" content="lantary">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lantary">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Lantary">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/07/10/%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96/blog%E8%83%BD%E8%A2%AB%E6%90%9C%E7%B4%A2%E5%88%B0/" class="post-title-link" itemprop="url">hexo框架下的博客提交至google搜索</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-07-10 00:00:00" itemprop="dateCreated datePublished" datetime="2022-07-10T00:00:00+08:00">2022-07-10</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-07-25 20:25:17" itemprop="dateModified" datetime="2022-07-25T20:25:17+08:00">2022-07-25</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96/" itemprop="url" rel="index"><span itemprop="name">博客优化</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/2022/07/10/%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96/blog%E8%83%BD%E8%A2%AB%E6%90%9C%E7%B4%A2%E5%88%B0/#waline" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" data-path="/2022/07/10/%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96/blog%E8%83%BD%E8%A2%AB%E6%90%9C%E7%B4%A2%E5%88%B0/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h3 id="博客优化内容"><a href="#博客优化内容" class="headerlink" title="博客优化内容"></a>博客优化内容</h3><p>对于刚建立的博客来说，谷歌往往不能或者不会收录你的博客，为了使自己的博客可以被谷歌所检索到。我们需要主动向谷歌提供网址信息。</p>
-<h3 id="优化方案"><a href="#优化方案" class="headerlink" title="优化方案"></a>优化方案</h3><p>谷歌提供了如何向谷歌提交搜索的方法，同样bing，搜狗，百度等搜索引擎也有相同的提交方案。<br>如果你想你的博客被全网搜索到，那么你需要在主流的搜索引擎上分别提交你的网址。要注意的是百度的提交原理跟其他搜索引擎有所不同。这篇博客只以谷歌搜索为例子。以下操作均在 <a target="_blank" rel="noopener" href="https://search.google.com/search-console/about">[Google Search Console]</a> 中完成。</p>
-<h4 id="1-验证网站所属"><a href="#1-验证网站所属" class="headerlink" title="1.验证网站所属"></a>1.验证网站所属</h4><p>进入 <a target="_blank" rel="noopener" href="https://search.google.com/search-console/about">[Google Search Console]</a> 后会显示</p>
-<p><img src="https://raw.githubusercontent.com/Lantary/Private_warehouses/main/hexo%E6%A1%86%E6%9E%B6%E4%B8%8B%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%8F%90%E4%BA%A4%E8%87%B3google%E6%90%9C%E7%B4%A2/p1.png" alt="piture_1"></p>
-<p>输入你博客的地址后点击继续。</p>
-<p><img src="https://github.com/Lantary/Private_warehouses/blob/main/hexo%E6%A1%86%E6%9E%B6%E4%B8%8B%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%8F%90%E4%BA%A4%E8%87%B3google%E6%90%9C%E7%B4%A2/p2.png?raw=true" alt="piture_2"></p>
-<p>选择验证网站所有权信息的方式。这里需要注意如果你的bolg是以hexo框架搭建的。 那么最好不要选择第一种 <code>HTML文件验证</code> 的方式。 因为hexo会自动编译你下载的HTML文件，使其失效，若想要用这种验证方式，那么需要在hexo编译完后，再添加HTML文件。 即在 <code>hexo g</code> 后，再添加HTML文件。且你每一次部署都需要如此操作十分麻烦。故不推荐。</p>
-<p>这里用第二种方式 <code>HTML标记</code> 进行验证。 复制content中的内容到主题中的配置文件 <code>_config.yml</code> 。 在属性 <code>google_site_verification:</code> 后添加content后的内容</p>
-<p><img src="https://raw.githubusercontent.com/Lantary/Private_warehouses/main/hexo%E6%A1%86%E6%9E%B6%E4%B8%8B%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%8F%90%E4%BA%A4%E8%87%B3google%E6%90%9C%E7%B4%A2/p3.png" alt="piture_3"></p>
-<p>最后通过验证如图所示。</p>
-<p><img src="https://raw.githubusercontent.com/Lantary/Private_warehouses/main/hexo%E6%A1%86%E6%9E%B6%E4%B8%8B%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%8F%90%E4%BA%A4%E8%87%B3google%E6%90%9C%E7%B4%A2/p4.png" alt="piture_4"></p>
-<h4 id="2-添加sitemap文件到博客"><a href="#2-添加sitemap文件到博客" class="headerlink" title="2.添加sitemap文件到博客"></a>2.添加sitemap文件到博客</h4><p>向博客中添加站点地图的方式有很多。这里推荐一种用插件实现的方案。 首先要在你的博客根目录下下载插件。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-sitemap --save</span><br></pre></td></tr></table></figure>
-<p>插件安装完成后，在public中文件夹中会生成一个 <code>sitemap.xml</code>，如果没有请重新编译一下 <code>hexo g</code> 再进行检查。 同时修改博客根目录下的站点配置文件 <code>_config.yml</code> 中的 url 属性，将你的主页网站输入到url中。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># URL</span><br><span class="line">## Set your site url here. For example, if you use GitHub Page, set url as &#x27;https://username.github.io/project&#x27;</span><br><span class="line">url: https://lantary.github.io/</span><br><span class="line">permalink: :year/:month/:day/:title/</span><br><span class="line">permalink_defaults:</span><br><span class="line">pretty_urls:</span><br><span class="line">  trailing_index: true # Set to false to remove trailing &#x27;index.html&#x27; from permalinks</span><br><span class="line">  trailing_html: true # Set to false to remove trailing &#x27;.html&#x27; from permalinks</span><br></pre></td></tr></table></figure>
-<p>重新编译部署 <code>hexo g -d</code>。在谷歌站点地图中输入sitemap.xml后提交即可。</p>
-<p><img src="https://github.com/Lantary/Private_warehouses/blob/main/hexo%E6%A1%86%E6%9E%B6%E4%B8%8B%E7%9A%84%E5%8D%9A%E5%AE%A2%E6%8F%90%E4%BA%A4%E8%87%B3google%E6%90%9C%E7%B4%A2/p5.png?raw=true" alt="piture_5"></p>
-<h4 id="3-其他网站索引添加"><a href="#3-其他网站索引添加" class="headerlink" title="3.其他网站索引添加"></a>3.其他网站索引添加</h4><p>其他网站添加索引的方式与谷歌搜索类似，如果是bing则可以直接使用<a target="_blank" rel="noopener" href="https://search.google.com/search-console/about">[Google Search Console]</a>的数据</p>
-<h3 id="版本信息"><a href="#版本信息" class="headerlink" title="版本信息"></a>版本信息</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">博客框架		hexo-cli_4.3.0</span><br><span class="line">主题		next_7.8.0</span><br><span class="line">网站挂载于	github</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><p><a target="_blank" rel="noopener" href="https://javahikers.github.io/2019/06/16/personal-blog-being-included-in-google/">[1] 解决验证问题</a></p>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/100922816">[2] 提交sitemap</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lantary.github.io/2022/07/01/%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/Rstudio%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BB%A3%E7%A0%81%E9%85%8D%E8%89%B2%E6%96%B9%E6%A1%88/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/%E5%A4%B4%E5%83%8F.png">
-      <meta itemprop="name" content="lantary">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lantary">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Lantary">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/07/01/%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/Rstudio%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BB%A3%E7%A0%81%E9%85%8D%E8%89%B2%E6%96%B9%E6%A1%88/" class="post-title-link" itemprop="url">Rstudio自定义代码配色方案</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-07-01 00:00:00" itemprop="dateCreated datePublished" datetime="2022-07-01T00:00:00+08:00">2022-07-01</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-07-25 20:25:17" itemprop="dateModified" datetime="2022-07-25T20:25:17+08:00">2022-07-25</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">日常使用中的问题</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/2022/07/01/%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/Rstudio%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BB%A3%E7%A0%81%E9%85%8D%E8%89%B2%E6%96%B9%E6%A1%88/#waline" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" data-path="/2022/07/01/%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/Rstudio%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BB%A3%E7%A0%81%E9%85%8D%E8%89%B2%E6%96%B9%E6%A1%88/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>Rsutido 中默认的代码配色方案变量和函数是没有区分的。所以想要一个自定义代码配色的方案</p>
-<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>因为只需要区分开函数和变量，所以可以让便量为默认色-“白色”，而函数给一个高亮。<br>在Rstudio中，函数高亮是有可以直接实现的选项的。<br>选择 TOOL –&gt;&gt; Global Option –&gt;&gt; Code –&gt;&gt; Display 中，勾选Highlight R function call。</p>
-<p><img src="https://raw.githubusercontent.com/Lantary/Private_warehouses/main/Rstudio%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BB%A3%E7%A0%81%E9%85%8D%E8%89%B2%E6%96%B9%E6%A1%88_p1.png" alt="p1"></p>
-<p>如果只是需求将变量和函数名分开，那么到这里为止就结束了。<br>但是如果你对Rstudio默认主题中的函数高亮颜色不满意想要修改，那么可以通过以下方式。</p>
-<ol>
-<li>确定你现在所使用的配色方案可以在TOOL –&gt;&gt; Global Option –&gt;&gt; Appearance 中查看</li>
-</ol>
-<p><img src="https://raw.githubusercontent.com/Lantary/Private_warehouses/main/Rstudio%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BB%A3%E7%A0%81%E9%85%8D%E8%89%B2%E6%96%B9%E6%A1%88_p2.png" alt="p2"></p>
-<ol start="3">
-<li>在你Rstudio的安装目录下找到对应名字的[ .rtheme]文件，我的文件夹在./Rstudio/resources/themes下</li>
-<li>复制一份更名，打开后找到 <code>.ace_support.ace_function</code> 即为函数颜色设置的设置条目。</li>
-</ol>
-<p><img src="https://raw.githubusercontent.com/Lantary/Private_warehouses/main/Rstudio%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BB%A3%E7%A0%81%E9%85%8D%E8%89%B2%E6%96%B9%E6%A1%88_p3.png" alt="p3"></p>
-<ol start="6">
-<li>更改文本开头的  <code>rs-theme-name:</code> 然后用Rstudio Add新设置的主题文件就可以了</li>
-</ol>
-<h3 id="版本信息"><a href="#版本信息" class="headerlink" title="版本信息"></a>版本信息</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">操作系统		ubuntu22</span><br><span class="line">Rstudio		2022.02.3+492</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><p>[1] <a target="_blank" rel="noopener" href="https://community.rstudio.com/t/colour-additional-functions-within-an-editor-theme/4428">https://community.rstudio.com/t/colour-additional-functions-within-an-editor-theme/4428</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lantary.github.io/2022/06/27/%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/ibus%E5%9C%A8pycharm%E4%B8%AD%E4%B8%8D%E8%83%BD%E8%BF%9B%E8%A1%8C%E6%B1%89%E5%AD%97%E8%BE%93%E5%85%A5%E7%9A%84%E9%97%AE%E9%A2%98/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/%E5%A4%B4%E5%83%8F.png">
-      <meta itemprop="name" content="lantary">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lantary">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Lantary">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/06/27/%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/ibus%E5%9C%A8pycharm%E4%B8%AD%E4%B8%8D%E8%83%BD%E8%BF%9B%E8%A1%8C%E6%B1%89%E5%AD%97%E8%BE%93%E5%85%A5%E7%9A%84%E9%97%AE%E9%A2%98/" class="post-title-link" itemprop="url">ibus在pycharm中不能进行汉字输入的问题</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-06-27 00:00:00" itemprop="dateCreated datePublished" datetime="2022-06-27T00:00:00+08:00">2022-06-27</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-07-25 20:25:17" itemprop="dateModified" datetime="2022-07-25T20:25:17+08:00">2022-07-25</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">日常使用中的问题</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/2022/06/27/%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/ibus%E5%9C%A8pycharm%E4%B8%AD%E4%B8%8D%E8%83%BD%E8%BF%9B%E8%A1%8C%E6%B1%89%E5%AD%97%E8%BE%93%E5%85%A5%E7%9A%84%E9%97%AE%E9%A2%98/#waline" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" data-path="/2022/06/27/%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/ibus%E5%9C%A8pycharm%E4%B8%AD%E4%B8%8D%E8%83%BD%E8%BF%9B%E8%A1%8C%E6%B1%89%E5%AD%97%E8%BE%93%E5%85%A5%E7%9A%84%E9%97%AE%E9%A2%98/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>在使用pycharm过程中，发现pycharm没有办法输入中文，且ibus输入法的候选框一直在左下角，不跟随光标位置。<br>在网络上搜索了一下，目前中文互联网上能搜索到的大部分解决方案因为版本问题多多少少都有些问题。<br>所以这里写一篇基于我使用版本确实有效的一个解决方案。并且指出我在用其他方案来解决时遇到的问题</p>
-<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>打开pycharm  —-&gt;&gt; help —-&gt;&gt; Edit Custom VM Options </p>
-<p>在出现的交互窗中输入</p>
- <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-Drecreate.x11.input.method=true</span><br></pre></td></tr></table></figure>
-<p>重启pycharm 可以正常的输入中文，但是光标跟随问题仍未解决。目前为之还没有找到很好的解决方案</p>
-<h2 id="其他方案"><a href="#其他方案" class="headerlink" title="其他方案"></a>其他方案</h2><h3 id="1-修改pycharm-sh文件"><a href="#1-修改pycharm-sh文件" class="headerlink" title="1.修改pycharm.sh文件"></a>1.<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_39628498/article/details/110485125">修改pycharm.sh文件</a></h3><p>该方法尝试最大的问题是我的pycharm是从snap中下载的。<br>而通过snap安装的软件，赋予的权限特别高，无论怎么改它的权限，都没有办法写入。<br>chmod命令，chattr命令都试过了，没有用。</p>
-<h3 id="2-加载第三方插件的方法"><a href="#2-加载第三方插件的方法" class="headerlink" title="2.加载第三方插件的方法"></a>2.<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/342670244">加载第三方插件的方法</a></h3><p>这个方案尝试过程中，遇到的最大问题是本版本pycharm搜索不到choose runtime 需要自己手动下载。<br>而且文章中给的JBR文件链接也是无效的。<br>这里提供一个<a target="_blank" rel="noopener" href="https://plugins.jetbrains.com/plugin/12836-choose-runtime/versions">choose runtime</a>的手动下载链接。<br>下载后在pycharm插件界面本地添加插件添加choose runtime即可。</p>
-<p>需要注意的是，这个方案的尝试中，我确实成功了。<br>但是也只是解决了pycharm中不能输入中文的问题。<br>光标不跟随问题仍不能解决。<br>并且按这个方案做完之后 pycharm 中 markdown 插件会出bug，直接失效。<br>这里写出来仅供参考。</p>
-<h2 id="版本信息"><a href="#版本信息" class="headerlink" title="版本信息"></a>版本信息</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Distributor 		 Ubuntu 22.04 LTS  </span><br><span class="line">Codename: 		 jammy  </span><br><span class="line">架构: 			 x86_64  </span><br><span class="line">ibus框架：		 IBus 1.5.26</span><br><span class="line">ibus输入法：		 IBus 智能拼音 1.12.1</span><br><span class="line">pycharm:		 community_11.0.15</span><br></pre></td></tr></table></figure>
-<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_54032194/article/details/119081008">https://blog.csdn.net/m0_54032194/article/details/119081008</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lantary.github.io/2022/06/27/%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/%E6%A3%80%E6%B5%8B%E5%88%B0%E7%AA%97%E5%8F%A3%E7%B3%BB%E7%BB%9F%E9%87%87%E7%94%A8wayland%E5%8D%8F%E8%AE%AE%20%E8%85%BE%E8%AE%AF%E4%BC%9A%E8%AE%AE%E6%9A%82%E4%B8%8D%E5%85%BC%E5%AE%B9%20%E7%A8%8B%E5%BA%8F%E5%8D%B3%E5%B0%86%E9%80%80%E5%87%BA/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/%E5%A4%B4%E5%83%8F.png">
-      <meta itemprop="name" content="lantary">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lantary">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Lantary">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/06/27/%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/%E6%A3%80%E6%B5%8B%E5%88%B0%E7%AA%97%E5%8F%A3%E7%B3%BB%E7%BB%9F%E9%87%87%E7%94%A8wayland%E5%8D%8F%E8%AE%AE%20%E8%85%BE%E8%AE%AF%E4%BC%9A%E8%AE%AE%E6%9A%82%E4%B8%8D%E5%85%BC%E5%AE%B9%20%E7%A8%8B%E5%BA%8F%E5%8D%B3%E5%B0%86%E9%80%80%E5%87%BA/" class="post-title-link" itemprop="url">检测到窗口系统采用wayland协议 腾讯会议暂不兼容 程序即将退出</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-06-27 00:00:00" itemprop="dateCreated datePublished" datetime="2022-06-27T00:00:00+08:00">2022-06-27</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-07-26 23:13:48" itemprop="dateModified" datetime="2022-07-26T23:13:48+08:00">2022-07-26</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">日常使用中的问题</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/2022/06/27/%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/%E6%A3%80%E6%B5%8B%E5%88%B0%E7%AA%97%E5%8F%A3%E7%B3%BB%E7%BB%9F%E9%87%87%E7%94%A8wayland%E5%8D%8F%E8%AE%AE%20%E8%85%BE%E8%AE%AF%E4%BC%9A%E8%AE%AE%E6%9A%82%E4%B8%8D%E5%85%BC%E5%AE%B9%20%E7%A8%8B%E5%BA%8F%E5%8D%B3%E5%B0%86%E9%80%80%E5%87%BA/#waline" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" data-path="/2022/06/27/%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8%E4%B8%AD%E7%9A%84%E9%97%AE%E9%A2%98/%E6%A3%80%E6%B5%8B%E5%88%B0%E7%AA%97%E5%8F%A3%E7%B3%BB%E7%BB%9F%E9%87%87%E7%94%A8wayland%E5%8D%8F%E8%AE%AE%20%E8%85%BE%E8%AE%AF%E4%BC%9A%E8%AE%AE%E6%9A%82%E4%B8%8D%E5%85%BC%E5%AE%B9%20%E7%A8%8B%E5%BA%8F%E5%8D%B3%E5%B0%86%E9%80%80%E5%87%BA/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="问题描述及解决办法"><a href="#问题描述及解决办法" class="headerlink" title="问题描述及解决办法"></a>问题描述及解决办法</h2><p>ubuntu系统中下载了腾讯会议官方版本的deb包，安装后无法打开。弹窗警告 “检测到窗口系统采用wayland协议 腾讯会议暂不兼容 程序即将退出”</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/gdm3/custom.conf</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">WaylandEnable=<span class="literal">false</span> 的注释井号去掉</span></span><br><span class="line">sudo service gdm3 restart</span><br></pre></td></tr></table></figure>
-
-
-<h2 id="版本信息"><a href="#版本信息" class="headerlink" title="版本信息"></a>版本信息</h2><table>
-<thead>
-<tr>
-<th align="center">内容</th>
-<th align="center">版本</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">Distributor ID</td>
-<td align="center">Ubuntu</td>
-</tr>
-<tr>
-<td align="center">Description</td>
-<td align="center">Ubuntu 22.04 LTS</td>
-</tr>
-<tr>
-<td align="center">Release</td>
-<td align="center">22.04</td>
-</tr>
-<tr>
-<td align="center">Codename</td>
-<td align="center">jammy</td>
-</tr>
-<tr>
-<td align="center">架构</td>
-<td align="center">x86_64</td>
-</tr>
-<tr>
-<td align="center">腾讯会议</td>
-<td align="center">linux 3.8.0.2(2022-06-07)</td>
-</tr>
-</tbody></table>
-<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_52640673/article/details/124911402">https://blog.csdn.net/m0_52640673/article/details/124911402</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lantary.github.io/2022/05/20/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6/001_DAVID%E5%9C%A8%E7%BA%BF%E5%AF%8C%E9%9B%86%E5%88%86%E6%9E%90/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/%E5%A4%B4%E5%83%8F.png">
-      <meta itemprop="name" content="lantary">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lantary">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Lantary">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/05/20/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6/001_DAVID%E5%9C%A8%E7%BA%BF%E5%AF%8C%E9%9B%86%E5%88%86%E6%9E%90/" class="post-title-link" itemprop="url">DAVID富集分析(一)</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-05-20 00:00:00" itemprop="dateCreated datePublished" datetime="2022-05-20T00:00:00+08:00">2022-05-20</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-07-25 20:25:17" itemprop="dateModified" datetime="2022-07-25T20:25:17+08:00">2022-07-25</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">生物信息学</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6/%E5%AF%8C%E9%9B%86%E5%88%86%E6%9E%90/" itemprop="url" rel="index"><span itemprop="name">富集分析</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/2022/05/20/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6/001_DAVID%E5%9C%A8%E7%BA%BF%E5%AF%8C%E9%9B%86%E5%88%86%E6%9E%90/#waline" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" data-path="/2022/05/20/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6/001_DAVID%E5%9C%A8%E7%BA%BF%E5%AF%8C%E9%9B%86%E5%88%86%E6%9E%90/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>转自<a target="_blank" rel="noopener" href="https://blog.csdn.net/xiaobai1_1/article/details/103596474">https://blog.csdn.net/xiaobai1_1/article/details/103596474</a></p>
-<p>原帖所用的是旧版的DAVID 因为各种原因，我用原帖的基因编号进行分析并没能得到同样的结果，故操作步骤与原帖相似，但重新选取了分析的基因。在一般的富集分析中被分析的基因往往来自于某一或一些列实验中差异分析的结果。</p>
-<h1 id="1-使用DAVID-进行-GO-KEGG-富集分析"><a href="#1-使用DAVID-进行-GO-KEGG-富集分析" class="headerlink" title="1.使用DAVID 进行 GO/ KEGG 富集分析"></a>1.使用DAVID 进行 GO/ KEGG 富集分析</h1><p>  a.打开DAVID官网：<a target="_blank" rel="noopener" href="https://david.ncifcrf.gov/">https://david.ncifcrf.gov/</a></p>
-<p>  b.点击上侧功能菜单：shortcut to DAVID Tools 进入Function Annotation</p>
-<p>  c.进入到如下的页面中，页面中的大红框中就是进行分析所用的主要操作区域。进入分析页面后，通过如下三步即可完成分析：<br>提交基因列表 –&gt; 选定提交列表类型 –&gt; 开始分析</p>
-<p>  <code>用本文件夹下 用于练手的基因文件 可跳过d步骤，e步骤中选择数据类型为ENSEMBL_TRANSCRIPT_ID</code></p>
-<p>  d.在 “Enter Gene List” 中上传基因列表，格式是每行一个基因。按照 DAVID 的要求，总的基因个数不得超过 3000 个。我们这里去GO数据库以glyoxylate cycle为关键词对搜索出的蛋白进行分析。（以该循环内的蛋白为例）选中所需的蛋白（全部）点击Download，选择bioentity_internal_id 项，实际就是蛋白的UniProtAccession编号。</p>
-<p>  这一步是为了获取用于分析的原数据，也可以使用本文档的 000_差异分析 中获得的蛋白，ENSEMBL_TRANSCRIPT_ID 数据进行富集分析</p>
-<p>  <img src="https://user-images.githubusercontent.com/102901955/166140079-c8902b77-a27e-432c-98cd-464a71edc6d3.png" alt="image"></p>
-<p>  然后通过<a target="_blank" rel="noopener" href="https://biodbnet-abcc.ncifcrf.gov/db/db2db.php">https://biodbnet-abcc.ncifcrf.gov/db/db2db.php</a> （一个基因格式转换的工具网站） 进行ID转换，input选择UniProtAccession， output选择AffyID，后将d步骤的UniProtAccession编号复制入转换框中进行转换</p>
-<p>  <img src="https://user-images.githubusercontent.com/102901955/166141328-e64b162a-fa97-48a8-ae69-7ec69e0dd4a4.png" alt="image"></p>
-<p>  结果如下图</p>
-<p>  <img src="https://user-images.githubusercontent.com/102901955/166141337-a3df761f-ae5c-460f-a623-f2e1a5829b9b.png" alt="image"></p>
-<p>  这种转换可能会产生缺项。</p>
-<p>  e.“Select Identifier” 中选择上传的基因类型，因为我们上传的是AffyID，所以在下拉菜单中选择 “AFFYMETRIX_3PRIME_IVT_ID”。</p>
-<p>  f.在 “List Type” 中有两个单选框，我们统一选择 “Gene List” 这一项。</p>
-<p>  g.点击 “Submit List” 即可</p>
-<p>  <img src="https://user-images.githubusercontent.com/102901955/166141385-45260d50-3960-47da-b02d-170dd9834381.png" alt="image"></p>
-<p>  h.提交基因列表之后，经过几秒钟的等待，如果分析顺利，就会弹出一个提示：Please note that multiple species have been detected in your gene list.<br>    这句话的意思就是在我们提交的基因列表中检测到多个物种，需要我们选择相应的物种。<br>    点击弹出框中的 “确定”，然后在 “List” 中的选择相应物种，于本次分析使用的是人类细胞，<br>    故这里我们选择 “Homo sapiens”，（读者可根据自己研究物种的类型进行选择）并点击下方的 “Select Species” 即可。</p>
-<p>  i.在功能富集分析的结果中有多个折叠栏，其中 Gene_Ontology 这一折叠栏中有有三个栏目：GOTERM_BP_FAT、GOTERM_CC_FAT、GOTERM_MF_FAT 就是我们想要的 GO 功能富集分析结果。<br>    而 Pathways 里面有一个 KEGG_PATHWAY 就是我们要的结果。找到 BP、CC、MF 和 KEGG 对应的详细结果， 点击每个栏目后面的 “Chart” 即可。<br>   <img src="https://user-images.githubusercontent.com/102901955/166135146-40de1cb7-b8d7-4201-af5b-211f8ab3346b.png" alt="20191218161843663"></p>
-<p>  j.点击 “Chart” 之后，即可出现如下图所示的结果，这里面有几列数据分别是：Category、Term、RT、Genes、Count、%、P-Value 和 Benjamini。<br>    这几列中我们比较关心的是：Term（GO语义）、P-Value（P值）、Count（基因数）、%（基因比例）点击红框中的 Download File 即可。<br>    打开一个新的网页，新打开的网页就是分析结果的文本文件，可以下载或者导入到作图软件中进行后续的操作。</p>
-<p>  <img src="https://user-images.githubusercontent.com/102901955/166141475-d371c498-c404-4bad-ab8c-004398b9b026.png" alt="image"></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lantary.github.io/2022/05/20/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6/GSEA,%20GSVA%E5%88%86%E6%9E%90/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/%E5%A4%B4%E5%83%8F.png">
-      <meta itemprop="name" content="lantary">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lantary">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Lantary">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/05/20/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6/GSEA,%20GSVA%E5%88%86%E6%9E%90/" class="post-title-link" itemprop="url">GSEA,GSVA分析</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-05-20 00:00:00" itemprop="dateCreated datePublished" datetime="2022-05-20T00:00:00+08:00">2022-05-20</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-07-25 20:25:17" itemprop="dateModified" datetime="2022-07-25T20:25:17+08:00">2022-07-25</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">生物信息学</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6/%E5%AF%8C%E9%9B%86%E5%88%86%E6%9E%90/" itemprop="url" rel="index"><span itemprop="name">富集分析</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/2022/05/20/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6/GSEA,%20GSVA%E5%88%86%E6%9E%90/#waline" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" data-path="/2022/05/20/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6/GSEA,%20GSVA%E5%88%86%E6%9E%90/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>一种富集分析</p>
-<h1 id="一、什么是GSEA"><a href="#一、什么是GSEA" class="headerlink" title="一、什么是GSEA"></a>一、什么是GSEA</h1><p><br></br></p>
-<h2 id="1-GSEA-基因集富集分析"><a href="#1-GSEA-基因集富集分析" class="headerlink" title="1.GSEA(基因集富集分析)"></a>1.GSEA(基因集富集分析)</h2><p>GSEA也是一种富集分析方式，与GO和KEGG富集分析相似却也有不同。一般的富集分析(GO与KEGG富集分析)更加关注少数几个显著变化的基因，在分析中往往要确定一个阈值，去除显著性或富集程度在阈值下基因。只选取头部的几个基因。这样的分析方法有可能会将基因变化量不大但又有重要生物学意义的一些基因忽略。而GSEA 在分析过程中不需要设置阈值，会将差异分析结果按log(FC)排序。关注的是基因表达量相近的基因数量。GSEA分析方法，可以有效的保留一般富集分析在设置阈值时去除的一些生物信息。GSEA是用一个预先定义的基因集中的基因来评估在与表型相关度排序的基因表中的分布趋势，从而判断其对表型的贡献。</p>
-<h2 id="2-GSEA结果图解析"><a href="#2-GSEA结果图解析" class="headerlink" title="2.GSEA结果图解析"></a>2.GSEA结果图解析</h2><p><img src="https://user-images.githubusercontent.com/102901955/168717081-1d444516-10c4-4638-a01e-a9889efd3966.png" alt="image"></p>
-<p>以上图为例，GSEA 的结果图一般分为三个部分</p>
-<p>1.第一部分: Enrichment Score, 也就是主图像的纵轴, 表示基因的富集程度, 计算方式是每当有一个在通路中的基因(黑线)则ES累加一个值, 每当有一个不在通路中的基因(非黑线部分)则ES减一个值, 最后做出曲线. 即在通路中的基因相邻越近, 曲线”斜率”越大, 基因越分散, 曲线”斜率”越小. 通常会显出一个山坡图, 若山顶为于红色区域, 说明GSEA结果为该通路上调表达. 反之则为下调表达. </p>
-<p>2.第二部分: 横坐标, 红蓝条表示的是输入的基因集, 红色部分表示差异分析中log(FC)为正, 蓝色部分表示差异分析中log(FC)为负. 黑线表示与选取的通路相关的基因, 本例中黑线即表示CHRXP11 通路相关的基因. </p>
-<p>3.第三部分: Ranked list metric 表示的也是差异分析中不同基因log(FC)的量, 将横坐标中的红蓝图量化表达出来. </p>
-<h2 id="3-GSEA-R语言实现"><a href="#3-GSEA-R语言实现" class="headerlink" title="3.GSEA R语言实现"></a>3.GSEA R语言实现</h2><p>1.数据格式</p>
-<p><img src="https://user-images.githubusercontent.com/102901955/169223848-ed0e5293-f179-4cdf-a288-37046819a6c5.png" alt="image"></p>
-<p>需要一个键名为基因ENTREZID, 键值为logFC的字典格式向量, K可以用下面代码构造字典, 其中df_all的logFC列为 差异分析后的logFC值, ENTREZID列为对应基因的ENTREZID编号</p>
-<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gene_fc <span class="operator">&lt;-</span> df_all<span class="operator">$</span>logFC                                  <span class="comment"># 构造字典向量</span></span><br><span class="line"><span class="built_in">names</span><span class="punctuation">(</span>gene_fc<span class="punctuation">)</span> <span class="operator">&lt;-</span> df_all<span class="operator">$</span>ENTREZID                        <span class="comment"># 构造字典向量</span></span><br></pre></td></tr></table></figure>
-
-<p>2.代码</p>
-<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 加载R包</span></span><br><span class="line">library<span class="punctuation">(</span>enrichplot<span class="punctuation">)</span>      <span class="comment"># 用于画图</span></span><br><span class="line">library<span class="punctuation">(</span>clusterProfiler<span class="punctuation">)</span> <span class="comment"># GSEA分析</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 导入文件</span></span><br><span class="line">df <span class="operator">=</span> read.csv<span class="punctuation">(</span><span class="string">&quot;路径&quot;</span><span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># GAEA</span></span><br><span class="line">df_all <span class="operator">&lt;-</span> df_all<span class="punctuation">[</span>order<span class="punctuation">(</span>df_all<span class="operator">$</span>logFC<span class="punctuation">,</span> decreasing <span class="operator">=</span> <span class="built_in">T</span><span class="punctuation">)</span><span class="punctuation">,</span> <span class="punctuation">]</span>  <span class="comment"># 数据按logFC排列</span></span><br><span class="line">gene_fc <span class="operator">&lt;-</span> df_all<span class="operator">$</span>logFC                                  <span class="comment"># 构造字典向量</span></span><br><span class="line"><span class="built_in">names</span><span class="punctuation">(</span>gene_fc<span class="punctuation">)</span> <span class="operator">&lt;-</span> df_all<span class="operator">$</span>ENTREZID                        <span class="comment"># 构造字典向量</span></span><br><span class="line">KEGG <span class="operator">&lt;-</span> gseKEGG<span class="punctuation">(</span>gene_fc<span class="punctuation">,</span> organism <span class="operator">=</span> <span class="string">&quot;mmu&quot;</span><span class="punctuation">)</span>               <span class="comment"># 人类样本organism参数为hsa 详情见http://www.genome.jp/kegg/catalog/org_list.html</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘图</span></span><br><span class="line">gseaplot2<span class="punctuation">(</span></span><br><span class="line">  KEGG<span class="punctuation">,</span>                           <span class="comment"># gseaResult object，即GSEA结果</span></span><br><span class="line">  <span class="string">&quot;mmu00830&quot;</span><span class="punctuation">,</span>                     <span class="comment"># 富集的ID编号，选择表示的通路</span></span><br><span class="line">  title <span class="operator">=</span> <span class="string">&quot;Retinol metabolism&quot;</span><span class="punctuation">,</span>   <span class="comment"># 标题</span></span><br><span class="line">  color <span class="operator">=</span> <span class="string">&quot;green&quot;</span><span class="punctuation">,</span>                <span class="comment"># GSEA线条颜色</span></span><br><span class="line">  base_size <span class="operator">=</span> <span class="number">11</span><span class="punctuation">,</span>                 <span class="comment"># 基础字体大小</span></span><br><span class="line">  rel_heights <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="number">1.5</span><span class="punctuation">,</span> <span class="number">0.5</span><span class="punctuation">,</span> <span class="number">1</span><span class="punctuation">)</span><span class="punctuation">,</span>   <span class="comment"># 副图的相对高度</span></span><br><span class="line">  subplots <span class="operator">=</span> <span class="number">1</span><span class="operator">:</span><span class="number">3</span><span class="punctuation">,</span>                 <span class="comment"># 要显示哪些副图 如subplots=c(1,3) -只要第一和第三个图，subplots=1 -只要第一个图</span></span><br><span class="line">  pvalue_table <span class="operator">=</span> <span class="literal">FALSE</span><span class="punctuation">,</span>           <span class="comment"># 是否添加 pvalue table</span></span><br><span class="line">  ES_geom <span class="operator">=</span> <span class="string">&quot;line&quot;</span>                <span class="comment"># running enrichment score用线还是用点ES_geom = &quot;dot&quot;</span></span><br><span class="line"><span class="punctuation">)</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-<p><br></br></p>
-<h1 id="二、什么是GSVA"><a href="#二、什么是GSVA" class="headerlink" title="二、什么是GSVA"></a>二、什么是GSVA</h1><p><br></br></p>
-<h2 id="1-GSVA-基因集变异分析"><a href="#1-GSVA-基因集变异分析" class="headerlink" title="1.GSVA(基因集变异分析)"></a>1.GSVA(基因集变异分析)</h2><p>GSVA 是一种基因富集分析算法. 输入数据是表达矩阵, 与一般的富集分析不同, GSVA不需要对样品进行分组, 它可以先进行通路的富集, 形成一个以通路为行名, 样品为列名的表达矩阵. 是一种非参数的无监督分析方法, 主要用来评估芯片和转录组的基因集富集结果. 主要是通过将基因在不同样品间的表达量矩阵转化成基因集在样品间的表达量矩阵, 从而来评估不同的代谢通路在不同样品间是否富集. </p>
-<h2 id="2-GSVA结果解释"><a href="#2-GSVA结果解释" class="headerlink" title="2.GSVA结果解释"></a>2.GSVA结果解释</h2><p>GSVA分析的结果是一个表达矩阵, 常见的结果可视化为制作热图, 热图的含义这里不做赘述. </p>
-<h2 id="3-GSVA-R语言实现"><a href="#3-GSVA-R语言实现" class="headerlink" title="3.GSVA R语言实现"></a>3.GSVA R语言实现</h2><p>1.导入的数据结构</p>
-<figure class = "half">
-    <img src = "https://user-images.githubusercontent.com/102901955/169063653-e5c0315d-0296-4a79-bfee-af60834bf9b6.png">
-    <img src = "https://user-images.githubusercontent.com/102901955/169064832-f85b88b0-58dc-46fe-bd1e-43563ccf7357.png">
-</figure>
-
-<p>表达矩阵: 导入的数据格式如上图所示, 行名为样本编号, 列名为Gene Symbol ID, 单元格内值为log2化的表达量. 原始数据可以在GEO数据库中找到.<br>基因集:   导入的数据如下图所示, 格式为gmt, 可以在<a target="_blank" rel="noopener" href="https://www.gsea-msigdb.org/gsea/msigdb/genesets.jsp">MSigdb</a>上找到常用的基因集, 也可以自己制作.</p>
-<p>2.代码</p>
-<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 加载R包</span></span><br><span class="line">library<span class="punctuation">(</span>GSVA<span class="punctuation">)</span>            <span class="comment"># 用于GSVA分析</span></span><br><span class="line">library<span class="punctuation">(</span>GSEABase<span class="punctuation">)</span>        <span class="comment"># 用于读取文件</span></span><br><span class="line">library<span class="punctuation">(</span>pheatmap<span class="punctuation">)</span>        <span class="comment"># 制作热图</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 文件读取</span></span><br><span class="line">setwd<span class="punctuation">(</span><span class="string">&quot;工作路径&quot;</span><span class="punctuation">)</span>                                   <span class="comment"># 设置工作路径</span></span><br><span class="line">keggSet <span class="operator">=</span> getGmt<span class="punctuation">(</span><span class="string">&quot;基因集文件路径&quot;</span><span class="punctuation">)</span>                  <span class="comment"># 读取基因集文件</span></span><br><span class="line">expmatrix_data <span class="operator">=</span> read.table<span class="punctuation">(</span>                       <span class="comment"># 读取表达矩阵</span></span><br><span class="line">  <span class="string">&quot;表达矩阵路径&quot;</span><span class="punctuation">,</span> </span><br><span class="line">  header <span class="operator">=</span> <span class="literal">TRUE</span><span class="punctuation">,</span>                                         </span><br><span class="line"><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
-<p>如果格式不对, 自行调整</p>
-<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># GSVA分析</span></span><br><span class="line">gsva_data <span class="operator">&lt;-</span> gsva<span class="punctuation">(</span></span><br><span class="line">  expr <span class="operator">=</span> as.matrix<span class="punctuation">(</span>exp_new<span class="punctuation">)</span><span class="punctuation">,</span>         <span class="comment"># 输入表达矩阵</span></span><br><span class="line">  gset.idx.list <span class="operator">=</span> keggSet<span class="punctuation">,</span>           <span class="comment"># 输入基因集</span></span><br><span class="line">  method <span class="operator">=</span> <span class="string">&quot;gsva&quot;</span><span class="punctuation">,</span>                   <span class="comment"># 选择算法</span></span><br><span class="line">  kcdf <span class="operator">=</span> <span class="string">&quot;none&quot;</span>                      <span class="comment"># 选择CDF计算模型,正态，高斯还是泊松</span></span><br><span class="line"><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
-<p>GSVA分析的算法见参考连接, ?gsva可以查看更多参数, 一般来说log2化的矩阵计算模型选用正态, 没有进行log2化的选泊松</p>
-<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 绘制热图</span></span><br><span class="line">pheatmap<span class="punctuation">(</span></span><br><span class="line">  gsva_data<span class="punctuation">,</span></span><br><span class="line">  show_colnames <span class="operator">=</span> <span class="built_in">T</span><span class="punctuation">,</span></span><br><span class="line">  show_rownames <span class="operator">=</span> <span class="built_in">T</span><span class="punctuation">,</span></span><br><span class="line">  kmeans_k <span class="operator">=</span> <span class="literal">NA</span></span><br><span class="line"><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h2 id=""><a href="#" class="headerlink" title=""></a></h2><h1 id="参考连接"><a href="#参考连接" class="headerlink" title="参考连接"></a>参考连接</h1><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/358168557">GSEA R绘图 代码</a></p>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/355879724">GSVA算法介绍</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/default-index/page/2/">2</a><a class="extend next" rel="next" href="/default-index/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
-  </nav>
-
+    <div class="comments" id="waline"></div>
 </div>
   </main>
 
@@ -1646,7 +539,7 @@ mjx-container[display="true"] + br {
 
 
 
-<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"waline-server-dusky.vercel.app","cssUrl":"https://unpkg.com/@waline/client@v2/dist/waline.css","commentCount":true,"pageview":false,"placeholder":"请文明评论呀","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"visitor":true,"comment_count":true,"requiredFields":[],"libUrl":"//unpkg.com/@waline/client@v2/dist/waline.js","el":"#waline","comment":true,"path":"/default-index/"}</script>
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"waline-server-dusky.vercel.app","cssUrl":"https://unpkg.com/@waline/client@v2/dist/waline.css","commentCount":true,"pageview":false,"placeholder":"请文明评论呀","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"visitor":true,"comment_count":true,"requiredFields":[],"libUrl":"//unpkg.com/@waline/client@v2/dist/waline.js","el":"#waline","comment":true,"path":"/2022/07/28/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6/Delong%E6%A3%80%E9%AA%8C/"}</script>
 <link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css">
 <script>
 document.addEventListener('page:loaded', () => {
